@@ -1,0 +1,165 @@
+[//]: #@corifeus-header
+
+## Latest Stable OpenWrt Version with additional packages/feeds
+
+---
+                        
+[//]: #@corifeus-header:end
+
+# Start
+
+By now, the whole build system is automated. This is just for historical documentary.
+
+# First save the existing packages
+
+* SSH into the router
+
+```bash
+# this is my own script but you can get the installed packages with some hacking
+# this is good if you want your own firmware
+# that builds all packages you now have 
+opkg list-installed > opkg-list-installed.txt
+```
+
+* mc
+  * via Midnight Commander you add to your repo via shell patrikx3@192.168.1.30/home/patrikx3/Projects/patrikx3/p3x/openwrt-insomnia/router/{router-name}
+* Copy the opkg-list-installed.txt file to {router-name}/opkg-list-installed.txt as well
+
+
+# Make the raw firmware
+
+By now, it is using faster with the helpers above, but below you can do it by hand to change everything easy.
+
+# Build All packages
+
+You start with:
+```bash
+./build-docker
+```
+
+Make sure you know there are already build docker images, so you don't really need it.
+
+The same, if you have a server instead ```cdn.corifeus.com```, you can change it at wish.
+
+There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
+
+* Target System  
+  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
+  * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
+  * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
+  * RPI 3 => Broadcom BCM27xx  
+  
+* Subtarget (Linksys missing this, not needed)
+  * D-Link DIR-860l B1 => MT7621
+  * RPI 3 => BCM2710  
+  
+* Target Profile  
+  * D-Link DIR-860l B1 => MT7621     
+  * Linksys WRT1900ACS => Linksys WRT1900ACS
+  * Linksys WRT3200ACM => Linksys WRT3200ACM  
+  * RPI 3 => Raspberrry Pi 3 B/CM  
+
+* Global build settings
+  * Select all target specific packages by default
+  * Select all kernel module packages by default
+  * Select all userspace packages by default
+  * Set build defaults for automatic builds
+  * Collect kernel debug information - UNCHECK / OpenWrt
+  * Kernel build options
+    * Compile the kernel with MIPS FPU
+      * ONLY For D-Link DIR860L B1
+    * Compile the kernel with debug information - UNCHECK / OpenWrt
+      
+* Build the LEDE Image Build / Build the OpenWrt Image Build
+  * Include package repositories
+  
+* Image configuration - ENTER
+  * Version configuration options - ENTER
+    * Release version code
+      * insomnia    
+    * Manufacturer name
+      * p3x
+    * Manufacturer URL
+      * https://pages.corifeus.com/openwrt-insomnia
+  * Seperate feed repositories
+    * select
+    
+* Kernel modules
+  * Select everything, but I think, it is now already added, except remove the below  
+  * Wireless Drivers
+    * kmod-mwifiex-sdio - UNCHECK for Linksys WRT 
+        
+* Languages
+  * Node.js
+    * node
+      * Configuration
+        * Version Selection
+          * 9.x
+    * SELECT ALL
+    
+  * PHP
+    * php7
+    * PHP7 Filter support
+    * SELECT ALL
+
+* Libraries
+  * libavahi-compat-libdnssd (*)          
+
+* Network
+  * Web Servers/Proxies
+    * apache
+      * Configuration
+        * Enable HTTP2
+    * nginx - Select then Enter
+      * Configuration
+        * Select all  
+        
+* Utilities
+  * database
+    * mariadb
+      * mariadb-client
+      * mariadb-client-extra
+      * mariadb-server
+        * ENTER
+          *  Mariadb server lite - UNCHECK
+          
+  * mc - select then enter
+    * Configuration
+      * Enable internal editor - UNCHECK
+* Exit
+* YES
+
+Copy the .config file to {router-name}/.config
+
+# In an another terminal you can increase the buidling 
+
+```bash
+# for me using multiple cores the main build I always get errors, so I always use just 1 core
+# I do this instead
+# find out the PID
+watch 'ps -aux | grep "make\|m4\|cc1"'
+# end just to do this
+sudo renice -20 -u 1000
+# for docker I also added renice, I checked out the dockerd pid and I added in
+ps -aux | grep dockerd
+# you get the PID
+sudo renice -20 10728 # this was the dockerd PID
+```
+
+
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.2-14 
+
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
+
+
+## Sponsor
+
+[![JetBrains](https://www.patrikx3.com/images/jetbrains-logo.svg)](https://www.jetbrains.com/)
+  
+ 
+
+[//]: #@corifeus-footer:end

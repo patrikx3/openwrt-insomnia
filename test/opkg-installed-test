@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+#./opkg-installed-test PACKAGES="$(< ../router/d-link-dir-860l-b1/opkg-list-installed.txt)" TUTI="aha"
+
+for i in "$@"
+do
+case $i in
+    PACKAGES=*|PACKAGES2=*)
+    PACKAGES="${i#*=}"
+    shift # past argument=value
+    ;;
+    TUTI=*|T=*)
+    TUTI="${i#*=}"
+    shift # past argument=value
+    ;;
+    *)
+     # unknown option
+    ;;
+esac
+done
+echo "PACKAGES so here:"
+echo $PACKAGES
+echo
+echo "TUTI  so here "
+echo $TUTI
+
+if [[ -n $1 ]]; then
+    echo "Last line of file specified as non-opt/last argument:"
+    tail -1 $1
+fi
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+source $DIR/openwrt-insomnia-lib
+
+ROUTER_PROFILE="linksys-wrt1900acs"
+ROUTER_TARGET="mvebu"
+ROUTER_SUB_TARGET="generic"
+FIRMWARE_NAME="insomnia"
+IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/openwrt-imagebuilder-${OPENWRT_VERSION_TOTAL}-${ROUTER_TARGET}.Linux-x86_64.tar.xz"
+
+tag="linksys-wrt"
+
+if [ -z "$1" ];
+then
+ build="corifeus"
+else
+ build=$1
+fi
+
+pre-build
+feeds
+setup-config-and-build $ROUTER_PROFILE $tag $build
+setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
+#setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
+post-build $1 $2

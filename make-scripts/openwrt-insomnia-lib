@@ -1,0 +1,208 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+build_host_path=/build/host-build
+
+#set -e
+# grep -rnw  -e 'downloads.openwrt-project.org'
+
+function pre-build() {
+
+    $DIR/copy-scripts.sh
+    ./scripts/feeds update -a
+    ./scripts/feeds install -a
+
+    # node
+    ./scripts/feeds update node
+    rm ./package/feeds/packages/node* || true
+    #rm ./package/feeds/packages/node-arduino-firmata || true
+    #rm ./package/feeds/packages/node-cylon || true
+    #rm ./package/feeds/packages/node-hid || true
+    #rm ./package/feeds/packages/node-serialport || true
+    ./scripts/feeds install -a -p node
+
+    # redis
+    ./scripts/feeds update redis
+    ./scripts/feeds install -a -p redis
+
+    # mariadb
+    ./scripts/feeds update mariadb
+    ./scripts/feeds install -a -p mariadb
+}
+
+function patches-and-feeds() {
+    cp -avr /build/patches/source /build
+    # if you need to update the feeds, we have to call the ./script feeds
+    # make package/kernel/mwlwifi/{clean,compile}
+}
+
+function feeds() {
+    cp -avr /build/patches/source/feeds /build/source
+}
+
+function fix-paths() {
+    sed -i.bak "s|CONFIG_VERSION_REPO.*|CONFIG_VERSION_REPO=\"$1\"|g" .config
+    sed -i.bak 's#CONFIG_TARGET_INIT_PATH="/usr/sbin#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-openwrt:/usr/sbin#g' .config
+    cat .config | grep CONFIG_TARGET_INIT_PATH
+    cat .config | grep CONFIG_VERSION_REPO
+
+}
+
+function setup-config-and-build() {
+
+    tag=$2
+
+    make defconfig
+    cp -avr /build/router/$1/source/. /build/source
+
+    ./scripts/diffconfig.sh > configdiff
+    cp configdiff .config
+    make defconfig;make oldconfig
+
+    # disable mariadb lite
+    echo "We build full MariaDB, it will be not be synced but it is, I just removed a line ..."
+    sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
+    cat .config | grep mariadb
+
+    # disable node unused packages
+    cat .config | grep node
+
+    cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
+
+    if [ -z "$3" ] || [ "$3" = "nosign" ] || [ "$3" = "corifeus" ]
+    then
+        CDN_REPO="http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}"
+    else
+        CDN_REPO=$2
+    fi
+
+#    sed -i.bak "s#http://downloads.openwrt-project.org/releases/${OPENWRT_VERSION_TOTAL}#$CDN_REPO#g" package/base-files/image-config.in
+    sed -i.bak "s#http://downloads.openwrt-project.org/snapshots#$CDN_REPO#g" package/base-files/image-config.in
+    sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-openwrt:/usr/sbin#g' package/base-files/image-config.in
+    cat package/base-files/image-config.in | grep default
+
+    fix-paths "$CDN_REPO"
+
+    chmod +rwx $build_host_path || true
+
+    # for now the pre download is not good
+    #CORES=$(grep -c ^processor /proc/cpuinfo)
+    #let CORES=$CORES+1
+    #is_downloaded="$build_host_path/${tag}-downloaded"
+    #if [ ! -e "$is_downloaded" ];
+    #then
+    #    touch $is_downloaded || true
+    #    chmod ugo+rwx $is_downloaded || true
+    #    make download V=s #-j$CORES
+    #fi
+
+    IGNORE_ERRORS=1 make V=s # -j$CORES
+#    make V=s -j$CORES
+}
+
+function setup-image-builder-and-build() {
+    IMAGE_BUILDER_PATH=$1
+    ROUTER_PROFILE=$2
+    FIRMWARE_NAME=$3
+    if [ -z "$4" ] || [ "$4" = "nosign" ] ;
+    then
+        CDN_REPO="http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}"
+    else
+        CDN_REPO=$4
+    fi
+
+    IMAGE_BUILDER_PATH=$(image-builder-uncompress $IMAGE_BUILDER_FILE)
+    pushd $IMAGE_BUILDER_PATH
+
+    sed -i.bak 's#src/gz#src#g' repositories.conf
+    sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf || true
+
+#    DIST_FEEDS=$(find -name distfeeds.conf)
+#    sed -i "s#http://downloads.openwrt-project.org/releases/${OPENWRT_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
+#    cat $DIST_FEEDS
+
+    rm -rf ./files
+    mkdir files
+    cp -R /build/image-builder-files/* files/
+    DIST_FEEDS_DIR=files/etc/opkg
+    mkdir -p $DIST_FEEDS_DIR
+    #cp $DIST_FEEDS $DIST_FEEDS_DIR
+    make image PROFILE=$ROUTER_PROFILE PACKAGES="$(< /build/router/${ROUTER_PROFILE}/opkg-list-installed.txt)" FILES=files/
+
+    for FIND_PATH in $(find ${IMAGE_BUILDER_PATH}/bin -type f -iname '*openwrt*')
+    do
+        FILE=$(basename "$FIND_PATH")
+        BIN_DIR=$(dirname "$FIND_PATH")
+        mv $FIND_PATH "/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/${FIRMWARE_NAME}-${FILE}"
+    done
+
+    popd
+}
+
+function image-builder-uncompress() {
+    IMAGE_BUILDER_FILE=$1
+# if you want a result, you can only echo once :)
+#    echo "Uncompressing image builder ${IMAGE_BUILDER_FILE} to /build"
+    tar xf ${IMAGE_BUILDER_FILE} -C /build/
+    IMAGE_BUILDER_BASENAME=$(basename ${IMAGE_BUILDER_FILE%.*})
+    IMAGE_BUILDER_BASENAME=$(basename ${IMAGE_BUILDER_BASENAME%.*})
+    IMAGE_BUILDER_PATH="/build/${IMAGE_BUILDER_BASENAME}"
+    echo $IMAGE_BUILDER_PATH
+}
+
+function post-build() {
+    delete-firmware-openwrt-files
+    if [ "$1" != "nosign" ] && [ "$2" != "nosign" ]
+    then
+        $DIR/sign
+    fi
+    echo "All files are in /build/source/bin"
+}
+
+function generate-firmware-dir() {
+    declare -gx firmware_files_sums="$(find /build/source/bin -name config.seed)"
+    declare -gx firmware_files_dir="$(dirname $firmware_files_sums)"
+    declare -gx firmware_files="$(find $firmware_files_dir -maxdepth 1 -type f)"
+}
+
+function delete-firmware-openwrt-files() {
+##    generate-firmware-dir
+##    find $firmware_files_dir -maxdepth 1 -type f -name "openwrt-${OPENWRT_VERSION_TOTAL}*" -delete
+    echo "Disabled delete openwrt firmwares, keep originals."
+}
+
+function final() {
+    container_id=$(cat /etc/hostname)
+    docker_tag="${1}"
+    command="$build_host_path/final-commit-and-push"
+    chmod +rwx $build_host_path || true
+    mkdir -p $build_host_path
+    chmod +rwx $build_host_path || true
+    pushd $build_host_path
+    chmod +rwx $command || true
+    if [ ! -e "$command" ];
+    then
+        echo "#!/usr/bin/env bash" > $command
+        echo "docker push patrikx3/openwrt-insomnia:latest" >> $command
+        echo "" >> $command
+        chmod +rwx $command
+    fi
+    echo "docker commit ${container_id} patrikx3/openwrt-insomnia:${docker_tag}" >> $command
+    echo "docker push patrikx3/openwrt-insomnia:${docker_tag}" >> $command
+    echo "" >> $command
+    popd
+    #rm $build_host_path/${docker_tag}-downloaded || true
+}
+
+export -f delete-firmware-openwrt-files
+export -f generate-firmware-dir
+export -f image-builder-uncompress
+export -f patches-and-feeds
+export -f feeds
+export -f setup-config-and-build
+export -f fix-paths
+export -f setup-image-builder-and-build
+export -f post-build
+export -f pre-build
+export -f final

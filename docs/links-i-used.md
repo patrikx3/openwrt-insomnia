@@ -1,0 +1,58 @@
+[//]: #@corifeus-header
+
+## Latest Stable OpenWrt Version with additional packages/feeds
+
+---
+                        
+[//]: #@corifeus-header:end
+
+
+
+## How I built these Dockers via these links
+
+https://openwrt-project.org/docs/guide-developer/start
+
+https://openwrt-project.org/docs/user-guide/imagebuilder
+
+https://openwrt-project.org/docs/guide-developer/quickstart-build-images  
+
+https://openwrt-project.org/docs/guide-developer/use-buildsystem
+
+https://forum.openwrt-project.org/t/how-to-build-openwrt-packages/885/6  
+
+https://forum.openwrt-project.org/t/how-to-build-openwrt-packages/885/7  
+
+https://openwrt-project.org/docs/user-guide/extroot_configuration
+
+https://github.com/nxhack/openwrt-node-packages  
+
+https://github.com/nxhack/openwrt-node-packages/issues/15
+
+https://forum.openwrt-project.org/t/buildbot-config-file/888/3
+
+https://codepad.co/snippet/hh8FztUc
+
+https://wiki.openwrt.org/toh/linksys/wrt_ac_series (WRT3200 firmware is 75 Mb, WRT1900ACS v2 is 34 MB)
+
+https://github.com/eduperez/mwlwifi_LEDE/
+
+https://github.com/chrisber/openwrt-ipkg-redis
+
+https://github.com/patrikx3/openwrt-redis
+
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.2-14 
+
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
+
+
+## Sponsor
+
+[![JetBrains](https://www.patrikx3.com/images/jetbrains-logo.svg)](https://www.jetbrains.com/)
+  
+ 
+
+[//]: #@corifeus-footer:end

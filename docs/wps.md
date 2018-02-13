@@ -1,0 +1,83 @@
+[//]: #@corifeus-header
+
+## Latest Stable OpenWrt Version with additional packages/feeds
+
+---
+                        
+[//]: #@corifeus-header:end
+# WPS
+
+https://openwrt-project.org/docs/user-guide/wifi_configuration#wps_options
+
+It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work.
+
+There were some changes. So this is how it works with ```SNAPSHOT```.
+
+Minimal steps needed to get WPS running:
+
+In ```/etc/config/wireless``` it is important in the ```wifi-iface```only in the 2.4 GHZ.
+```text
+    option wps_pushbutton '1'
+```
+
+But you can do it with ```LUCI``` as well.
+
+```bash
+opkg update
+opkg remove wpad-mini
+# if you remove it, it will not work
+opkg install wpad hostapd-utils
+reboot && exit
+
+# wait about 2 minutes
+hostapd_cli -i wlan1 wps_pbc
+```
+
+```bash
+reboot && exit
+
+# regenerate the wifi interface
+rm -f /etc/config/wireless
+wifi config
+
+iw reg get
+iw dev
+```
+
+
+## Actual Linksys 3200ACM WPS
+
+Do what it says above. Then on router on the bottom right there is the WPS button. Click for like 3 seconds or more and it will work.
+
+### Example
+
+```text
+config wifi-iface 'default_radio1'
+	option device 'radio1'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'your-ssid'
+	option key 'your-secret'
+	option encryption 'psk2+ccmp'
+	option wps_pushbutton '1'
+
+```
+
+
+
+[//]: #@corifeus-footer
+
+---
+
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.2-14 
+
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
+
+
+## Sponsor
+
+[![JetBrains](https://www.patrikx3.com/images/jetbrains-logo.svg)](https://www.jetbrains.com/)
+  
+ 
+
+[//]: #@corifeus-footer:end
