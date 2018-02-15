@@ -48,6 +48,10 @@ Looks like ```arm_cortex-a53_neon-vfpv4``` is ```aarch64_cortex-a53``` now.
 # Kernel
 
 ```CONFIG_KERNEL_DEBUG_FS=y``` is cannot be un-checked.           
+
+
+
+
 [//]: #@corifeus-footer
 
 ---
