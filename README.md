@@ -12,6 +12,10 @@
                         
 [//]: #@corifeus-header:end
 
+### Issues
+[README](docs/issues.md)
+
+
 ### Build info
 Always check out the original image builder if it changed (like sources urls).
 
@@ -23,7 +27,7 @@ Always check out the original image builder if it changed (like sources urls).
 ## The following CPU-s are fully built
 
 * arm_cortex-a9_vfpv3 (arm a9)
-* arm_cortex-a53_neon-vfpv4 (arm a53)
+* aarch64_cortex-a53 (arm a53)
 * mipsel_24kc (mipsel)
 
 ***There are at least 4500 packages built per target (but more just I decreased 200 counts, because there are the signatures etc).***
@@ -132,18 +136,18 @@ src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_2
 src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/routing
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/telephony
 ```
-### R-PI 3 or compatible arm (arm_cortex-a53_neon-vfpv4)
+### R-PI 3 or compatible arm (aarch64_cortex-a53)
 
 ```text
 src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/brcm2708/bcm2710/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/luci
-src/gz insomnia_mariadb http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/mariadb
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/packages
-src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/redis
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a53_neon-vfpv4/telephony
+src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/base
+src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/luci
+src/gz insomnia_mariadb http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/mariadb
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/node
+src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/packages
+src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/redis
+src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/telephony
 ```
 
 ## Ext-root issue
@@ -324,9 +328,6 @@ docker pull patrikx3/openwrt-insomnia:linksys-wrt
 # add more packages
 make -j9 menuconfig
 
-# configure the kernel
-make -j9 kernel_menuconfig
-
 # build all packages can the router can do it
 IGNORE_ERRORS=1 make -j1 V=s
 
@@ -421,7 +422,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.2-14 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.4-47 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

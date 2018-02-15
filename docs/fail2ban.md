@@ -7,7 +7,7 @@
 [//]: #@corifeus-header:end
 # Fail2Ban is not easy, but can be done cooly!
 
-It is for DDWRT, but even easier to use with ExtRoot and LEDE. Just don't have enough time to write down everything.
+It is for DDWRT, but even easier to use with ExtRoot and OpenWrt. Just don't have enough time to write down everything.
 
 Right now, I use git but you can download the latest as well.
 
@@ -63,7 +63,7 @@ by Patrik aka ```p3x-robot / p3x / corifeus```
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.2-14 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.4-47 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

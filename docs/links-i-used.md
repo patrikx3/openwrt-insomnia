@@ -10,25 +10,19 @@
 
 ## How I built these Dockers via these links
 
-https://openwrt-project.org/docs/guide-developer/start
+https://openwrt.org/docs/guide-developer/start
 
-https://openwrt-project.org/docs/user-guide/imagebuilder
+https://openwrt.org/docs/user-guide/imagebuilder
 
-https://openwrt-project.org/docs/guide-developer/quickstart-build-images  
+https://openwrt.org/docs/guide-developer/quickstart-build-images  
 
-https://openwrt-project.org/docs/guide-developer/use-buildsystem
+https://openwrt.org/docs/guide-developer/use-buildsystem
 
-https://forum.openwrt-project.org/t/how-to-build-openwrt-packages/885/6  
-
-https://forum.openwrt-project.org/t/how-to-build-openwrt-packages/885/7  
-
-https://openwrt-project.org/docs/user-guide/extroot_configuration
+https://openwrt.org/docs/user-guide/extroot_configuration
 
 https://github.com/nxhack/openwrt-node-packages  
 
 https://github.com/nxhack/openwrt-node-packages/issues/15
-
-https://forum.openwrt-project.org/t/buildbot-config-file/888/3
 
 https://codepad.co/snippet/hh8FztUc
 
@@ -40,11 +34,19 @@ https://github.com/chrisber/openwrt-ipkg-redis
 
 https://github.com/patrikx3/openwrt-redis
 
+
+https://forum.lede-project.org/t/how-to-build-openwrt-packages/885/6  
+
+https://forum.lede-project.org/t/how-to-build-openwrt-packages/885/7  
+
+https://forum.lede-project.org/t/buildbot-config-file/888/3
+
+
 [//]: #@corifeus-footer
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.2-14 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.4-47 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

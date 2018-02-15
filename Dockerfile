@@ -53,6 +53,9 @@ WORKDIR /build
 #RUN git clone -b ${OPENWRT_BRANCH} git://git.openwrt.org/source.git
 RUN git clone git://git.openwrt.org/openwrt/openwrt.git source
 WORKDIR /build/source
+
+# once OPENWRT_VERSION_TOTAL != SNAPSHOT checkout the verions
+
 #RUN git checkout tags/v${OPENWRT_VERSION_TOTAL}
 RUN git checkout master
 

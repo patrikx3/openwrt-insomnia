@@ -5,13 +5,49 @@
 ---
                         
 [//]: #@corifeus-header:end
-# Wifi re-generate
+# Once moving from LEDE to OpenWRT
+
+From the file ```/etc/profile```, remove the path:
 
 ```bash
-rm -f /etc/config/wireless
-wifi config
+export PATH="/opt/router-scripts-lede:/usr/sbin:/usr/bin:/sbin:/bin"
 ```
 
+and change it like:
+
+```bash
+export PATH="/opt/router-scripts-openwrt:/usr/sbin:/usr/bin:/sbin:/bin"
+```
+
+## LEDE-KEYRING
+
+The ```lede-keyring``` package might change to ```openwrt-keyring```.
+
+# Package missing
+
+* procd-nand (but working, probably built in now)
+
+# Router package missing
+
+## R-PI 3
+
+* faad2 
+* kmod-fs-exfat 
+* libfaad2 
+* libffmpeg-mini 
+* luci-app-minidlna 
+* minidlna 
+* moc
+
+# Target changed
+
+## R-PI 3
+
+Looks like ```arm_cortex-a53_neon-vfpv4``` is ```aarch64_cortex-a53``` now.
+           
+# Kernel
+
+```CONFIG_KERNEL_DEBUG_FS=y``` is cannot be un-checked.           
 [//]: #@corifeus-footer
 
 ---
