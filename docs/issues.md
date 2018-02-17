@@ -44,8 +44,15 @@ The ```lede-keyring``` package might change to ```openwrt-keyring```.
 ## R-PI 3
 
 Looks like ```arm_cortex-a53_neon-vfpv4``` is ```aarch64_cortex-a53``` now.
+
+https://forum.lede-project.org/t/raspberrry-pi-3-b-cm-is-missing/11684/2
+           
            
 # Kernel
+
+https://forum.lede-project.org/t/config-kernel-debug-fs/11692/7
+
+
 
 ```CONFIG_KERNEL_DEBUG_FS=y``` is cannot be un-checked.           
 
