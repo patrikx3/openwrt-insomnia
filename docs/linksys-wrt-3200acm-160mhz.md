@@ -22,7 +22,7 @@ iw dev
 
 ## Picture
 
-![Linksys-3200ACM-160Mhz](artifacts/images/Linksys-3200ACM-160Mhz.png "Linksys-3200ACM-160Mhz") 
+![Linksys-3200ACM-160Mhz](../artifacts/images/Linksys-3200ACM-160Mhz.png "Linksys-3200ACM-160Mhz") 
 
 ## This is important
 

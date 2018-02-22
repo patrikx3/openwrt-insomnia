@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mwlwifi
-PKG_VERSION:=10.3.4.0.git-2018-02-14
+PKG_VERSION:=10.3.4.0.git-2018-02-22
 PKG_RELEASE=1
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
 
-# it actually Eduperez's numbers and versions are showing always even though I re-written, this is only the ipk name.
+# i changed to use the original Kaloz
 # cat /sys/kernel/debug/ieee80211/phy1/mwlwifi/info && cat /sys/kernel/debug/ieee80211/phy0/mwlwifi/info
 # ll /rom/lib/firmware/mwlwifi/ && ll /lib/firmware/mwlwifi/
 # have to keep in PKG_MIRROR_HASH
@@ -23,12 +23,12 @@ PKG_LICENSE_FILES:=LICENSE
 # make package/kernel/mwlwifi/download V=s
 # make package/kernel/mwlwifi/check FIXUP=1 V=s
 # cat package/kernel/mwlwifi/Makefile | less
-PKG_SOURCE_URL:=https://github.com/eduperez/mwlwifi_LEDE
+PKG_SOURCE_URL:=https://github.com/kaloz/mwlwifi
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=dad933e66f072dd50417d46aac70bfd89f38d42c
-PKG_MIRROR_HASH:=d8e060bead28d8f97cace24e626863937c4d7ac86ab6285704b68ef0ee3f1ce4
+PKG_SOURCE_VERSION:=f4d5f12affbca285b501eb984e4dd9498740e520
+PKG_MIRROR_HASH:=6d7ee20d7146d592d5a6e7646c70e416f9e26ef0a2840d15a978fa13191167fb
 
-PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Eduardo Perez and Patrik Laszlo <alabard@gmail.com>
+PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/kernel.mk

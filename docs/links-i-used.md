@@ -28,7 +28,7 @@ https://codepad.co/snippet/hh8FztUc
 
 https://wiki.openwrt.org/toh/linksys/wrt_ac_series (WRT3200 firmware is 75 Mb, WRT1900ACS v2 is 34 MB)
 
-https://github.com/eduperez/mwlwifi_LEDE/
+https://github.com/kaloz/mwlwifi
 
 https://github.com/chrisber/openwrt-ipkg-redis
 

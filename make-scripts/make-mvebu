@@ -4,7 +4,7 @@ cd $DIR
 
 source $DIR/openwrt-insomnia-lib
 
-tag="linksys-wrt"
+tag="mvebu"
 
 #$DIR/make-linksys-wrt1900acs $1 $2
 

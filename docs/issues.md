@@ -25,7 +25,12 @@ The ```lede-keyring``` package might change to ```openwrt-keyring```.
 
 # Package missing
 
+
+[Info](https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=393817df5d7046fadf137f9b0a363cb00551d2de)
+
 * procd-nand (but working, probably built in now)
+
+
 
 # Router package missing
 

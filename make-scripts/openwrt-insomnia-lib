@@ -12,8 +12,8 @@ default_cdn="http://downloads.lede-project.org/snapshots"
 
 function pre-build() {
 
-# once we have a real version (non SNAPSHOT), uncomment everything
-
+#    echo "once we have a real version - non SNAPSHOT, uncomment everything"
+    echo "i think it can build errors, so i disabled"
 #    $DIR/copy-scripts.sh
 #    ./scripts/feeds update -a
 #    ./scripts/feeds install -a

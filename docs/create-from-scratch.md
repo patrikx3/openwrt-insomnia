@@ -44,9 +44,9 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
-  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
   * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
   * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
+  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
   * RPI 3 => Broadcom BCM27xx  
   
 * Subtarget (Linksys missing this, not needed)
@@ -54,9 +54,9 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
   * RPI 3 => BCM2710 64bit based boards 
   
 * Target Profile  
-  * D-Link DIR-860l B1 => MT7621     
   * Linksys WRT1900ACS => Linksys WRT1900ACSv2
   * Linksys WRT3200ACM => Linksys WRT3200ACM  
+  * D-Link DIR-860l B1 => MT7621     
   * RPI 3 => Raspberrry Pi 3B  
 
 * Global build settings
