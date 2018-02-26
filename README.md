@@ -103,6 +103,41 @@ https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
 If you want to install right away with LUCI:
 https://cdn.corifeus.com/openwrt/SNAPSHOT/
 
+## The release
+
+* Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
+  * For Linksys the firmwares that start with ```insomnia-latest-mwlwifi``` worth trying, because your WIFI is will be flying.   
+  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/generic/
+    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
+    * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
+    * Error code: 18005
+      * When trying to install a firmware image, I get the following error:
+        * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
+      * Solution: Rename the firmware image to something short, like e.g. factory.bin
+        * Based on 
+https://openwrt-project.org/faq/before_installation#error_code18005
+* D-Link DIR-860l B1
+  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/ramips/mt7621/
+    * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
+      1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
+      1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
+      1. Make sure the PC has the new firmware 
+      1. Turn off the router
+      1. Hold the reset button (in the bottom, there is a small whole for like a needle, it says RESET).
+      1. Turn on the router and wait for like 3-5 seconds, the orange will flash, like turning off.
+      1. Open a web browser to 192.168.0.1 and then you should see EMERGENCY FLASHING page then click browse/upload locate the file and click UPLOAD FIRMWARE NOW.
+      1. For me, for first upload it doesn't do anything, I just click UPLOAD again and then it start uploading.
+      1. You should see a SUCCSESS page, 
+      1. You will have to wait until like 150 seconds.
+      1. When it is green, you can turn off the static settings for the ethernet and enable DHCP.
+      1. The you can open with 192.168.1.1, no password at all, you got LUCI and SSH as well.
+      1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
+* RPI-3
+  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/brcm2708/bcm2710/
+  * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he use it.
+
+
+
 ## If you want some of the packages
 
 ```text
@@ -149,76 +184,19 @@ src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_
 src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/routing
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/telephony
 ```
-
-## Ext-root issue
-
-### Solution 1
-If you use for example:  
- https://cdn.corifeus.com/openwrt/version/arhitecture/target/type/file-firmware-squashfs-sysupgrade.bin 
- 
-So it is a **sysypgrade -F** firmware. Then I can re-use the old ```ext-root```, that I had before. Actually it only works with the Linksys WRT 3200ACM, with Linksys WRT 1200ACS it was not working, but maybe it still work, I don't know, it could be something changed that made it not work. :) 
- 
-But, if you use a factory, like:  
-https://cdn.corifeus.com/openwrt/version/arhitecture/target/type/file-firmware-squashfs-factory.bin
-
-Then it doesn't work, you have to re-build to ```ext-root```. 
-
-There is a ```Solution 2```, but for me it didn't work, but by using a ***sysupgrade*** firmware. It will re-use the ```ext-root```.
-
-### Solution 2 
-
-If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f /overlay/etc/.extroot-uuid```. After restart, please ```reboot``` again and it works. 
-
-Based on:  
-https://forum.openwrt-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
-
-#### For me it is not working, I use solution 1.
-
-## Wifi and WPS Issue
-
-It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work. [WPS](docs/wps.md) info.
-
-## The release
-
-* Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
-  * For Linksys the firmwares that start with ```insomnia-latest-mwlwifi``` worth trying, because your WIFI is will be flying.   
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/generic/
-    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
-    * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
-    * Error code: 18005
-      * When trying to install a firmware image, I get the following error:
-        * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
-      * Solution: Rename the firmware image to something short, like e.g. factory.bin
-        * Based on 
-https://openwrt-project.org/faq/before_installation#error_code18005
-* D-Link DIR-860l B1
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/ramips/mt7621/
-    * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
-      1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
-      1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
-      1. Make sure the PC has the new firmware 
-      1. Turn off the router
-      1. Hold the reset button (in the bottom, there is a small whole for like a needle, it says RESET).
-      1. Turn on the router and wait for like 3-5 seconds, the orange will flash, like turning off.
-      1. Open a web browser to 192.168.0.1 and then you should see EMERGENCY FLASHING page then click browse/upload locate the file and click UPLOAD FIRMWARE NOW.
-      1. For me, for first upload it doesn't do anything, I just click UPLOAD again and then it start uploading.
-      1. You should see a SUCCSESS page, 
-      1. You will have to wait until like 150 seconds.
-      1. When it is green, you can turn off the static settings for the ethernet and enable DHCP.
-      1. The you can open with 192.168.1.1, no password at all, you got LUCI and SSH as well.
-      1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
-* RPI-3
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/brcm2708/bcm2710/
-  * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he use it.
-
-
 # Signatures
 
 ## If you do not want to have the hassle, there are multiple solutions below.
 
-This for building, by now, everything is verified from ```cdn.corfifeus.com```. But, if you build and don't want to care about signature, because it is your own build, so, you don't need it. There are the solutions below.
+If you use an ```insomnia``` firmware, then you are done, but if you want one or more feeds from a non ```insomnia``` firmware, your router still needs a verified signature.
 
-### Manual 1
+### If you just use one or a few feeds non insomnia firmware, your router needs a signature
+
+You need to copy this file from this directory:  
+https://github.com/patrikx3/openwrt-insomnia/tree/master/image-builder-files/etc/opkg/keys to  
+ ```/etc/opkg/keys```.
+
+### Option 2
 
 The easiest solution I know is via LUCI :  
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg)    
@@ -226,7 +204,7 @@ The easiest solution I know is via LUCI :
 In the **Configuration** tab, comment like this:  
 ```#option check_signature 1```
 
-### Manual 2
+### Option 3 manual with SSH
   
 You can also set it up via SSH as:
 ```text
@@ -267,6 +245,37 @@ They files to generate are in the same link above. So, if you want to sign, you 
 ![GPG and USIGN structure in the repo](artifacts/images/gpg-and-usign.png "GPG and USIGN structure in the repo") 
 
 If you have this signed gpg and usign data and keys, I can help you to signed firmwares and packages.
+
+
+## Ext-root issue
+
+### Solution 1
+If you use for example:  
+ https://cdn.corifeus.com/openwrt/version/arhitecture/target/type/file-firmware-squashfs-sysupgrade.bin 
+ 
+So it is a **sysypgrade -F** firmware. Then I can re-use the old ```ext-root```, that I had before. Actually it only works with the Linksys WRT 3200ACM, with Linksys WRT 1200ACS it was not working, but maybe it still work, I don't know, it could be something changed that made it not work. :) 
+ 
+But, if you use a factory, like:  
+https://cdn.corifeus.com/openwrt/version/arhitecture/target/type/file-firmware-squashfs-factory.bin
+
+Then it doesn't work, you have to re-build to ```ext-root```. 
+
+There is a ```Solution 2```, but for me it didn't work, but by using a ***sysupgrade*** firmware. It will re-use the ```ext-root```.
+
+### Solution 2 
+
+If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f /overlay/etc/.extroot-uuid```. After restart, please ```reboot``` again and it works. 
+
+Based on:  
+https://forum.openwrt-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
+
+#### For me it is not working, I use solution 1.
+
+## Wifi and WPS Issue
+
+It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work. [WPS](docs/wps.md) info.
+
+
 
 ## Docker
 
