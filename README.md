@@ -310,6 +310,9 @@ https://hub.docker.com/r/patrikx3/openwrt-insomnia/tags/
         
 So building from a raw image:
 ```bash
+git clone https://github.com/patrikx3/openwrt-insomnia
+cd openwrt-insomnia
+
 docker pull patrikx3/openwrt-insomnia:latest
 # or
 ./build-docker
@@ -317,20 +320,20 @@ docker pull patrikx3/openwrt-insomnia:latest
 # then
 ./run
 
-# for some reason it always calls chown docker:docker /build, but you can press CONTROL+C and it will still be docker user, weird, it does that, I never do that, only in the Dockerfile
-
-# All adds the plus feeds (node, redis, mariadb), image builder and node, redis 4, fixes Apache builder
+# All adds the plus feeds (node, redis, mariadb), image builder and node, redis 4
 # All set for the .config. feeds.conf and in the image builder in the repositories.config
 
 # the default packages http url is http://cdn.corifeus.com/openwrt/SNAPSHOT
 
 # but if you use the appropriate firmware, since a lot is pre-built,
 # adding in new modules, etc, the built will be super fast
-docker pull patrikx3/openwrt-insomnia:d-link-dir-860l-b1
+docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
+./run-d-link-dir-860l-b1
 
 # the linksys latest wrt builds are in hierarchically in order 
-docker pull patrikx3/openwrt-insomnia:linksys-wrt
-# the .config in the repo is the insomnia-latest-mwlwifi-openwrt-mvebu-linksys-wrt3200acm
+docker pull patrikx3/lede-insomnia:linksys-wrt
+# the .config in the repo is the insomnia-latest-mwlwifi-lede-mvebu-linksys-wrt3200acm
+./run-linksys-wrt
 
 # then you just change the .config and kernel
 
