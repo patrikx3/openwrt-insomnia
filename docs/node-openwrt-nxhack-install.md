@@ -5,11 +5,44 @@
 ---
                         
 [//]: #@corifeus-header:end
-# To detach the tty without exiting the shell,
+# Re-compile a node package from OpenWrt
 
-### use the escape sequence Ctrl-p + Ctrl-q
+Change the ```feeds.conf``` from ```nxhack``` to ```patrixk3``` for testing.
 
-### Note: This will continue to exist in a stopped state once exited (see "docker ps -a")
+## Change the feeds.conf from nxhack to patrixk3 for testing
+
+```bash
+nano feeds.conf
+# Change the feeds.conf from nxhack to patrixk3 for testing
+```
+
+## Run all this
+
+```bash
+./copy-scripts.sh
+./scripts/feeds update -a
+./scripts/feeds install -a
+
+# node
+./scripts/feeds update node
+rm ./package/feeds/packages/node* || true
+./scripts/feeds install -a -p node
+
+./scripts/feeds install node-npm-check-updates
+#make oldconfig
+make V=s -j9 package/feeds/node/node-npm-check-updates/{clean,prepare,compile}
+
+```
+
+# After the error to change the hash use like
+
+Execute the title section ```Run all this again``` again.
+  
+Finally:
+
+```bash
+make V=s -j9 package/feeds/node/node-npm-check-updates/{clean,prepare,compile}
+```
 [//]: #@corifeus-footer
 
 ---

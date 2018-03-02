@@ -14,7 +14,7 @@ function pre-build() {
 
 #    echo "once we have a real version - non SNAPSHOT, uncomment everything"
     echo "i think it can build errors, so i disabled"
-#    $DIR/copy-scripts.sh
+#    ./copy-scripts.sh
 #    ./scripts/feeds update -a
 #    ./scripts/feeds install -a
 

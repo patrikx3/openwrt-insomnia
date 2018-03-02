@@ -24,6 +24,11 @@ Always check out the original image builder if it changed (like sources urls).
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
+
+## RPI-3
+
+It is only re-built per request, given I do not use it.
+
 ## The following CPU-s are fully built
 
 * arm_cortex-a9_vfpv3 (arm a9)
@@ -193,8 +198,10 @@ If you use an ```insomnia``` firmware, then you are done, but if you want one or
 ### If you just use one or a few feeds non insomnia firmware, your router needs a signature
 
 You need to copy this file from this directory:  
-https://github.com/patrikx3/openwrt-insomnia/tree/master/image-builder-files/etc/opkg/keys to  
- ```/etc/opkg/keys```.
+https://github.com/patrikx3/openwrt-insomnia/tree/master/image-builder-files/etc/opkg/keys to    
+```text
+ /etc/opkg/keys
+```
 
 ### Option 2
 
@@ -318,7 +325,7 @@ docker pull patrikx3/openwrt-insomnia:latest
 ./build-docker
 
 # then
-./run
+docker run -ti patrikx3/openwrt-insomnia:latest bash
 
 # All adds the plus feeds (node, redis, mariadb), image builder and node, redis 4
 # All set for the .config. feeds.conf and in the image builder in the repositories.config
@@ -327,15 +334,14 @@ docker pull patrikx3/openwrt-insomnia:latest
 
 # but if you use the appropriate firmware, since a lot is pre-built,
 # adding in new modules, etc, the built will be super fast
-docker pull patrikx3/lede-insomnia:d-link-dir-860l-b1
-./run-d-link-dir-860l-b1
+docker pull patrikx3/openwrt-insomnia:d-link-dir-860l-b1
+docker run -ti patrikx3/openwrt-insomnia:d-link-dir-860l-b1 bash
 
 # the linksys latest wrt builds are in hierarchically in order 
-docker pull patrikx3/lede-insomnia:linksys-wrt
+docker pull patrikx3/openwrt-insomnia:linksys-wrt
 # the .config in the repo is the insomnia-latest-mwlwifi-lede-mvebu-linksys-wrt3200acm
-./run-linksys-wrt
-
-# then you just change the .config and kernel
+docker run -ti patrikx3/openwrt-insomnia:linksys-wrt bash
+# then you just change the .config
 
 # add more packages
 make -j9 menuconfig
@@ -434,7 +440,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.12-94 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.14-120 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

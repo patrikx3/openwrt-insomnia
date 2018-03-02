@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+./copy-scripts.sh
+./scripts/feeds update -a
+./scripts/feeds install -a
+
+# node
+./scripts/feeds update node
+rm ./package/feeds/packages/node* || true
+./scripts/feeds install -a -p node
+
+# redis
+./scripts/feeds update redis
+./scripts/feeds install -a -p redis
+
+# mariadb
+./scripts/feeds update mariadb
+./scripts/feeds install -a -p mariadb
+
