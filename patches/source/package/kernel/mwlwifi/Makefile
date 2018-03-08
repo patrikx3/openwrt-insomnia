@@ -22,11 +22,12 @@ PKG_LICENSE_FILES:=
 # make package/kernel/mwlwifi/check FIXUP=1 V=s
 # cat package/kernel/mwlwifi/Makefile | less
 # make package/kernel/mwlwifi/{clean,prepare,compile} package/index V=s
+# for the package/kernel/mwlwifi/patches must be remove rm -rf package/kernel/mwlwifi/patches
 PKG_SOURCE_URL:=https://github.com/kaloz/mwlwifi
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_DATE:=2018-02-26
-PKG_SOURCE_VERSION:=51350a3e085a811179a270baddcae03ec9384f07
-PKG_MIRROR_HASH:=f7a4264c8b9f4754da322cac29af6d9b22a7c134e2355cbe7875fea91fd7a381
+PKG_SOURCE_DATE:=2018-03-06
+PKG_SOURCE_VERSION:=b1b9a9e1c1beee30a8cce4038f4109727362ebe0
+PKG_MIRROR_HASH:=6807437eb92f7cf599b8943d89c2fb3f8f7c72656272bebb5d454cc65fbcc739
 
 PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1

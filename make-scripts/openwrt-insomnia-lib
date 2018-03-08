@@ -2,6 +2,9 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
+CORES=$(grep -c ^processor /proc/cpuinfo)
+let CORES=$CORES+1
+
 build_host_path=/build/host-build
 
 default_cdn="http://downloads.lede-project.org/snapshots"
@@ -40,6 +43,7 @@ function patches-and-feeds() {
     cp -avr /build/patches/source /build
     # if you need to update the feeds, we have to call the ./script feeds
     # make package/kernel/mwlwifi/{clean,compile}
+    rm package/kernel/mwlwifi/patches/ -rf
 }
 
 function feeds() {
@@ -117,7 +121,12 @@ function setup-image-builder-and-build() {
         CDN_REPO=$4
     fi
 
-    IMAGE_BUILDER_PATH=$(image-builder-uncompress $IMAGE_BUILDER_FILE)
+    if [ "$IMAGE_BUILDER_PATH" = "uncompressed" ];
+    then
+        IMAGE_BUILDER_PATH=/build/$IMAGE_BUILDER_FILE_WITHOUT_EXTENSION
+    else
+        IMAGE_BUILDER_PATH=$(image-builder-uncompress $IMAGE_BUILDER_FILE)
+    fi
     pushd $IMAGE_BUILDER_PATH
 
     sed -i.bak 's#src/gz#src#g' repositories.conf

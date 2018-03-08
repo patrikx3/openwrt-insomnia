@@ -44,6 +44,7 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
+  * Linksys WRT Multiple  => Marvell Armada 37x/38x/XP
   * Linksys WRT1900ACS => Marvell Armada 37x/38x/XP  
   * Linksys WRT3200ACM => Marvell Armada 37x/38x/XP
   * D-Link DIR-860l B1 => MediaTek Ralink MIPS
@@ -54,9 +55,10 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
   * RPI 3 => BCM2710 64bit based boards 
   
 * Target Profile  
+  * Linksys WRT Multiple => Multiple devices
   * Linksys WRT1900ACS => Linksys WRT1900ACSv2
   * Linksys WRT3200ACM => Linksys WRT3200ACM  
-  * D-Link DIR-860l B1 => MT7621     
+  * D-Link DIR-860l B1 => D-Link DIR-860l B1     
   * RPI 3 => Raspberrry Pi 3B  
 
 * Global build settings
@@ -64,12 +66,18 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
   * Select all kernel module packages by default
   * Select all userspace packages by default
   * Set build defaults for automatic builds
-  * Collect kernel debug information - UNCHECK / OpenWrt
   * Kernel build options
     * Compile the kernel with MIPS FPU
       * ONLY For D-Link DIR860L B1
-    * Compile the kernel with debug information - UNCHECK / OpenWrt
-      
+
+For multiple Linksys WRT go back to and select what is you want
+
+* Target Devices (for now is only Linksys WRT Multiple)
+  * Enable all profiles by default - UNCHECK
+  * Use a per-device root filesystem that add profile packages  
+  * Linksys WRT1900ACS
+  * Linksys WRT3200ACM
+     
 * Build the OpenWrt Image Build
   * Include package repositories
   
@@ -83,12 +91,7 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
       * https://pages.corifeus.com/openwrt-insomnia
   * Seperate feed repositories
     * select
-    
-* Kernel modules
-  * Select everything, but I think, it is now already added, except remove the below  
-  * Wireless Drivers
-    * kmod-mwifiex-sdio - UNCHECK for Linksys WRT 
-        
+            
 * Languages
   * Node.js
     * node
@@ -151,7 +154,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.14-120 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.16-165 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

@@ -16,6 +16,7 @@ There were some changes. So this is how it works with ```SNAPSHOT```.
 Minimal steps needed to get WPS running:
 
 In ```/etc/config/wireless``` it is important in the ```wifi-iface```only in the 2.4 GHZ.
+
 ```text
     option wps_pushbutton '1'
 ```
@@ -71,7 +72,7 @@ config wifi-iface 'default_radio1'
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.14-120 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.16-165 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
