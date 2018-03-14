@@ -360,6 +360,9 @@ make -j9 image PROFILE=etc-linksys-wrt1900acs PACKAGES="pkg1 pkg2 pkg3 pkg-etc"
 ./make-d-link-dir-860l-b1 nosign
 ./make-d-link-dir-860l-b1 "http://cdn.mine.com/openwrt/18.01" nosign
 
+# it uses both 1900acs and 3200acm
+./make-linksys-multiple 
+
 ./make-linksys-wrt1900acs nosign
 ./make-linksys-wrt1900acs "http://cdn.mine.com/openwrt/18.01"  nosign
 
