@@ -29,7 +29,7 @@ then
 fi
 
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
-#setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
+#####setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 post-build $1 $2
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];

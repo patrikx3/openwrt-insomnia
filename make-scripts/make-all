@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-make dirclean
-make-linksys-wrt
-make dirclean
-make-d-link-dir-860l-b1
-make dirclean
-make-rpi-3

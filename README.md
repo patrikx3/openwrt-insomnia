@@ -310,74 +310,6 @@ All the latest stable OpenWrt versions.
 You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/SNAPSHOT, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg) at ```Configuration``` tab. If you do not want to build at all you can choose to your host  
 
-## Some helper is the source with all the add-ons
-These are the helpers for the raw image (```patrikx3/openwrt-insomnia:latest```) that creates new images from raw. Of course, if you use the ```Docker Images``` with the tag, have pre-built, so if you use add / remove anything, the build will be much faster, because some will not will be needed again ```compiled``` only when you added.  
-
-The tags are here:
-https://hub.docker.com/r/patrikx3/openwrt-insomnia/tags/  
-        
-So building from a raw image:
-```bash
-git clone https://github.com/patrikx3/openwrt-insomnia
-cd openwrt-insomnia
-
-docker pull patrikx3/openwrt-insomnia:latest
-# or
-./build-docker
-
-# then
-docker run -ti patrikx3/openwrt-insomnia:latest bash
-
-# All adds the plus feeds (node, redis, mariadb), image builder and node, redis 4
-# All set for the .config. feeds.conf and in the image builder in the repositories.config
-
-# the default packages http url is http://cdn.corifeus.com/openwrt/SNAPSHOT
-
-# but if you use the appropriate firmware, since a lot is pre-built,
-# adding in new modules, etc, the built will be super fast
-docker pull patrikx3/openwrt-insomnia:d-link-dir-860l-b1
-docker run -ti patrikx3/openwrt-insomnia:d-link-dir-860l-b1 bash
-
-# the linksys latest wrt builds are in hierarchically in order 
-docker pull patrikx3/openwrt-insomnia:linksys-wrt
-# the .config in the repo is the insomnia-latest-mwlwifi-lede-mvebu-linksys-wrt3200acm
-docker run -ti patrikx3/openwrt-insomnia:linksys-wrt bash
-# then you just change the .config
-
-# add more packages
-make -j9 menuconfig
-
-# build all packages can the router can do it
-IGNORE_ERRORS=1 make -j1 V=s
-
-# the final firmware
-# and in the /build/image-builder-* you can build there as well
-make -j9 image PROFILE=etc-linksys-wrt1900acs PACKAGES="pkg1 pkg2 pkg3 pkg-etc"
-
-# also you need to disable signing like this, because if you want
-# to sign with this repo, you need to contact with me
-# because some scripts are not in the repo in GitHub
-./make-d-link-dir-860l-b1 nosign
-./make-d-link-dir-860l-b1 "http://cdn.mine.com/openwrt/18.01" nosign
-
-# it uses both 1900acs and 3200acm
-./make-linksys-multiple 
-
-./make-linksys-wrt1900acs nosign
-./make-linksys-wrt1900acs "http://cdn.mine.com/openwrt/18.01"  nosign
-
-./make-linksys-wrt1900acs-latest-mwlwifi nosign
-./make-linksys-wrt1900acs-latest-mwlwifi "http://cdn.mine.com/openwrt/18.01" nosign  
-
-./make-linksys-wrt3200acm nosign
-./make-linksys-wrt3200acm "http://cdn.mine.com/openwrt/18.01"
-
-./make-linksys-wrt3200acm-latest-mwlwifi nosign
-./make-linksys-wrt3200acm-latest-mwlwifi "http://cdn.mine.com/openwrt/18.01"  nosign
-
-./make-linksys-wrt3200acm-latest-mwlwifi "http://cdn.mine.com/openwrt/18.01" nosign
-```
-
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 
 
 [README about how I build the firmwares in order](docs/template-docker-commit.md)
@@ -444,7 +376,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.18-169 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.20-185 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

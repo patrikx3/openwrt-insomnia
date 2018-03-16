@@ -129,8 +129,8 @@ function setup-image-builder-and-build() {
     fi
     pushd $IMAGE_BUILDER_PATH
 
-    sed -i.bak 's#src/gz#src#g' repositories.conf
-    sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf || true
+    #sed -i.bak 's#src/gz#src#g' repositories.conf
+    #sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf || true
 
 #    DIST_FEEDS=$(find -name distfeeds.conf)
 #    sed -i "s#http://downloads.openwrt-project.org/releases/${OPENWRT_VERSION_TOTAL}#$CDN_REPO#g" $DIST_FEEDS
