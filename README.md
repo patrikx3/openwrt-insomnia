@@ -113,7 +113,7 @@ https://cdn.corifeus.com/openwrt/SNAPSHOT/
 
 * Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
   * For Linksys the firmwares that start with ```insomnia-latest-mwlwifi``` worth trying, because your WIFI is will be flying.   
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/generic/
+  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
     * Error code: 18005
@@ -153,7 +153,7 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 ### Linksys WRT or compatible alike mvebu / arm 9 (arm_cortex-a9_vfpv3)
 
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/generic/packages
+src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/cortexa9/packages
 src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/base
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/luci
 src/gz insomnia_mariadb http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/mariadb
@@ -376,7 +376,7 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.20-185 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.23-193 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ./copy-scripts.sh
+./copy-all-patches-and-feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
