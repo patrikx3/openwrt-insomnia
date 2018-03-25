@@ -43,6 +43,7 @@ function patches-and-feeds() {
     cp -avr /build/patches/source /build
     # if you need to update the feeds, we have to call the ./script feeds
     # make package/kernel/mwlwifi/{clean,compile}
+    # it is could that it is only remove on the patches and feeds
     rm package/kernel/mwlwifi/patches/ -rf
 }
 

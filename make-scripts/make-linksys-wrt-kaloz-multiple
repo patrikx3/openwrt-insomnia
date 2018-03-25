@@ -27,7 +27,8 @@ else
 fi
 
 pre-build
-patches-and-feeds
+# disable patches, use raw
+#patches-and-feeds
 setup-config-and-build linksys-wrt-kaloz-multiple $tag $build
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
