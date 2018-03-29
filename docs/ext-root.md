@@ -22,11 +22,14 @@ ssh root@192.168.1.1
 opkg update
 
 # Linksys WRT1900ACS and Linksys WRT3200ACM 
+# in insomnia, it is pre installed
 opkg install kmod-usb-core kmod-fs-ext4 kmod-usb-storage-extras blkid block-mount e2fsprogs fdisk 
 
 # D-Link DIR-860l B1
+# in insomnia, it is pre installed
 opkg install kmod-usb3 blkid kmod-usb-storage-extras blkid block-mount fdisk e2fsprogs 
 
+# in insomnia, it is pre installed
 insmod xhci-mtk
 
 mkfs.ext4 /dev/sda1
@@ -98,7 +101,7 @@ reboot && exit
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.27-197 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.31-201 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

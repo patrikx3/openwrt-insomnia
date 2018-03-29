@@ -4,11 +4,11 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v9.9.0",
+        "nodejs": "v9.10.0",
         "icon": "fa fa-coffee",
         "code": "Insomnia"
     },
-    "version": "18.0.27-197",
+    "version": "18.0.31-201",
     "description": "Latest Stable OpenWrt Version with additional packages/feeds",
     "main": "src/index.js",
     "directories": {
@@ -32,13 +32,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1267-331"
+        "corifeus-builder": "^1.7.1275-333"
     },
     "engines": {
         "node": ">=8.9.0"
     },
     "homepage": "https://pages.corifeus.com/openwrt-insomnia",
     "dependencies": {
-        "corifeus-utils": "^1.1.884-315"
+        "corifeus-utils": "^1.1.894-317"
     }
 }
