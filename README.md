@@ -12,12 +12,20 @@
                         
 [//]: #@corifeus-header:end
 
+
+## Linksys WRT3200ACM Winbond
+
+The info is here:  
+https://cdn.corifeus.com/openwrt/SNAPSHOT/
+
+
 ### Issues
 [README](docs/issues.md)
 
 
 ### Build info
 Always check out the original image builder if it changed (like sources urls).
+
 
 
 # OpenWrt Latest Stable build with latest NodeJs 9, always the latest Kaloz mwlwifi's WIFI driver, latest Redis 4 stable, MariaDB 5.5
