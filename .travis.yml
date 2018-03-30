@@ -1,13 +1,13 @@
 language: node_js
 node_js:
-  - "node"
-
+- node
 services:
-  - docker
-
+- docker
 before_script:
-  - npm install grunt-cli -g
-  - docker build -t patrikx3/openwrt-insomnia:base ./openwrt-base
-
+- npm install grunt-cli -g
+- docker build -t patrikx3/openwrt-insomnia:base ./openwrt-base
 script:
-  - docker build -t patrikx3/openwrt-insomnia .
+- docker build -t patrikx3/openwrt-insomnia .
+env:
+  global:
+    secure: ichJLO09m/96ZiDqqJLOlrHwglOaFxjrSeCzE66zZtiL/DPyc8MsIom/iZalg0zItixJ7BydxXSThtFHdzFoKlG8n/T8YSfWjmi24GGh6zv3N9zYUg72iYhqaQtll8IcWDsw8cqct09r34I8pzpoq9HSuQLu3LU082elGPDxP+sscY/FQSMJHqwMUjK6YYosJnY8DdokcuprZ5aN2Ck4Fa7ksWAdhNrsxI/hWs+QGfBo57mgHIWhCDqOoS2pDCdEH5CK7+7UtU1+VJU0DwsXwvgb28fyAymdA/GZFcKeSFIJ7MPGSl1I+FZB4cMzdk/zJb4bU70C9UikEYiAoU0MBJcmI0AmtG9LBR8G3OUkqNBQ6auu9s4zb+KUOzt3thhZ2DR+DWl0Ir/fbkONxgn7B6yIARjiV5s/AlblwFHcjWcte0VLQud1uQioebFRKi7xIE55iyJy/B5GrHR+nH8BSYGlFftUG2HeaxxMzboKaXhmiC1EXl2KqF9d6OI08k0nmJ8Qltrx91vfiuSKYY+JeRPaCqB7/2Ps1pyC0yTF+bP18h7Cy7+wx83Njc2KL//vkXC0LsQwpKrGFhUxyLecvpbPe44g15fYAeicobuPNiTk2KmiVUNY0FZIVq7gNAv11f5OOR0nip7aywWO0IdOcXIXC1pMscHfMItXN3wR1s0=
