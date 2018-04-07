@@ -93,7 +93,7 @@ Besides, all packages are there, like:
 * python 2 and 3
 * redis 4
 * msmtp
-* mariadb 5.5.58
+* mariadb 10
 * nodejs v9 latest
 * But **everything** is built, actually.
 
