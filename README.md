@@ -28,7 +28,7 @@ Always check out the original image builder if it changed (like sources urls).
 
 
 
-# OpenWrt Latest Stable build with latest NodeJs 9, always the latest Kaloz mwlwifi's WIFI driver, latest Redis 4 stable, MariaDB 5.5
+# OpenWrt Latest Stable build with latest NodeJs 9, always the latest Kaloz mwlwifi's WIFI driver, latest Redis 4 stable, MariaDB 10
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
