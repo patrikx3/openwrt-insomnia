@@ -23,7 +23,7 @@ iw dev
 
 Though I set 160Mhz, but my clients only know 80Mhz right now, but with the settings, it still works, so 160Mhz is working:
 
-![Linksys-3200ACM-160Mhz](../artifacts/images/Linksys-3200ACM-160Mhz.png "Linksys-3200ACM-160Mhz") 
+![Linksys-3200ACM-160Mhz](https://cdn.corifeus.com/git/openwrt-insomnia/artifacts/images/Linksys-3200ACM-160Mhz.png "Linksys-3200ACM-160Mhz") 
 
 ## This is important
 

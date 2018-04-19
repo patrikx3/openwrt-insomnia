@@ -43,19 +43,19 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 * Target System  
-  * Linksys WRT Multiple  => Marvell Armada EBU Armada
-  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
-  * RPI 3 => Broadcom BCM27xx  
+  * Marvell Armada EBU Armada => Linksys WRT Multiple
+  * MediaTek Ralink MIPS => D-Link DIR-860l B1
+  * Broadcom BCM27xx => RPI 3  
   
 * Subtarget
-  * Linksys WRT Multiple  => Marvell Armada 37x/38x/XP
-  * D-Link DIR-860l B1 => MT7621
-  * RPI 3 => BCM2710 64bit based boards 
+  * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
+  * MT7621 => D-Link DIR-860l B1 
+  * BCM2710 64bit based boards => RPI 3 
   
 * Target Profile  
-  * Linksys WRT Multiple => Multiple devices
+  * Multiple devices => Linksys WRT Multiple
   * D-Link DIR-860l B1 => D-Link DIR-860l B1     
-  * RPI 3 => Raspberrry Pi 3B  
+  * Raspberrry Pi 3B => RPI 3   
 
 * Global build settings
   * Select all target specific packages by default
@@ -98,7 +98,6 @@ For multiple Linksys WRT go back to and select what is you want
     
   * PHP
     * php7
-    * PHP7 Filter support
     * SELECT ALL
 
 * Libraries
