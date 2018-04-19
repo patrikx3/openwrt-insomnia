@@ -2,7 +2,7 @@
 
   [![Build Status](https://travis-ci.org/patrikx3/openwrt-insomnia.svg?branch=master)](https://travis-ci.org/patrikx3/openwrt-insomnia)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/openwrt-insomnia/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/openwrt-insomnia/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/openwrt-insomnia/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/openwrt-insomnia/?branch=master) 
 
-# Latest Stable OpenWrt Version with additional packages/feeds
+# ☕ Latest Stable OpenWrt Version with additional packages/feeds
 
 
 

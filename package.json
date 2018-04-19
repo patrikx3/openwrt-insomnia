@@ -9,7 +9,7 @@
         "code": "Insomnia"
     },
     "version": "18.0.45-239",
-    "description": "Latest Stable OpenWrt Version with additional packages/feeds",
+    "description": "☕ Latest Stable OpenWrt Version with additional packages/feeds",
     "main": "src/index.js",
     "directories": {
         "test": "test"

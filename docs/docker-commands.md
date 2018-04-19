@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# Latest Stable OpenWrt Version with additional packages/feeds
+# ☕ Latest Stable OpenWrt Version with additional packages/feeds
 
                         
 [//]: #@corifeus-header:end
