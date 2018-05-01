@@ -210,6 +210,8 @@ function final() {
         chmod +rwx $command
     fi
     echo "docker commit ${container_id} patrikx3/openwrt-insomnia:${docker_tag}" >> $command
+    echo "docker stop ${container_id}" >> $command
+    echo "docker rm ${container_id}" >> $command
     echo "docker push patrikx3/openwrt-insomnia:${docker_tag}" >> $command
     echo "" >> $command
     popd

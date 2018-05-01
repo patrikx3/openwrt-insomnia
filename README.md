@@ -28,7 +28,7 @@ Always check out the original image builder if it changed (like sources urls).
 
 
 
-# OpenWrt Latest Stable build with latest NodeJs 9, always the latest Kaloz mwlwifi's WIFI driver, latest Redis 4 stable, MariaDB 10
+# OpenWrt with latest NodeJs, always the latest Kaloz mwlwifi's WIFI driver, latest Redis stable, MariaDB
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-Link DIR860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
@@ -91,17 +91,17 @@ Besides, all packages are there, like:
 * apache - full
 * php 7.2
 * python 2 and 3
-* redis 4
+* Redis stable version
 * msmtp
-* mariadb 10
-* nodejs v9 latest
+* mariadb
+* nodejs latest
 * But **everything** is built, actually.
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
-[Redis 4 is here!](https://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/redis/)
+[Redis stable version is here!](https://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/redis/)
 
-[MariaDB 10 is here!](https://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/mariadb/)
+[OpenWrt merged the MariaDB package and is here!](https://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/mariadb/)
 
 # NODE.JS INFO
 
@@ -164,7 +164,6 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/cortexa9/packages
 src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/base
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/luci
-src/gz insomnia_mariadb http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/mariadb
 src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/node
 src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/packages
 src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/redis
@@ -178,7 +177,6 @@ src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_
 src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/ramips/mt7621/packages
 src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/base
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/luci
-src/gz insomnia_mariadb http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/mariadb
 src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/node
 src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/packages
 src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/redis
@@ -191,7 +189,6 @@ src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mips
 src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/brcm2708/bcm2710/packages
 src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/base
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/luci
-src/gz insomnia_mariadb http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/mariadb
 src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/node
 src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/packages
 src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/redis
@@ -389,9 +386,14 @@ echo "except-interface=eth1" >> /etc/dnsmasq.conf
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
 
-## Sponsor
+## Sponsors
 
-[![JetBrains](https://www.patrikx3.com/images/jetbrains-logo.svg)](https://www.jetbrains.com/)
+[IntelliJ - The most intelligent Java IDE](https://www.jetbrains.com)
+  
+[![JetBrains](https://cdn.corifeus.com/assets/svg/jetbrains-logo.svg)](https://www.jetbrains.com/) [![NoSQLBooster](https://cdn.corifeus.com/assets/png/nosqlbooster-70x70.png)](https://www.nosqlbooster.com/)
+
+[The Smartest IDE for MongoDB](https://www.nosqlbooster.com)
+  
   
  
 
