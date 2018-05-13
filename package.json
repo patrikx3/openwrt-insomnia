@@ -10,7 +10,7 @@
         "opencollective": false,
         "reponame": "openwrt-insomnia"
     },
-    "version": "18.0.65-273",
+    "version": "18.0.68-274",
     "description": "☕ Latest Stable OpenWrt Version with additional packages/feeds",
     "main": "src/index.js",
     "directories": {
