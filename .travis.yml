@@ -4,7 +4,7 @@ node_js:
 services:
 - docker
 before_script:
-- npm install grunt-cli -g
+- npm install -g grunt-cli npm
 - docker build -t patrikx3/openwrt-insomnia:base ./openwrt-base
 script:
 - docker build -t patrikx3/openwrt-insomnia .
