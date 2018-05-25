@@ -35,13 +35,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.8.19-420"
+        "corifeus-builder": "^1.8.24-423"
     },
     "engines": {
         "node": ">=10.2.1"
     },
     "homepage": "https://pages.corifeus.com/openwrt-insomnia",
     "dependencies": {
-        "corifeus-utils": "^1.2.76-388"
+        "corifeus-utils": "^1.2.80-389"
     }
 }
