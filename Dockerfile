@@ -6,8 +6,8 @@
 FROM patrikx3/openwrt-insomnia:base
 MAINTAINER patrikx3/openwrt-insomnia - Patrik Laszlo - alabard@gmail.com
 
-ARG OPENWRT_VERSION_TOTAL=SNAPSHOT
-#ARG OPENWRT_BRANCH=openwrt-17.01
+ARG OPENWRT_VERSION_TOTAL=v18.06.0-rc1
+#ARG OPENWRT_BRANCH=openwrt-18.01
 ENV OPENWRT_VERSION_TOTAL=${OPENWRT_VERSION_TOTAL}
 #ENV OPENWRT_BRANCH=${OPENWRT_BRANCH}
 
@@ -17,7 +17,7 @@ WORKDIR /build/source
 
 # once OPENWRT_VERSION_TOTAL != SNAPSHOT checkout the verions
 
-#RUN git checkout tags/v${OPENWRT_VERSION_TOTAL}
+RUN git checkout tags/v${OPENWRT_VERSION_TOTAL}
 RUN git checkout master
 
 RUN cp feeds.conf.default feeds.conf

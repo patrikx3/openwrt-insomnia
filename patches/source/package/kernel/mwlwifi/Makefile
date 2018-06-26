@@ -12,7 +12,6 @@ PKG_RELEASE=1
 
 PKG_LICENSE:=ISC
 PKG_LICENSE_FILES:=
-
 # i changed to use the original Kaloz
 # cat /sys/kernel/debug/ieee80211/phy1/mwlwifi/info && cat /sys/kernel/debug/ieee80211/phy0/mwlwifi/info
 # ll /rom/lib/firmware/mwlwifi/ && ll /lib/firmware/mwlwifi/
@@ -24,10 +23,10 @@ PKG_LICENSE_FILES:=
 # make package/kernel/mwlwifi/{clean,prepare,compile} package/index V=s
 # for the package/kernel/mwlwifi/patches must be remove rm -rf package/kernel/mwlwifi/patches
 PKG_SOURCE_URL:=https://github.com/kaloz/mwlwifi
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_DATE:=2018-03-30
-PKG_SOURCE_VERSION:=fcaea79ad33d6ae3c381d9e96bf77d6870ca8e79
-PKG_MIRROR_HASH:=1c0fa04ca80939038139dd50a50d9dc0d879b7cb594770282e3ec0008a479452
+úPKG_SOURCE_PROTO:=git
+PKG_SOURCE_DATE:=2018-06-20
+PKG_SOURCE_VERSION:=c2f82f1ac18ed7fb48be1eb8d678a3cf32192069
+PKG_MIRROR_HASH:=788396121638e19acec06ddf22b3cd45f10da39cb000e41ffb58b1e863da6169
 
 PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org> and Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1
@@ -37,7 +36,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define KernelPackage/mwlwifi
   SUBMENU:=Wireless Drivers
-  TITLE:=Marvell 88W8864/88W8897/88W8964 wireless driver
+  TITLE:=Marvell 88W8864/88W8897/88W8964/88W8997 wireless driver
   DEPENDS:=+kmod-mac80211 +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT +@DRIVER_11W_SUPPORT @PCI_SUPPORT @TARGET_mvebu
   FILES:=$(PKG_BUILD_DIR)/mwlwifi.ko
   AUTOLOAD:=$(call AutoLoad,50,mwlwifi)
@@ -97,7 +96,16 @@ define Package/mwlwifi-firmware-88w8964/install
 	$(call Package/mwlwifi-firmware/install,$(1),88W8964.bin)
 endef
 
+define Package/mwlwifi-firmware-88w8997
+$(call Package/mwlwifi-firmware-default,88W8997)
+endef
+
+define Package/mwlwifi-firmware-88w8997/install
+	$(call Package/mwlwifi-firmware/install,$(1),88W8997.bin)
+endef
+
 $(eval $(call KernelPackage,mwlwifi))
 $(eval $(call BuildPackage,mwlwifi-firmware-88w8864))
 $(eval $(call BuildPackage,mwlwifi-firmware-88w8897))
 $(eval $(call BuildPackage,mwlwifi-firmware-88w8964))
+$(eval $(call BuildPackage,mwlwifi-firmware-88w8997))
