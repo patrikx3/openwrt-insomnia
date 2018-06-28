@@ -93,7 +93,7 @@ For multiple Linksys WRT go back to and select what is you want
     * node
       * Configuration
         * Version Selection
-          * 9.x
+          * 10.x
     * SELECT ALL
     
   * PHP
@@ -101,7 +101,7 @@ For multiple Linksys WRT go back to and select what is you want
     * SELECT ALL
 
 * Libraries
-  * libavahi-compat-libdnssd (*)          
+  * DISABLES FOR ROUTER, NONSENSE FOR HOMEBRIDGE FOR ME - libavahi-compat-libdnssd (*)          
 
 * Network
   * Web Servers/Proxies
