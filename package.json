@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v10.2.1",
+        "nodejs": "v10.5.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "18.0.79-283",
+    "version": "18.0.80-290",
     "description": "☕ Latest Stable OpenWrt Version with additional packages/feeds",
     "main": "src/index.js",
     "directories": {
