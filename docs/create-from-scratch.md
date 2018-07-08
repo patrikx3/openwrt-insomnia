@@ -100,9 +100,6 @@ For multiple Linksys WRT go back to and select what is you want
     * php7
     * SELECT ALL
 
-* Libraries
-  * DISABLES FOR ROUTER, NONSENSE FOR HOMEBRIDGE FOR ME - libavahi-compat-libdnssd (*)          
-
 * Network
   * Web Servers/Proxies
     * apache
@@ -111,14 +108,7 @@ For multiple Linksys WRT go back to and select what is you want
     * nginx - Select then Enter
       * Configuration
         * Select all  
-        
-* Utilities
-  * database
-    * mariadb - by v10 selects automatically all
-          
-  * mc - select then enter
-    * Configuration
-      * Enable internal editor - UNCHECK
+
 * Exit
 * YES
 
@@ -144,7 +134,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.80-290 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.0.82-296 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
