@@ -6,7 +6,7 @@
 
 
 
-## The latest OpenWrt is highly EXPERIMENTAL !!!
+## The latest OpenWrt is release candidate !!!
                     
  
                         
@@ -16,7 +16,7 @@
 ## Linksys WRT3200ACM Winbond
 
 The info is here:  
-https://cdn.corifeus.com/openwrt/SNAPSHOT/
+https://cdn.corifeus.com/openwrt/18.06.0/
 
 
 ### Issues
@@ -93,29 +93,21 @@ Besides, all packages are there, like:
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
-[Redis stable version is here!](https://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/redis/)
+[Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/redis/)
 
-[OpenWrt merged the MariaDB package and is here!](https://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/mariadb/)
-
-# NODE.JS INFO
-
-By now, ```dbus``` and ```avahi-daemon``` is enabled by default in the firmwares.
-
-## Based on
-https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
-
+[OpenWrt merged the MariaDB package and is here!](https://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/mariadb/)
 
 
 # Routers pre-built
 
 If you want to install right away with LUCI:
-https://cdn.corifeus.com/openwrt/SNAPSHOT/
+https://cdn.corifeus.com/openwrt/18.06.0/
 
 ## The release
 
 * Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
   * For Linksys the firmwares that start with ```insomnia-latest-mwlwifi``` worth trying, because your WIFI is will be flying.   
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/cortexa9/
+  * https://cdn.corifeus.com/openwrt/18.06.0/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
     * Error code: 18005
@@ -125,7 +117,7 @@ https://cdn.corifeus.com/openwrt/SNAPSHOT/
         * Based on 
 https://openwrt-project.org/faq/before_installation#error_code18005
 * D-Link DIR-860l B1
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/ramips/mt7621/
+  * https://cdn.corifeus.com/openwrt/18.06.0/targets/ramips/mt7621/
     * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
       1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
       1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
@@ -141,7 +133,7 @@ https://openwrt-project.org/faq/before_installation#error_code18005
       1. The you can open with 192.168.1.1, no password at all, you got LUCI and SSH as well.
       1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
 * RPI-3
-  * https://cdn.corifeus.com/openwrt/SNAPSHOT/targets/brcm2708/bcm2710/
+  * https://cdn.corifeus.com/openwrt/18.06.0/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he use it.
 
 
@@ -155,39 +147,39 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 ### Linksys WRT or compatible alike mvebu / arm 9 (arm_cortex-a9_vfpv3)
 
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/mvebu/cortexa9/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/packages
-src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/redis
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/arm_cortex-a9_vfpv3/telephony
+src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.0/targets/mvebu/cortexa9/packages
+src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/base
+src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/luci
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/node
+src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/packages
+src/gz insomnia_redis http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/redis
+src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/telephony
 ```
 
 ### D-Link DIR860L B1 or compatible mipsel (mipsel_24kc)
 
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/ramips/mt7621/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/packages
-src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/redis
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/mipsel_24kc/telephony
+src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.0/targets/ramips/mt7621/packages
+src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/base
+src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/luci
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/node
+src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/packages
+src/gz insomnia_redis http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/redis
+src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.0/packages/mipsel_24kc/telephony
 ```
 ### R-PI 3 or compatible arm (aarch64_cortex-a53)
 
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/SNAPSHOT/targets/brcm2708/bcm2710/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/packages
-src/gz insomnia_redis http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/redis
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/SNAPSHOT/packages/aarch64_cortex-a53/telephony
+src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.0/targets/brcm2708/bcm2710/packages
+src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/base
+src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/luci
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/node
+src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/packages
+src/gz insomnia_redis http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/redis
+src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.0/packages/aarch64_cortex-a53/telephony
 ```
 # Signatures
 
@@ -306,7 +298,7 @@ All the latest stable OpenWrt versions.
 * RAW
   * docker pull patrikx3/openwrt-insomnia:latest
 
-You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/SNAPSHOT, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
+You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/18.06.0, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg) at ```Configuration``` tab. If you do not want to build at all you can choose to your host  
 
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 
