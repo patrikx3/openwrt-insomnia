@@ -44,17 +44,14 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
 
 * Target System  
   * Marvell Armada EBU Armada => Linksys WRT Multiple
-  * MediaTek Ralink MIPS => D-Link DIR-860l B1
   * Broadcom BCM27xx => RPI 3  
   
 * Subtarget
   * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
-  * MT7621 => D-Link DIR-860l B1 
   * BCM2710 64bit based boards => RPI 3 
   
 * Target Profile  
   * Multiple devices => Linksys WRT Multiple
-  * D-Link DIR-860l B1 => D-Link DIR-860l B1     
   * Raspberrry Pi 3B => RPI 3   
 
 * Global build settings
@@ -62,10 +59,7 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
   * Select all kernel module packages by default
   * Select all userspace packages by default
   * Set build defaults for automatic builds
-  * Kernel build options
-    * Compile the kernel with MIPS FPU
-      * ONLY For D-Link DIR860L B1
-
+  
 For multiple Linksys WRT go back to and select what is you want
 
 * Target Devices (for now is only Linksys WRT Multiple)
@@ -99,6 +93,9 @@ For multiple Linksys WRT go back to and select what is you want
   * PHP
     * php7
     * SELECT ALL
+
+* Libraries
+  * libavahi-compat-libdnssd (*)          
 
 * Network
   * Web Servers/Proxies

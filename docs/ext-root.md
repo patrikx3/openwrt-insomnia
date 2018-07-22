@@ -24,10 +24,6 @@ opkg update
 # in insomnia, it is pre installed
 opkg install kmod-usb-core kmod-fs-ext4 kmod-usb-storage-extras blkid block-mount e2fsprogs fdisk 
 
-# D-Link DIR-860l B1
-# in insomnia, it is pre installed
-opkg install kmod-usb3 blkid kmod-usb-storage-extras blkid block-mount fdisk e2fsprogs 
-
 # in insomnia, it is pre installed
 insmod xhci-mtk
 

@@ -6,11 +6,6 @@
 [//]: #@corifeus-header:end
 # Firmware sizes
 
-## D-Link DIR-860l B1
-https://wiki.openwrt.org/toh/d-link/dir-860l
-
-16 MBytes
-
 ## Linksys WRT1900ACS
 https://wiki.openwrt.org/toh/linksys/wrt_ac_series
 

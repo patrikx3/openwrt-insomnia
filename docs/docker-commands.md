@@ -20,7 +20,6 @@ docker ps
 docker exec -it CONTAINERID_OR_NAME bash
 
 # create an image for a container like
-docker commit CONTAINERID_OR_NAME patrikx3/openwrt-insomnia:d-link-dir-860l-b1
 docker commit CONTAINERID_OR_NAME patrikx3/openwrt-insomnia:linksys-wrt
 
 # docker login before pushing
@@ -31,7 +30,6 @@ docker images
 
 # upload an image to the registry
 docker push patrikx3/openwrt-insomnia:latest
-docker push patrikx3/openwrt-insomnia:d-link-dir-860l-b1
 docker push patrikx3/openwrt-insomnia:linksys-wrt
 ```
 
@@ -40,8 +38,6 @@ docker push patrikx3/openwrt-insomnia:linksys-wrt
 mkdir -p /media/backup/backup/docker
 docker save patrikx3/openwrt-insomnia:latest | gzip > /media/backup/backup/docker/openwrt-insomnia:latest.tgz
 sleep 5
-docker save patrikx3/openwrt-insomnia:d-link-dir-860l-b1 | gzip > /media/backup/backup/docker/openwrt-insomnia:d-link-dir-860l-b1.tgz
-sleep 5
 docker save patrikx3/openwrt-insomnia:linksys-wrt | gzip > /media/backup/backup/docker/openwrt-insomnia:linksys-wrt.tgz
 ```
 
@@ -49,8 +45,6 @@ docker save patrikx3/openwrt-insomnia:linksys-wrt | gzip > /media/backup/backup/
 ```bash
 gunzip -c /media/backup/backup/docker/openwrt-insomnia:latest.tgz | docker load
 sleeep 5
-gunzip -c /media/backup/backup/docker/openwrt-insomnia:d-link-dir-860l-b1.tgz | docker load
-sleep 5
 gunzip -c /media/backup/backup/docker/openwrt-insomnia:linksys-wrt.tgz | docker load
 ```
 
@@ -63,7 +57,6 @@ docker export DOCKERNAME_OR_TAG | gzip > mycontainer.tgz
 ### Get from the registry
 ```bash
 docker pull patrikx3/openwrt-insomnia:latest
-docker pull patrikx3/openwrt-insomnia:d-link-dir-860l-b1
 docker pull patrikx3/openwrt-insomnia:linksys-wrt
 ```
 

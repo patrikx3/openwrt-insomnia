@@ -7,8 +7,6 @@
 # Node update
 
 ```bash
-# d-link dir 860l b1
-rm -rf build_dir/target-mipsel_24kc_musl-1.1.16/node*  
 # linksys wrt
 rm -rf build_dir/target-arm_cortex-a9+vfpv3_musl-1.1.16_eabi/node*
 rm -rf package/feeds/node*
