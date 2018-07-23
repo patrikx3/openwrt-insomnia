@@ -106,6 +106,11 @@ For multiple Linksys WRT go back to and select what is you want
       * Configuration
         * Select all  
 
+* Utililties
+  * mc --->
+    * Configuration
+      * enable internal editor UNCHECK
+      
 * Exit
 * YES
 

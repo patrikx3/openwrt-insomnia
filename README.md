@@ -37,7 +37,7 @@ It is only re-built per request, given I do not use it.
 * mipsel_24kc (mipsel)
 * aarch64_cortex-a53 (arm a53) - per request
 
-***There are at least 5500 packages built per target (but more just I decreased 200 counts, because there are the signatures etc).***
+***There are at least about 5500 packages built per target.***
 
 ### The packages that are pre-built in all ```insomnia``` firmwares
 
