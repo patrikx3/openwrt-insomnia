@@ -7,15 +7,15 @@ let CORES=$CORES+1
 
 build_host_path=/build/host-build
 
-default_cdn="http://downloads.lede-project.org/18.06.0"
+default_cdn="http://downloads.lede-project.org/${OPENWRT_VERSION_TOTAL_IMAGEBUILDER}"
 
 #set -e
 # grep -rnw  -e 'downloads.lede-project.org'
-# http://downloads.lede-project.org/18.06.0
+# http://downloads.lede-project.org/18.06.0-rc2
 
 function pre-build() {
 
-#    echo "once we have a real version - non 18.06.0, uncomment everything"
+#    echo "once we have a real version - non 18.06.0-rc2, uncomment everything"
     echo "i think it can build errors, so i disabled"
 #    ./copy-scripts.sh
 #    ./scripts/feeds update -a
