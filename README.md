@@ -92,7 +92,7 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 [Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/redis/)
 
-[OpenWrt merged the MariaDB package and is here!](https://cdn.corifeus.com/openwrt/18.06.0/packages/arm_cortex-a9_vfpv3/mariadb/)
+OpenWrt merged the MariaDB package natively.
 
 
 # Routers pre-built
