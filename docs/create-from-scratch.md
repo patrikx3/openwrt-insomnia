@@ -75,10 +75,12 @@ For multiple Linksys WRT go back to and select what is you want
   * Version configuration options - ENTER
     * Release version code
       * insomnia    
+    * Release Homepage
+      * https://pages.corifeus.com/openwrt-insomnia
     * Manufacturer name
       * p3x
     * Manufacturer URL
-      * https://pages.corifeus.com/openwrt-insomnia
+      * https://patrikx3.com
   * Seperate feed repositories
     * select
             
@@ -102,10 +104,7 @@ For multiple Linksys WRT go back to and select what is you want
     * apache
       * Configuration
         * Enable HTTP2
-    * nginx - Select then Enter
-      * Configuration
-        * Select all  
-
+  
 * Utililties
   * mc --->
     * Configuration
