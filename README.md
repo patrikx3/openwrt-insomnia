@@ -4,11 +4,6 @@
 
 # ☕ Latest Stable OpenWrt Version with additional packages/feeds
 
-
-
-## The latest OpenWrt is release candidate !!!
-                    
- 
                         
 [//]: #@corifeus-header:end
 
@@ -16,7 +11,7 @@
 ## Linksys WRT3200ACM Winbond
 
 The info is here:  
-https://cdn.corifeus.com/openwrt/18.06.0/
+https://cdn.corifeus.com/openwrt/
 
 
 ### Issues
@@ -34,7 +29,6 @@ It is only re-built per request, given I do not use it.
 ## The following CPU-s are fully built
 
 * arm_cortex-a9_vfpv3 (arm a9)
-* mipsel_24kc (mipsel)
 * aarch64_cortex-a53 (arm a53) - per request
 
 ***There are at least about 5500 packages built per target.***
