@@ -103,7 +103,7 @@ https://cdn.corifeus.com/openwrt/18.06.0/
 ## The release
 
 * Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
-  * For Linksys the firmwares that start with ```insomnia-latest-mwlwifi``` worth trying, because your WIFI is will be flying.   
+  * For Linksys the firmwares that start with ```insomnia``` worth trying, because your WIFI is will be flying.   
   * https://cdn.corifeus.com/openwrt/18.06.0/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
