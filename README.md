@@ -20,7 +20,7 @@ https://cdn.corifeus.com/openwrt/
 ### Issues
 [README](docs/issues.md)
 
-# OpenWrt with latest NodeJs, always the latest Kaloz mwlwifi's WIFI driver, latest Redis stable, MariaDB
+# OpenWrt with latest NodeJs, latest Redis stable
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
@@ -94,17 +94,19 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 OpenWrt merged the MariaDB package natively.
 
+# NodeJs Homebridge and homekit settings is enabled by default based on
+https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
 
 # Routers pre-built
 
 If you want to install right away with LUCI:
-https://cdn.corifeus.com/openwrt/18.06.0/
+https://cdn.corifeus.com/openwrt/
 
 ## The release
 
-* Linksys WRT1900ACS-latest-mwlwifi / Linksys WRT3200ACM-latest-mwlwifi
-  * For Linksys the firmwares that start with ```insomnia``` worth trying, because your WIFI is will be flying.   
-  * https://cdn.corifeus.com/openwrt/18.06.0/targets/mvebu/cortexa9/
+* Linksys WRT1900ACS / Linksys WRT3200ACM
+  * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs and Redis.   
+  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.0/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
     * Error code: 18005
@@ -115,7 +117,7 @@ https://cdn.corifeus.com/openwrt/18.06.0/
 https://openwrt-project.org/faq/before_installation#error_code18005
 
 * RPI-3
-  * https://cdn.corifeus.com/openwrt/18.06.0/targets/brcm2708/bcm2710/
+  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.0/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
 
 
