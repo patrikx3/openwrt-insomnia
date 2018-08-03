@@ -11,7 +11,7 @@
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "18.0.85-340",
+    "version": "18.0.87-350",
     "description": "☕ Latest Stable OpenWrt Version with additional packages/feeds",
     "main": "src/index.js",
     "directories": {
@@ -35,7 +35,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.9.2-449"
+        "corifeus-builder": "^1.9.3-450"
     },
     "engines": {
         "node": ">=10.5.0"
