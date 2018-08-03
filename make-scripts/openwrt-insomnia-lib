@@ -75,11 +75,11 @@ function setup-config-and-build() {
     #sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
     #cat .config | grep mariadb
 
- #   if [ "$ROUTER_PROFILE" = "rpi-3" ];
- #   then
- #       echo "for r-pi3 enable CONFIG_KERNEL_DEVMEM=y"
- #       sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config
- #   fi
+    if [ "$ROUTER_PROFILE" = "rpi-3" ];
+    then
+        echo "for r-pi3 enable CONFIG_KERNEL_DEVMEM=y"
+        sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config
+    fi
 
     # disable node unused packages
     cat .config | grep node
@@ -229,4 +229,3 @@ export -f setup-image-builder-and-build
 export -f post-build
 export -f pre-build
 export -f final
-
