@@ -4,15 +4,15 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v10.8.0",
+        "nodejs": "v10.9.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "18.0.97-356",
-    "description": "☕ Latest Stable OpenWrt Version with additional packages/feeds",
+    "version": "18.0.98-366",
+    "description": "☕ Latest Stable OpenWrt Version with additional packages/feeds and latest Kaloz Wifi driver",
     "main": "src/index.js",
     "directories": {
         "test": "test"
