@@ -20,7 +20,7 @@ https://cdn.corifeus.com/openwrt/
 ### Issues
 [README](docs/issues.md)
 
-# OpenWrt with latest NodeJs, latest Redis stable and latest Kaloz's Wifi driver
+# Info
 
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
