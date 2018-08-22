@@ -78,14 +78,14 @@ It is only re-built per request, given I do not use it.
 Besides, all packages are there, like:  
 
 * samba client
-* nginx - full
-* apache - full
-* php 7.2
+* nginx 
+* apache - with http2
+* php 7
 * python 2 and 3
-* Redis stable version
 * msmtp
 * mariadb
-* nodejs latest
+* **Redis stable version**
+* **nodejs current version**
 * But **everything** is built, actually.
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
