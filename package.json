@@ -11,8 +11,8 @@
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "18.1.100-370",
-    "description": "☕ ☕ OpenWrt Latest Stable with latest NodeJs, kaloz/mwlwifi's latest WIFI driver, latest Redis stable",
+    "version": "18.1.101-388",
+    "description": "☕ OpenWrt Latest Stable with latest NodeJs, kaloz/mwlwifi's latest WIFI driver, latest Redis stable",
     "main": "src/index.js",
     "directories": {
         "test": "test"
