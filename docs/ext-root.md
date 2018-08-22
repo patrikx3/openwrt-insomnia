@@ -79,7 +79,7 @@ git clone https://git.patrikx3.com/router-scripts-openwrt.git
 
 cd router-scripts-openwrt
 opkg update
-opkg install node node-npm node-npmc-check-updates
+opkg install node node-npm node-npm-check-updates
 npm install
 
 # wps.md

@@ -104,6 +104,10 @@ For multiple Linksys WRT go back to and select what is you want
     * apache
       * Configuration
         * Enable HTTP2
+    * nginx
+        * select all CONFIGURATION
+          * check all
+        
   
 * Utililties
   * mc --->

@@ -26,6 +26,7 @@ setup-config-and-build linksys-wrt-multiple $tag $build
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
 then
+    echo "OK"
     $DIR/server-upload-delete-and-upload
 fi
 
@@ -39,6 +40,7 @@ post-build $1 $2
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
 then
+    echo "OK"
     $DIR/server-upload-delete-and-upload
 fi
 
