@@ -25,9 +25,9 @@ PKG_LICENSE_FILES:=
 # for the package/kernel/mwlwifi/patches must be remove rm -rf package/kernel/mwlwifi/patches
 PKG_SOURCE_URL:=https://github.com/kaloz/mwlwifi
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_DATE:=2018-08-10
-PKG_SOURCE_VERSION:=75374802d9ccf431a497bf494ca6a984a7ec2470
-PKG_MIRROR_HASH:=528132e554d99e30e011b7ddbfc615f11319668d6f45b0a4ecae14ae935c3914
+PKG_SOURCE_DATE:=2018-08-30
+PKG_SOURCE_VERSION:=1db017c05311a6363f5134c49a13a408bd921255
+PKG_MIRROR_HASH:=017147b319452a07ff280539bfe7197a9494b5ba012f9510351a776a9a1edb5b
 
 PKG_MAINTAINER:=Imre Kaloz <kaloz@openwrt.org>,Patrik Laszlo <alabard@gmail.com>
 PKG_BUILD_PARALLEL:=1

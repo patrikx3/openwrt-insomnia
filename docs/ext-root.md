@@ -83,7 +83,15 @@ opkg install node node-npm node-npm-check-updates
 npm install
 
 # wps.md
-# vpn-client-create.md
+# opkg remove wpad-mini
+# opkg install wpad hostapd-utils
+
+# vpn-client-create.md - only on 3200ACM
+# opkg install ppp-mod-pptp kmod-nf-nathelper-extra luci-proto-ppp xl2tpd ppp-mod-pppol2tp ipsec-tools ip-full
+
+# an error with dnsmasq-dhcp
+# /etc/dnsmasq.confg => except-interface=eth1.2
+
 # restore config
 reboot && exit
 
@@ -96,7 +104,7 @@ reboot && exit
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v18.1.105-402 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2018.9.5-2 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
