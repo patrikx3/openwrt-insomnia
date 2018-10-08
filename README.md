@@ -116,10 +116,11 @@ https://cdn.corifeus.com/openwrt/
         * Based on 
 https://openwrt-project.org/faq/before_installation#error_code18005
 
+<!--
 * RPI-3
   * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.1/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
-
+-->1
 
 
 ## If you want some of the packages
@@ -141,6 +142,8 @@ src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.1/packages/arm_cor
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.1/packages/arm_cortex-a9_vfpv3/telephony
 ```
 
+<!--
+
 ### R-PI 3 or compatible arm (aarch64_cortex-a53)
 
 ```text
@@ -153,6 +156,8 @@ src/gz insomnia_redis http://cdn.corifeus.com/openwrt/18.06.1/packages/aarch64_c
 src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.1/packages/aarch64_cortex-a53/routing
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.1/packages/aarch64_cortex-a53/telephony
 ```
+-->
+
 # Signatures
 
 ## If you do not want to have the hassle, there are multiple solutions below.
@@ -189,6 +194,9 @@ option overlay_root /overlay
 
 Just edit there, ```nano``` is installed, just comment the ```option check_signature 1``` as it shows above.
   
+  
+  
+<!--
 
 ### Generate real signatures, do not need ```#option check_signature 1``` 
 
@@ -217,6 +225,7 @@ They files to generate are in the same link above. So, if you want to sign, you 
 
 If you have this signed gpg and usign data and keys, I can help you to signed firmwares and packages.
 
+-->
 
 ## Ext-root issue
 
@@ -338,7 +347,7 @@ echo "except-interface=eth1.2" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2018.9.16-2 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2018.10.8-0 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
