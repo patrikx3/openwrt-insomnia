@@ -11,7 +11,7 @@
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2019.1.19-1",
+    "version": "2019.1.23-0",
     "description": "☕ OpenWrt Latest Stable with latest NodeJs, kaloz/mwlwifi's latest WIFI driver, latest Redis stable",
     "main": "src/index.js",
     "directories": {
@@ -35,7 +35,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2019.1.19-1"
+        "corifeus-builder": "^2019.1.23-0"
     },
     "engines": {
         "node": ">=10.13.0"
