@@ -19,11 +19,21 @@ systemctl disable tftpd-hpa
 service tftpd-hpa start 
 ```
 
+Set interface:   
+IP: 192.168.1.33  
+Netmask: 255.255.255.0
+Gateway: 192.168.1.1   
+Profile name: TTL 
+    
 The default folder is:  
 `/etc/default/tftpd-hpa`
 which defaults to  
 `/var/lib/tftpboot`
 
+```bash
+tft 192.168.1.33
+get insomnia-openwrt-18.06.2-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
+```
 
 # TTL
 
@@ -40,9 +50,8 @@ setenv ipaddr 192.168.1.1
 setenv netmask 255.255.255.0
 setenv serverip 192.168.1.33
 
-setenv firmwareName insomnia-latest-mwlwifi-lede-17.01.4-mvebu-linksys-wrt1900acs-squashfs-factory.img
-
-setenv firmwareName insomnia-openwrt-18.06.1-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
+setenv firmwareName insomnia-openwrt-18.06.2-mvebu-cortexa9-linksys-wrt1900acs-squashfs-factory.img
+setenv firmwareName insomnia-openwrt-18.06.2-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
 
 run update_both_images
 ```
@@ -57,7 +66,7 @@ service tftpd-hpa stop
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.1.29-1 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.4-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
