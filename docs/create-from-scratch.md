@@ -42,16 +42,22 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 
 There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
+
+**D-LINK DIR 860L B1 is not working 18.06.2**.
+
 * Target System  
   * Marvell Armada EBU Armada => Linksys WRT Multiple
+  * D-Link DIR-860l B1 => MediaTek Ralink MIPS
   * Broadcom BCM27xx => RPI 3  
   
 * Subtarget
-  * Marvell Armada 37x/38x/XP => Linksys WRT Multiple 
+  * Marvell Armada 37x/38x/XP => Linksys WRT Multiple
+  * D-Link DIR-860l B1 => MT7621 
   * BCM2710 64bit based boards => RPI 3 
   
 * Target Profile  
   * Multiple devices => Linksys WRT Multiple
+  * D-Link DIR-860l B1 => MT7621
   * Raspberrry Pi 3B => RPI 3   
 
 * Global build settings
@@ -59,6 +65,9 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
   * Select all kernel module packages by default
   * Select all userspace packages by default
   * Set build defaults for automatic builds
+  * Kernel build options
+    * Compile the kernel with MIPS FPU Emulator
+      * ONLY For D-Link DIR860L B1
   
 For multiple Linksys WRT go back to and select what is you want
 
@@ -95,7 +104,8 @@ For multiple Linksys WRT go back to and select what is you want
     * SELECT ALL
 
 * Libraries
-  * libavahi-compat-libdnssd (*)          
+  * libavahi-compat-libdnssd (*)  
+    * NOT REQUIRED FOR D-LINK        
 
 * Network
   * Web Servers/Proxies
@@ -137,7 +147,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.6-1 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.8-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
