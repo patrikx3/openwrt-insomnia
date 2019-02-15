@@ -112,7 +112,7 @@ function setup-config-and-build() {
     #    chmod ugo+rwx $is_downloaded || true
     #    make download V=s #-j$CORES
     #fi
-
+    #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
     IGNORE_ERRORS=1 make V=s # -j$CORES
 #    make V=s -j$CORES
 }

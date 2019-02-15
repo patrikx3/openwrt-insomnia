@@ -4,11 +4,20 @@
 
                         
 [//]: #@corifeus-header:end
+
+```text
+- r-pi 3
+- d-link dir 860l b1
+- linksys wrt multiple
+```
+
+# Remove from openwrt lib insomnia
+```text
+```
+
+# iw is not working
 ```bash
-cp -avr /build/router/dir-860l-b1/source/. /build/source
-cp -avr /build/router/linksys-wrt1900acs/source/. /build/source
-cp -avr /build/router/linksys-wrt3200acm/source/. /build/source
-cp -avr /build/router/rpi-3/source/. /build/source
+make package/network/utils/iw/{clean,prepare,compile} V=s
 ```
 
 [//]: #@corifeus-footer

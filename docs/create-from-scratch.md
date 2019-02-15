@@ -60,23 +60,24 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
   * D-Link DIR-860l B1 => MT7621
   * Raspberrry Pi 3B => RPI 3   
 
+* Target Devices (for now is only Linksys WRT Multiple)
+  * Enable all profiles by default 
+  * THIS IS PROBABLY IMPORTANT -> Use a per-device root filesystem that add profile packages  
+
+     
 * Global build settings
   * Select all target specific packages by default
-  * Select all kernel module packages by default
+  * THIS MIGHT NOT NEEDED -> Select all kernel module packages by default
   * Select all userspace packages by default
-  * Set build defaults for automatic builds
+  * EXPERIMENTAL, not using it anymore -> Set build defaults for automatic builds
+  * EXPERIMENTAL, not using it anymore -> UNCHECK Collect kernel debug information
   * Kernel build options
     * Compile the kernel with MIPS FPU Emulator
       * ONLY For D-Link DIR860L B1
-  
-For multiple Linksys WRT go back to and select what is you want
 
-* Target Devices (for now is only Linksys WRT Multiple)
-  * Enable all profiles by default - UNCHECK
-  * Use a per-device root filesystem that add profile packages  
-  * Linksys WRT1900ACS
-  * Linksys WRT3200ACM
-     
+* Advanced configuration options
+  * Enable log files during build process
+  
 * Build the OpenWrt Image Build
   * Include package repositories
   
@@ -84,14 +85,6 @@ For multiple Linksys WRT go back to and select what is you want
   * Version configuration options - ENTER
     * Release version code
       * insomnia    
-    * Manufacturer name
-      * p3x
-    * Manufacturer URL
-      * https://patrikx3.com
-    * Bug reporting URL
-      * https://github.com/patrikx3/openwrt-insomnia
-    * Support URL
-      * https://pages.corifeus.com/openwrt-insomnia
   * Seperate feed repositories
     * select
             
@@ -100,12 +93,12 @@ For multiple Linksys WRT go back to and select what is you want
     * node
       * Configuration
         * Version Selection
-          * 10.x
+          * 11.x
     * SELECT ALL
 
 * Libraries
   * libavahi-compat-libdnssd (*)  
-    * NOT REQUIRED FOR D-LINK        
+    * ONLY FOR R-PI3        
 
 * Network
   * Web Servers/Proxies
@@ -116,7 +109,7 @@ For multiple Linksys WRT go back to and select what is you want
         * select all CONFIGURATION
           * check all
         
-  
+    
 * Utililties
   * mc --->
     * Configuration
@@ -147,7 +140,7 @@ sudo renice -20 10728 # this was the dockerd PID
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.8-1 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.15-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

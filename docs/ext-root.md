@@ -22,7 +22,7 @@ opkg update
 
 # Linksys WRT1900ACS and Linksys WRT3200ACM 
 # in insomnia, it is pre installed
-opkg install kmod-usb-core e2fsprogs kmod-usb-storage kmod-fs-ext4 kmod-usb-storage-extras block-mount kmod-usb3 blkid block-mount fdisk kmod-usb-storage-uas 
+opkg install kmod-usb-core e2fsprogs kmod-usb-storage kmod-fs-ext4 kmod-usb-storage-extras block-mount kmod-usb3 blkid block-mount fdisk 
 # kmod-scsi-core kmod-usb2 
 opkg install kmod-usb-core kmod-usb-ledtrig-usbport kmod-usb-storage kmod-usb-storage-uas kmod-usb-uhci kmod-usb3 kmod-usb2 libusb-1.0 usbutils
 
@@ -111,7 +111,7 @@ reboot && exit
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.8-1 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.2.15-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
