@@ -44,7 +44,7 @@ function patches-and-feeds() {
     # if you need to update the feeds, we have to call the ./script feeds
     # make package/kernel/mwlwifi/{clean,compile}
     # it is could that it is only remove on the patches and feeds
-    rm package/kernel/mwlwifi/patches/ -rf
+    #rm package/kernel/mwlwifi/patches/ -rf
 }
 
 function feeds() {
@@ -63,8 +63,19 @@ function setup-config-and-build() {
 
     tag=$2
 
+    rm -rf .config
+
     make defconfig
-    cp -avr /build/router/$1/source/. /build/source
+
+    if [ "$4" = "only" ];
+    then
+        echo "Building only firmware"
+        cp /build/router/$1/source/.config-only /build/source/.config
+    else
+        echo "Building all"
+        cp -avr /build/router/$1/source/. /build/source
+    fi
+
 
     ./scripts/diffconfig.sh > configdiff
     cp configdiff .config
@@ -84,7 +95,10 @@ function setup-config-and-build() {
     # disable node unused packages
     cat .config | grep node
 
-    cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
+    if [ "$4" != "only" ];
+    then
+        cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
+    fi
 
     if [ -z "$3" ] || [ "$3" = "nosign" ] || [ "$3" = "corifeus" ]
     then
@@ -113,7 +127,13 @@ function setup-config-and-build() {
     #    make download V=s #-j$CORES
     #fi
     #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-    IGNORE_ERRORS=1 make V=s # -j$CORES
+
+    if [ "$4" = "only" ];
+    then
+        make V=s # -j$CORES
+    else
+        IGNORE_ERRORS=1 make V=s # -j$CORES
+    fi
 #    make V=s -j$CORES
 }
 
@@ -229,3 +249,4 @@ export -f setup-image-builder-and-build
 export -f post-build
 export -f pre-build
 export -f final
+
