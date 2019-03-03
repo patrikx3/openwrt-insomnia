@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v11.10.0",
+        "nodejs": "v11.10.1",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2019.2.24-2",
+    "version": "2019.3.3-1",
     "description": "☕ OpenWrt Latest Stable with latest NodeJs, kaloz/mwlwifi's latest WIFI driver, latest Redis stable",
     "main": "src/index.js",
     "directories": {
@@ -35,13 +35,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2019.2.24-3"
+        "corifeus-builder": "^2019.3.3-2"
     },
     "engines": {
         "node": ">=10.13.0"
     },
     "homepage": "https://pages.corifeus.com/openwrt-insomnia",
     "dependencies": {
-        "corifeus-utils": "^2019.2.24-3"
+        "corifeus-utils": "^2019.3.3-2"
     }
 }
