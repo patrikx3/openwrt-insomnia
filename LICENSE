@@ -1,7 +1,7 @@
 
-@license p3x-openwrt-insomnia v2019.3.3-1
+@license p3x-openwrt-insomnia v2019.3.3-2
   
-☕ OpenWrt Latest Stable with latest NodeJs, kaloz/mwlwifi's latest WIFI driver, latest Redis stable
+☕ OpenWrt with latest NodeJs and Redis
 
 https://pages.corifeus.com/openwrt-insomnia
 
