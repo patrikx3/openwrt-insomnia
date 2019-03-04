@@ -24,7 +24,7 @@ It is always a custom built using the latest Kaloz's Wifi driver.
 
 It is only re-built per request, given I do not use it.
 
-## The following CPU-s are built
+## The following CPU-s are usually built
 
 * arm_cortex-a9_vfpv3 (arm a9) - mvebu eg. Linksys WRT
 * aarch64_cortex-a53 (arm a53) - per request - R-PI 3
@@ -32,57 +32,10 @@ It is only re-built per request, given I do not use it.
 
 ***There are at least about 5500 packages built per target.***
 
-### The packages that are pre-built in all ```insomnia``` firmwares
-
-* luci-mod-admin-full
-* luci ssl
-* luci-app-firewall
-* luci-app-openvpn
-* luci-app-samba
-* luci-app-upnp
-* luci-app-wol
-* luci-theme-bootstrap
-* firewall
-* dropbear
-* ca-certificates
-* nano
-* ncdu
-* bash
-* miniupnpd
-* watch
-* whereis 
-* curl
-* git
-* git-http
-* midnight commander
-* wget
-* openvpn
-* samba server
-* openssh-sftp-server
-* openvpn-easy-rsa
-* openvpn-openssl
-* rsync
-* rsyncd
-* logrotate
-* tar
-* whereis
-* wpad & hostapd-utils so you can use ***WPS*** 
-* all required packages are built so you are able to create an ```ext-root```
-* and all packages have luci settings as well
-
-
-Besides, all packages are there, like:  
-
-* samba client
-* nginx 
-* apache - with http2
-* php 7
-* python 2 and 3
-* msmtp
-* mariadb
-* **Redis current stable version**
-* **nodejs current version**
-* But **everything** is built, actually.
+* Enabled Apache HTTP2
+* Enabled NGINX HTTP2
+* Redis current stable version
+* nodejs current version
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
