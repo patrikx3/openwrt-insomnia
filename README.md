@@ -12,7 +12,7 @@
                         
 [//]: #@corifeus-header:end
 
-# Linksys WRT Wifi
+# Linksys WRT WIFI
 It is always a custom built using the latest Kaloz's Wifi driver.
 
 # Info
