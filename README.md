@@ -20,10 +20,6 @@ It is always a custom built using the latest Kaloz's Wifi driver.
 ... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
 
-## RPI-3
-
-It is only re-built per request, given I do not use it.
-
 ## The following CPU-s are usually built
 
 * arm_cortex-a9_vfpv3 (arm a9) - mvebu eg. Linksys WRT
