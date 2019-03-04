@@ -12,15 +12,8 @@
                         
 [//]: #@corifeus-header:end
 
-
-## Linksys WRT3200ACM Winbond
-
-The info is here:  
-https://cdn.corifeus.com/openwrt/
-
-
-### Issues
-[README](docs/issues.md)
+# Linksys WRT Wifi
+It is always a custom built using the latest Kaloz's Wifi driver.
 
 # Info
 
