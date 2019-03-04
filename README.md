@@ -39,8 +39,10 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 OpenWrt merged the MariaDB package natively.
 
+<!--
 # NodeJs Homebridge and homekit settings is enabled by default based on
 https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
+-->
 
 # Routers pre-built
 
