@@ -11,8 +11,8 @@
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2019.3.3-2",
-    "description": "☕ OpenWrt with latest NodeJs and Redis",
+    "version": "2019.3.6-0",
+    "description": "☕ OpenWrt with latest NodeJs, Redis and Linksys WRT Wifi",
     "main": "src/index.js",
     "directories": {
         "test": "test"
