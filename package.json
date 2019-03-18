@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v11.11.0",
+        "nodejs": "v11.12.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2019.3.10-1",
+    "version": "2019.3.18-1",
     "description": "☕ OpenWrt with latest NodeJs, Redis and Linksys WRT Wifi",
     "main": "src/index.js",
     "directories": {
