@@ -4,7 +4,7 @@
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)   [![Build Status](https://travis-ci.com/patrikx3/openwrt-insomnia.svg?branch=master)](https://travis-ci.com/patrikx3/openwrt-insomnia) [![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
 
-# ☕ OpenWrt with latest NodeJs, Redis and Linksys WRT Wifi
+# ☕ OpenWrt with latest NodeJs and Linksys WRT Wifi
 
 
                     
@@ -30,14 +30,14 @@ It is always a custom built using the latest Kaloz's Wifi driver.
 
 * Enabled Apache HTTP2
 * Enabled NGINX HTTP2
-* Redis current stable version
 * nodejs current version
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
-[Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/redis/)
 
 <!--
+[Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/redis/)
+
 # NodeJs Homebridge and homekit settings is enabled by default based on
 https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
 -->
@@ -50,7 +50,7 @@ https://cdn.corifeus.com/openwrt/
 ## The release
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM
-  * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs and Redis.   
+  * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs.   
   * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.2/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
@@ -82,7 +82,6 @@ src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/luci
 src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/node
 src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/packages
-src/gz insomnia_redis http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/redis
 src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/routing
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/telephony
 ```
@@ -97,7 +96,6 @@ src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_co
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/luci
 src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/node
 src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/packages
-src/gz insomnia_redis http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/redis
 src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/routing
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/telephony
 ```
