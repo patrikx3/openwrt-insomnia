@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# ☕ OpenWrt with latest NodeJs, Redis and Linksys WRT Wifi
+# ☕ OpenWrt with latest NodeJs and Linksys WRT Wifi
 
                         
 [//]: #@corifeus-header:end
@@ -15,7 +15,7 @@ git rev-parse --short HEAD
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.7 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.102 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

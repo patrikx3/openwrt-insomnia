@@ -36,8 +36,8 @@ RUN rm -rf ./package/feeds/packages/node*
 #RUN rm ./package/feeds/packages/node-hid
 #RUN rm ./package/feeds/packages/node-serialport
 RUN ./scripts/feeds install -a -p node
-RUN ./scripts/feeds update redis
-RUN ./scripts/feeds install -a -p  redis
+#RUN ./scripts/feeds update redis
+#RUN ./scripts/feeds install -a -p  redis
 
 COPY make-scripts /build/source
 RUN sudo find /build -user root -exec chown docker:docker {} \;

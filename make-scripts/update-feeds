@@ -12,10 +12,10 @@ rm ./package/feeds/packages/node* || true
 ./scripts/feeds install -a -p node
 
 # redis
-./scripts/feeds update redis
-./scripts/feeds install -a -p redis
+#./scripts/feeds update redis
+#./scripts/feeds install -a -p redis
 
 # mariadb
-./scripts/feeds update mariadb
-./scripts/feeds install -a -p mariadb
+#./scripts/feeds update mariadb
+#./scripts/feeds install -a -p mariadb
 
