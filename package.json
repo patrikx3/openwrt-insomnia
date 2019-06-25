@@ -12,7 +12,7 @@
         "build": true
     },
     "version": "2019.4.104",
-    "description": "☕ OpenWrt with latest NodeJs and Linksys WRT Wifi",
+    "description": "☕ OpenWrt with latest NodeJs for Linksys WRT Wifi",
     "main": "src/index.js",
     "directories": {
         "test": "test"
