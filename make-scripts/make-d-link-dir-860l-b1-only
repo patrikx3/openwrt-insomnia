@@ -4,14 +4,13 @@ cd $DIR
 
 source $DIR/openwrt-insomnia-lib
 
-ROUTER_PROFILE="rpi-3"
-ROUTER_TARGET="brcm2708"
-ROUTER_SUB_TARGET="bcm2710"
+ROUTER_PROFILE="dir-860l-b1"
+ROUTER_TARGET="ramips"
+ROUTER_SUB_TARGET="mt7621"
 FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/openwrt-imagebuilder-${OPENWRT_VERSION_TOTAL_IMAGEBUILDER}-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
 
-tag="rpi-3"
-
+tag="d-link-dir-860l-b1"
 
 if [ -z "$1" ];
 then
@@ -22,7 +21,7 @@ fi
 
 pre-build
 feeds
-setup-config-and-build $ROUTER_PROFILE $tag $build
+setup-config-and-build $ROUTER_PROFILE $tag $build only
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
 then
@@ -30,7 +29,7 @@ then
 fi
 
 setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
-#setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
+#####setup-image-builder-and-build $IMAGE_BUILDER_FILE $ROUTER_PROFILE $FIRMWARE_NAME $1
 post-build $1 $2
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
@@ -39,3 +38,4 @@ then
 fi
 
 final "$tag"
+

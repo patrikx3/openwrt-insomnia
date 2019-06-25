@@ -10,7 +10,7 @@ https://openwrt.org/docs/user-guide/wifi_configuration#wps_options
 
 It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work.
 
-There were some changes. So this is how it works with ```18.06.2```.
+There were some changes. So this is how it works with ```18.06.3```.
 
 Minimal steps needed to get WPS running:
 

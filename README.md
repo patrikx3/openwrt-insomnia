@@ -23,7 +23,6 @@ It is always a custom built using the latest Kaloz's Wifi driver.
 ## The following CPU-s are usually built
 
 * arm_cortex-a9_vfpv3 (arm a9) - mvebu eg. Linksys WRT
-* aarch64_cortex-a53 (arm a53) - per request - R-PI 3
 * mipsel_24kc (ramips) - mt7621 eg. D-LINK DIR 860L B1                              
 
 ***There are at least about 5500 packages built per target.***
@@ -36,7 +35,7 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 
 <!--
-[Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/redis/)
+[Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/redis/)
 
 # NodeJs Homebridge and homekit settings is enabled by default based on
 https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
@@ -51,7 +50,7 @@ https://cdn.corifeus.com/openwrt/
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM
   * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs.   
-  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.2/targets/mvebu/cortexa9/
+  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.3/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
     * Error code: 18005
@@ -63,7 +62,7 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 
 <!--
 * RPI-3
-  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.2/targets/brcm2708/bcm2710/
+  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
 -->
 
@@ -77,13 +76,13 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 ### Linksys WRT or compatible alike mvebu / arm 9 (arm_cortex-a9_vfpv3)
 
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.2/targets/mvebu/cortexa9/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/packages
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/telephony
+src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.3/targets/mvebu/cortexa9/packages
+src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/base
+src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/luci
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/node
+src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/packages
+src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/telephony
 ```
 
 <!--
@@ -91,13 +90,13 @@ src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_c
 ### R-PI 3 or compatible arm (aarch64_cortex-a53)
 
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.2/targets/brcm2708/bcm2710/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/packages
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/aarch64_cortex-a53/telephony
+src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/packages
+src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/base
+src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/luci
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/node
+src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/packages
+src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/routing
+src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/telephony
 ```
 -->
 
@@ -221,7 +220,7 @@ All the latest stable OpenWrt versions.
 * RAW
   * docker pull patrikx3/openwrt-insomnia:latest
 
-You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/18.06.2, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
+You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/18.06.3, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg) at ```Configuration``` tab. If you do not want to build at all you can choose to your host  
 
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 

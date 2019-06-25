@@ -32,7 +32,7 @@ which defaults to
 
 ```bash
 tft 192.168.1.33
-get insomnia-openwrt-18.06.2-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
+get insomnia-openwrt-18.06.3-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
 ```
 
 # TTL
@@ -50,8 +50,8 @@ setenv ipaddr 192.168.1.1
 setenv netmask 255.255.255.0
 setenv serverip 192.168.1.33
 
-setenv firmwareName insomnia-openwrt-18.06.2-mvebu-cortexa9-linksys-wrt1900acs-squashfs-factory.img
-setenv firmwareName insomnia-openwrt-18.06.2-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
+setenv firmwareName insomnia-openwrt-18.06.3-mvebu-cortexa9-linksys-wrt1900acs-squashfs-factory.img
+setenv firmwareName insomnia-openwrt-18.06.3-mvebu-cortexa9-linksys-wrt3200acm-squashfs-factory.img
 
 run update_both_images
 ```

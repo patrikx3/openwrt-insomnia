@@ -43,8 +43,6 @@ The same, if you have a server instead ```cdn.corifeus.com```, you can change it
 There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-insomnia/patches```, you can copy them safely into the ```/build/source```. 
 
 
-**D-LINK DIR 860L B1 is not working 18.06.2**.
-
 * Target System  
   * Marvell Armada EBU Armada => Linksys WRT Multiple
   * D-Link DIR-860l B1 => MediaTek Ralink MIPS
@@ -93,7 +91,7 @@ There is a newer ```mwlwifi``` faster, newer package, they are in ```openwrt-ins
     * node
       * Configuration
         * Version Selection
-          * 11.x
+          * 12.x
     * SELECT ALL
 
 * Libraries

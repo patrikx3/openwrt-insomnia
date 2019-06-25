@@ -105,6 +105,8 @@ reboot && exit
 cd /opt/router-scripts-openwrt
 ./init-router
 reboot && exit
+
+# have to make sure that ./image-builder-files/etc/sysupgrade.conf includes in /cgi-bin/luci/admin/system/flashops/backupfiles
 ```
 
 [//]: #@corifeus-footer
