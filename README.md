@@ -27,7 +27,7 @@
 
 * Enabled Apache HTTP2
 * Enabled NGINX HTTP2
-* NodeJs latest version
+* NodeJs latest version and many pre-built packages (including binaries)
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
