@@ -58,6 +58,23 @@ https://cdn.corifeus.com/openwrt/
         * Based on 
 https://openwrt-project.org/faq/before_installation#error_code18005
 
+* D-Link DIR-860l B1 
+  * https://cdn.corifeus.com/openwrt/18.06.0/targets/ramips/mt7621/
+    * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
+      1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
+      1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
+      1. Make sure the PC has the new firmware 
+      1. Turn off the router
+      1. Hold the reset button (in the bottom, there is a small whole for like a needle, it says RESET).
+      1. Turn on the router and wait for like 3-5 seconds, the orange will flash, like turning off.
+      1. Open a web browser to 192.168.0.1 and then you should see EMERGENCY FLASHING page then click browse/upload locate the file and click UPLOAD FIRMWARE NOW.
+      1. For me, for first upload it doesn't do anything, I just click UPLOAD again and then it start uploading.
+      1. You should see a SUCCSESS page, 
+      1. You will have to wait until like 150 seconds.
+      1. When it is green, you can turn off the static settings for the ethernet and enable DHCP.
+      1. The you can open with 192.168.1.1, no password at all, you got LUCI and SSH as well.
+      1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
+
 * RPI-3
   * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
