@@ -259,6 +259,7 @@ This is a OpenWrt Docker builder and a living Docker repo as well, ready to buil
 All the latest stable OpenWrt versions.
 
 * docker pull patrikx3/openwrt-insomnia:linksys-wrt
+* docker pull patrikx3/openwrt-insomnia:d-link-dir-860l-b1
 * docker pull patrikx3/openwrt-insomnia:rpi-3
 
 * RAW
