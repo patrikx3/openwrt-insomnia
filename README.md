@@ -92,33 +92,53 @@ Before `18.06.1` we were able to enable `CONFIG_KERNEL_DEVMEM`, but since `18.06
 
 What is very useful is (many NodeJs built packages as well as binary builds):
 ```text
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/node
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/node
 ```
 
 The rest, you can find on OpenWrt as well, so you do not need it:
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.3/targets/mvebu/cortexa9/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/luci
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/packages
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/telephony
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.2/targets/mvebu/cortexa9/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/telephony
 ```
 
-<!--
+### D-LINK DIR 860L B1
+
+What is very useful is (many NodeJs built packages as well as binary builds):
+```text
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.3/packages/mipsel_24kc/node
+```
+
+The rest, you can find on OpenWrt as well, so you do not need it:
+```text
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.3/targets/ramips/mt7621/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.3/packages/mipsel_24kc/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/mipsel_24kc/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/mipsel_24kc/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/mipsel_24kc/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/mipsel_24kc/telephony
+```
 
 ### R-PI 3 or compatible arm (aarch64_cortex-a53)
 
+What is very useful is (many NodeJs built packages as well as binary builds):
 ```text
-src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/packages
-src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/base
-src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/node
-src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/packages
-src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/routing
-src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/telephony
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/node
 ```
--->
+
+The rest, you can find on OpenWrt as well, so you do not need it:
+```text
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/aarch64_cortex-a53/telephony
+```
+
 
 # Signatures
 
