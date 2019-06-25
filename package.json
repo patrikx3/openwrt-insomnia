@@ -11,8 +11,8 @@
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2019.4.105",
-    "description": "☕ OpenWrt with latest NodeJs for Linksys WRT Wifi",
+    "version": "2019.4.106",
+    "description": "☕ OpenWrt with latest NodeJs for Linksys WRT / D-LINK DIR 860L B1 / R-PI 3",
     "main": "src/index.js",
     "directories": {
         "test": "test"

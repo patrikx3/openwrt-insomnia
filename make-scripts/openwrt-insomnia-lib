@@ -86,7 +86,7 @@ function setup-config-and-build() {
     #sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
     #cat .config | grep mariadb
 
-    if [ "$ROUTER_PROFILE" = "rpi-3" ];
+    if [ "$ROUTER_PROFILE" = "rpi-3" ] && [ "$4" = "only" ];
     then
         echo "for r-pi3 enable CONFIG_KERNEL_DEVMEM=y"
         sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config

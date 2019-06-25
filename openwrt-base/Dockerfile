@@ -53,6 +53,9 @@ RUN make
 RUN sudo cp ./usign /usr/bin/usign
 RUN sudo chmod +x /usr/bin/usign
 
+RUN sudo unlink /etc/localtime
+RUN sudo ln -s /usr/share/zoneinfo/CET /etc/localtime
+
 WORKDIR /build
 
 CMD /bin/bash

@@ -4,16 +4,13 @@
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)   [![Build Status](https://travis-ci.com/patrikx3/openwrt-insomnia.svg?branch=master)](https://travis-ci.com/patrikx3/openwrt-insomnia) [![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
 
-# ☕ OpenWrt with latest NodeJs for Linksys WRT Wifi
+# ☕ OpenWrt with latest NodeJs for Linksys WRT / D-LINK DIR 860L B1 / R-PI 3
 
 
                     
  
                         
 [//]: #@corifeus-header:end
-
-# Linksys WRT WIFI
-It is always a custom built using the latest Kaloz's Wifi driver.
 
 # Info
 
@@ -24,12 +21,13 @@ It is always a custom built using the latest Kaloz's Wifi driver.
 
 * arm_cortex-a9_vfpv3 (arm a9) - mvebu eg. Linksys WRT
 * mipsel_24kc (ramips) - mt7621 eg. D-LINK DIR 860L B1                              
+* aarch64_cortex-a53 (arm a53) - per request - R-PI 3
 
 ***There are at least about 5500 packages built per target.***
 
 * Enabled Apache HTTP2
 * Enabled NGINX HTTP2
-* nodejs current version
+* NodeJs latest version
 
 I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
 
@@ -75,11 +73,16 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 
 ### Linksys WRT or compatible alike mvebu / arm 9 (arm_cortex-a9_vfpv3)
 
+What is very useful is (many NodeJs built packages as well as binary builds):
+```text
+src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/node
+```
+
+The rest, you can find on OpenWrt as well, so you do not need it:
 ```text
 src/gz insomnia_core http://cdn.corifeus.com/openwrt/18.06.3/targets/mvebu/cortexa9/packages
 src/gz insomnia_base http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/base
 src/gz insomnia_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/luci
-src/gz insomnia_node http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/node
 src/gz insomnia_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/packages
 src/gz insomnia_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/routing
 src/gz insomnia_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/telephony
@@ -289,7 +292,7 @@ echo "except-interface=eth1.2" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.105 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.106 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 
