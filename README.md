@@ -14,8 +14,12 @@
 
 # Info
 
-... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
+... and many pre-built packages and firmwares, image builder, Linksys WR1900ACS/WRT3200ACM, D-LINK DIR 860L B1 and RPI-3 is already built, but based on the READMEs, you can built a new one easy.  
 
+  
+  
+Also, a docker container with all the firmwares and packages are in `/build/source/bin` @  
+https://hub.docker.com/r/patrikx3/openwrt-insomnia  
 
 ## The following CPU-s are usually built
 
