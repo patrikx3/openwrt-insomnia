@@ -9,6 +9,7 @@ ROUTER_TARGET="brcm2708"
 ROUTER_SUB_TARGET="bcm2710"
 FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/openwrt-imagebuilder-${OPENWRT_VERSION_TOTAL_IMAGEBUILDER}-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
+#IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/openwrt-imagebuilder-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
 
 tag="rpi-3"
 
