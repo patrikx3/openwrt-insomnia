@@ -83,8 +83,6 @@ https://openwrt-project.org/faq/before_installation#error_code18005
   * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
 
-### R-PI 3
-Before `18.06.1` we were able to enable `CONFIG_KERNEL_DEVMEM`, but since `18.06.2` we cannot build, so it is disabled and it works since `18.06.3` again.
 
 ## If you want some of the packages
 

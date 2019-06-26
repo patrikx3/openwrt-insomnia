@@ -22,7 +22,7 @@ fi
 
 pre-build
 feeds
-setup-config-and-build $ROUTER_PROFILE $tag $build
+setup-config-and-build $ROUTER_PROFILE $tag $build only
 
 if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
 then
