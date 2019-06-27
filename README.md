@@ -63,7 +63,7 @@ https://cdn.corifeus.com/openwrt/
 https://openwrt-project.org/faq/before_installation#error_code18005
 
 * D-Link DIR-860l B1 
-  * https://cdn.corifeus.com/openwrt/18.06.0/targets/ramips/mt7621/
+  * https://cdn.corifeus.com/openwrt/18.06.3/targets/ramips/mt7621/
     * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
       1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
       1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
@@ -82,6 +82,7 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 * RPI-3
   * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.3/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
+
 
 
 ## If you want some of the packages
