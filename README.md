@@ -95,17 +95,17 @@ https://openwrt-project.org/faq/before_installation#error_code18005
 
 What is very useful is (many NodeJs built packages as well as binary builds):
 ```text
-src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/node
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/node
 ```
 
 The rest, you can find on OpenWrt as well, so you do not need it:
 ```text
-src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.2/targets/mvebu/cortexa9/packages
-src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/base
-src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/luci
-src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/packages
-src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/routing
-src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.2/packages/arm_cortex-a9_vfpv3/telephony
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.3/targets/mvebu/cortexa9/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.3/packages/arm_cortex-a9_vfpv3/telephony
 ```
 
 ### D-LINK DIR 860L B1
