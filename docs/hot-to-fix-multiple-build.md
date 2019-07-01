@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# ☕ OpenWrt with latest NodeJs for Linksys WRT / D-LINK DIR 860L B1 / R-PI 3
+# ☕ OpenWrt with latest NodeJs for Linksys WRT
 
                         
 [//]: #@corifeus-header:end
@@ -15,12 +15,12 @@ make package/install V=s
 # Need to update and these:
 
 ## D-LINK 860L B1
-https://downloads.openwrt.org/releases/18.06.3/targets/ramips/mt7621/config.seed (is existing in 18.06.3)
+https://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt7621/config.seed (is existing in 18.06.4)
 
 ```text
 CONFIG_VERSION_CODE="insomnia"
 CONFIG_KERNEL_MIPS_FPU_EMULATOR=y
-CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/18.06.3"
+CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/18.06.4"
 CONFIG_BUILD_LOG=y
 ```
 
@@ -31,10 +31,10 @@ es hasznald ezt:
 ```
 
 ## R-PI3
-https://downloads.openwrt.org/releases/18.06.3/targets/brcm2708/bcm2710/config.seed
+https://downloads.openwrt.org/releases/18.06.4/targets/brcm2708/bcm2710/config.seed
 
 ```text
-CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/18.06.3"
+CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/18.06.4"
 CONFIG_VERSION_CODE="insomnia"
 CONFIG_KERNEL_DEVMEM=y
 CONFIG_PACKAGE_avahi-dbus-daemon=y
@@ -57,7 +57,7 @@ es hasznald ezt:
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.106 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.100 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

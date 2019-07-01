@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# ☕ OpenWrt with latest NodeJs for Linksys WRT / D-LINK DIR 860L B1 / R-PI 3
+# ☕ OpenWrt with latest NodeJs for Linksys WRT
 
                         
 [//]: #@corifeus-header:end
@@ -58,10 +58,10 @@ make menuconfig
 
 ```bash
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-openwrt:#g' .config
-sed -i.bak 's#http://downloads.openwrt.org/releases/18.06.3#http://cdn.corifeus.com/openwrt/18.06.3#g' .config
-sed -i.bak 's#http://downloads.openwrt.org/releases/18.06.3#http://cdn.corifeus.com/openwrt/18.06.3#g' package/base-files/image-config.in
+sed -i.bak 's#http://downloads.openwrt.org/releases/18.06.4#http://cdn.corifeus.com/openwrt/18.06.4#g' .config
+sed -i.bak 's#http://downloads.openwrt.org/releases/18.06.4#http://cdn.corifeus.com/openwrt/18.06.4#g' package/base-files/image-config.in
 sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-openwrt:/usr/sbin#g' package/base-files/image-config.in
-echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/openwrt/18.06.3\"" >> .config
+echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/openwrt/18.06.4\"" >> .config
 cat package/base-files/image-config.in | grep default
 cat .config | grep CONFIG_VERSION_REPO
 cat .config | grep CONFIG_TARGET_INIT_PATH 
@@ -75,7 +75,7 @@ make -j1 V=s
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.106 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.100 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

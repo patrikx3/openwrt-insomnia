@@ -35,6 +35,7 @@ echo "Image builder is uncompressed"
 
 setup-image-builder-and-build uncompressed linksys-wrt1900acs $FIRMWARE_NAME $1
 setup-image-builder-and-build uncompressed linksys-wrt3200acm $FIRMWARE_NAME $1
+setup-image-builder-and-build uncompressed linksys-wrt32x $FIRMWARE_NAME $1
 
 post-build $1 $2
 

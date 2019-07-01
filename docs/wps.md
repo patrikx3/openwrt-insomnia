@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# ☕ OpenWrt with latest NodeJs for Linksys WRT / D-LINK DIR 860L B1 / R-PI 3
+# ☕ OpenWrt with latest NodeJs for Linksys WRT
 
                         
 [//]: #@corifeus-header:end
@@ -10,7 +10,7 @@ https://openwrt.org/docs/user-guide/wifi_configuration#wps_options
 
 It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work.
 
-There were some changes. So this is how it works with ```18.06.3```.
+There were some changes. So this is how it works with ```18.06.4```.
 
 Minimal steps needed to get WPS running:
 
@@ -71,7 +71,7 @@ config wifi-iface 'default_radio1'
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.4.106 
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.100 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

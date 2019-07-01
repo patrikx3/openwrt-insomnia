@@ -4,15 +4,15 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v12.4.0",
+        "nodejs": "v12.5.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2019.4.106",
-    "description": "☕ OpenWrt with latest NodeJs for Linksys WRT / D-LINK DIR 860L B1 / R-PI 3",
+    "version": "2019.10.100",
+    "description": "☕ OpenWrt with latest NodeJs for Linksys WRT",
     "main": "src/index.js",
     "directories": {
         "test": "test"
