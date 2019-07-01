@@ -62,7 +62,7 @@ https://cdn.corifeus.com/openwrt/
         * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
       * Solution: Rename the firmware image to something short, like e.g. factory.bin
         * Based on 
-https://openwrt-project.org/faq/before_installation#error_code18005
+https://openwrt.org/faq/before_installation#error_code18005
 
 <!--
 * D-Link DIR-860l B1 
@@ -328,7 +328,7 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 # Linksys USB-TTL
 [README](docs/linksys-usb-ttl.md)
 
-# Linksys WRT 3200ACM
+# Linksys WRT 3200ACM / WRT32X
 For some reason it needs this:
 
 ```bash

@@ -95,6 +95,12 @@ function setup-config-and-build() {
     # disable node unused packages
     cat .config | grep node
 
+    grep -qxF 'CONFIG_DEVEL=y' .config ||  echo "CONFIG_DEVEL=y"  >> .config
+    grep -qxF 'CONFIG_BUILD_LOG=y' .config ||  echo "CONFIG_BUILD_LOG=y"  >> .config
+    grep -qxF 'CONFIG_CCACHE=y' .config ||  echo "CONFIG_CCACHE=y"  >> .config
+    cat .config | grep -G 'CONFIG_DEVEL\|CONFIG_BUILD_LOG\|CONFIG_CCACHE'
+
+
     if [ "$4" != "only" ];
     then
         cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
@@ -117,22 +123,22 @@ function setup-config-and-build() {
     chmod +rwx $build_host_path || true
 
     # for now the pre download is not good
-    #CORES=$(grep -c ^processor /proc/cpuinfo)
-    #let CORES=$CORES+1
+    CORES=$(grep -c ^processor /proc/cpuinfo)
+    let CORES_BUILD=$CORES/2
     #is_downloaded="$build_host_path/${tag}-downloaded"
     #if [ ! -e "$is_downloaded" ];
     #then
     #    touch $is_downloaded || true
     #    chmod ugo+rwx $is_downloaded || true
-    #    make download V=s #-j$CORES
+    #make download V=s -j$CORES
     #fi
     #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
     if [ "$4" = "only" ];
     then
-        make V=s # -j$CORES
+        make V=s -j$CORES_BUILD
     else
-        IGNORE_ERRORS=1 make V=s # -j$CORES
+        IGNORE_ERRORS=1 make V=s -j$CORES_BUILD
     fi
 #    make V=s -j$CORES
 }
