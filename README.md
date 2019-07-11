@@ -20,6 +20,10 @@
 Also, a docker container with all the firmwares and packages are in `/build/source/bin` @  
 https://hub.docker.com/r/patrikx3/openwrt-insomnia  
 
+  
+**For building for Docker the host should be Debian, as I had issues with building on Ubuntu host and Docker Debian container.**
+  
+
 ## The following CPU-s are usually built
 
 * arm_cortex-a9_vfpv3 (arm a9) - mvebu eg. Linksys WRT
@@ -52,7 +56,7 @@ https://cdn.corifeus.com/openwrt/
 
 ## The release
 
-* Linksys WRT1900ACS / Linksys WRT3200ACM
+* Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT32X
   * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs.   
   * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.4/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
@@ -218,32 +222,11 @@ If you have this signed gpg and usign data and keys, I can help you to signed fi
 
 ## Ext-root issue
 
-### Solution 1
-If you use for example:  
- https://cdn.corifeus.com/openwrt/version/arhitecture/target/type/file-firmware-squashfs-sysupgrade.bin 
- 
-So it is a **sysypgrade -F** firmware. Then I can re-use the old ```ext-root```, that I had before. Actually it only works with the Linksys WRT 3200ACM, with Linksys WRT 1200ACS it was not working, but maybe it still work, I don't know, it could be something changed that made it not work. :) 
- 
-But, if you use a factory, like:  
-https://cdn.corifeus.com/openwrt/version/arhitecture/target/type/file-firmware-squashfs-factory.bin
-
-Then it doesn't work, you have to re-build to ```ext-root```. 
-
-There is a ```Solution 2```, but for me it didn't work, but by using a ***sysupgrade*** firmware. It will re-use the ```ext-root```.
-
-### Solution 2 
-
-If you have ```ext-root``` before ```sysupgrade``` you need to execute ```rm -f /overlay/etc/.extroot-uuid```. After restart, please ```reboot``` again and it works. 
-
-Based on:  
-https://forum.openwrt-project.org/t/solved-sd-card-extroot-stop-auto-mount-after-firmware-upgrade/4310/1
-
-#### For me it is not working, I use solution 1.
+Based on the OpenWrt forum discussions, after sysupgrade, the ext-root has to be re-built, no other solution.
 
 ## Wifi and WPS Issue
 
 It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work. [WPS](docs/wps.md) info.
-
 
 
 ## Docker
@@ -340,7 +323,15 @@ echo "except-interface=eth1.2" >> /etc/dnsmasq.conf
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.100 
+🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
+
+Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
+
+All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
+
+
+
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.103 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

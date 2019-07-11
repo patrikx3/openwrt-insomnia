@@ -18,7 +18,15 @@ RUN apt-get -y update
 # libboost1.55-dev => libboost-dev
 # openjdk-7-jdk => default-jdk
 # python2.6-dev => python-dev - (though not existing in jessie)
-RUN apt -y install asciidoc bash bc time bcc bin86 binutils build-essential bzip2 cmake curl default-jdk fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc mercurial nano ncdu patch perl-modules python python-dev quilt rsync ruby sdcc sharutils software-properties-common sshpass subversion sudo unzip util-linux wget xsltproc xz-utils zlib1g-dev g++-multilib swig python3 python3-dev help2man libelf-dev
+
+# classpath
+# apt install openjdk-8* ecj java-wrappers nasm bzr libpcap-ng-dev
+# apt install ecj java-wrappers nasm bzr libpcap-dev
+# libpcap-ng-dev => libpcap-dev
+
+# jeff added to the build bots => pwgen locales ccache
+
+RUN apt -y install asciidoc bash bc time bcc bin86 binutils build-essential bzip2 cmake curl default-jdk fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc mercurial nano ncdu patch perl-modules python python-dev quilt rsync ruby sdcc sharutils software-properties-common sshpass subversion sudo unzip util-linux wget xsltproc xz-utils zlib1g-dev g++-multilib swig python3 python3-dev help2man libelf-dev ecj java-wrappers nasm bzr libpcap-dev pwgen locales ccache
 #before it was needed nethack*, still?
 # nethack
 

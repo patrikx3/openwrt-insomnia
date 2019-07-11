@@ -2,9 +2,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-CORES=$(grep -c ^processor /proc/cpuinfo)
-let CORES=$CORES+1
-
 build_host_path=/build/host-build
 
 default_cdn="${OPENWRT_DEFAULT_CDN}"
@@ -123,23 +120,62 @@ function setup-config-and-build() {
     chmod +rwx $build_host_path || true
 
     # for now the pre download is not good
-    CORES=$(grep -c ^processor /proc/cpuinfo)
-    let CORES_BUILD=$CORES/2
+    if [ -z "$CORES" ]; then
+        #CORES=$(grep -c ^processor /proc/cpuinfo)
+        CORES=$((1+`nproc`))
+        #CORES=`nproc`
+
+      #if [ "$HOST_HOSTNAME" = "bitang" ];
+      #  then
+      #      CORES=12
+      #fi
+
+        let CORES_BUILD=$CORES
+
+    else
+        echo "Using manual cores ${CORES}"
+        let CORES_BUILD=$CORES
+    fi
+
+
+    echo "Using cores for building ${CORES_BUILD}"
+
     #is_downloaded="$build_host_path/${tag}-downloaded"
     #if [ ! -e "$is_downloaded" ];
     #then
     #    touch $is_downloaded || true
     #    chmod ugo+rwx $is_downloaded || true
-    #make download V=s -j$CORES
+    #make download -j$CORES #V=s
     #fi
     #export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
+    rm -rf ./logs/package/error.txt || true
+
+
+    timeStart=$(date +%s.%N)
+
+
+
+
+    make download -j$CORES_BUILD V=s
     if [ "$4" = "only" ];
     then
-        make V=s -j$CORES_BUILD
+        make -j$CORES_BUILD #V=s
     else
-        IGNORE_ERRORS=1 make V=s -j$CORES_BUILD
+        IGNORE_ERRORS=1 make clean download world V=s -j$CORES_BUILD
     fi
+
+    timeEnd=$(date +%s.%N)
+    timeSpan=$(echo "$timeEnd - $timeStart" | bc)
+    timeDay=$(echo "$timeSpan/86400" | bc)
+    timeDayCarry=$(echo "$timeSpan-86400*$timeDay" | bc)
+    timeHour=$(echo "$timeDayCarry/3600" | bc)
+    timeHourCarry=$(echo "$timeDayCarry-3600*$timeHour" | bc)
+    timeMinute=$(echo "$timeHourCarry/60" | bc)
+    timeSecond=$(echo "$timeHourCarry-60*$timeMinute" | bc)
+
+    printf "Total runtime: %d:%02d:%02d:%02.4f\n" $timeDay $timeHour $timeMinute $timeSecond > build-runtime.log
+
 #    make V=s -j$CORES
 }
 

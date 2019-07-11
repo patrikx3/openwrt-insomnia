@@ -2,4 +2,4 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-watch -n 60 'find ./bin | wc -l'
+watch -n 60 'cat ./logs/package/error.txt'

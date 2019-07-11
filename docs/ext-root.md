@@ -96,7 +96,7 @@ npm install
 # vpn-client-create.md - only on 3200ACM
 # opkg install ppp-mod-pptp kmod-nf-nathelper-extra luci-proto-ppp xl2tpd ppp-mod-pppol2tp ipsec-tools ip-full
 
-# an error with dnsmasq-dhcp
+# an error with dnsmasq-dhcp wrt3200acm/wrt32x
 # /etc/dnsmasq.confg => except-interface=eth1.2
 
 # restore config
@@ -113,7 +113,15 @@ reboot && exit
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.100 
+🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
+
+Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
+
+All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
+
+
+
+[**P3X-OPENWRT-INSOMNIA**](https://pages.corifeus.com/openwrt-insomnia) Build v2019.10.103 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 
