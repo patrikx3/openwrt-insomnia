@@ -3,7 +3,7 @@
 # docker exec -it <containerIdOrName> bash
 # docker attach <id>
 # docker run -t -i patrikx3/openwrt-base bash
-FROM debian:stable
+FROM debian:stretch
 MAINTAINER patrikx3/openwrt-insomnia:base - Patrik Laszlo - alabard@gmail.com
 
 ENV DEBIAN_FRONTEND=noninteractive

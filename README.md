@@ -14,15 +14,60 @@
 
 # Info
 
-... and many pre-built packages and firmwares, image builder, Linksys WRT1900ACS/WRT3200ACM/WRT32X is built with extra packages in the firmware, but based on the READMEs, you can built a new one easy.  
+... built all pre-built packages and firmwares, image builder, Linksys WRT1900ACS/WRT3200ACM/WRT32X is built with extra packages in the firmware, but based on the READMEs, you can built a new one easy.  
 
   
 Also, a docker container with all the firmwares and packages are in `/build/source/bin` @  
 https://hub.docker.com/r/patrikx3/openwrt-insomnia  
 
   
-**For building for Docker the host should be Debian, as I had issues with building on Ubuntu host and Docker Debian container.**
+**For building, for Docker, the host should be Debian, as I had issues with building on Ubuntu host and Docker Debian container.**
   
+   
+   
+## Crypto accelerator
+
+Since OpenWrt 19, the crypto accelerator is enabled by default. This speeds up for example OpenVPN a lot.
+  
+https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
+    
+To enable, you have to append to the `/etc/ssl/openssl.cnf`, this text:
+```text
+[default]
+openssl_conf=openssl_def
+
+[openssl_def]
+# this is the main library configuration section
+engines=engine_section
+
+[engine_section]
+# this is the engine configuration section, where the engines are listed
+devcrypto=devcrypto_section
+
+[devcrypto_section]
+# this is the section where the devcrypto engine commands are used
+CIPHERS=ALL
+DIGESTS=NONE
+```  
+
+### You can verify 
+
+Not enabled:  
+```text
+root@hawk:~# openssl engine -t -c
+(dynamic) Dynamic engine loading support
+     [ unavailable ]
+```
+
+Enabled:  
+```text
+root@hawk:~# openssl engine -t -c
+(dynamic) Dynamic engine loading support
+     [ unavailable ]
+(devcrypto) /dev/crypto engine
+ [DES-CBC, DES-EDE3-CBC, AES-128-CBC, AES-192-CBC, AES-256-CBC, AES-128-ECB, AES-192-ECB, AES-256-ECB]
+     [ available ]
+```
 
 ## The following CPU-s are usually built
 
@@ -33,7 +78,7 @@ https://hub.docker.com/r/patrikx3/openwrt-insomnia
 * aarch64_cortex-a53 (arm a53) - per request - R-PI 3
 -->
 
-***There are at least about 5500 packages built per target.***
+***There are at least about 7000 packages built per target.***
 
 * Enabled Apache HTTP2
 * Enabled NGINX HTTP2
@@ -43,7 +88,7 @@ I cant's list all of it, there is enough for now. See what is in [create from sc
 
 
 <!--
-[Redis stable version is here!](https://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/redis/)
+[Redis stable version is here!](https://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/redis/)
 
 # NodeJs Homebridge and homekit settings is enabled by default based on
 https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
@@ -58,7 +103,7 @@ https://cdn.corifeus.com/openwrt/
 
 * Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT32X
   * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs.   
-  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.4/targets/mvebu/cortexa9/
+  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/19.07.0-rc1/targets/mvebu/cortexa9/
     * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
     * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
     * Error code: 18005
@@ -70,7 +115,7 @@ https://openwrt.org/faq/before_installation#error_code18005
 
 <!--
 * D-Link DIR-860l B1 
-  * https://cdn.corifeus.com/openwrt/18.06.4/targets/ramips/mt7621/
+  * https://cdn.corifeus.com/openwrt/19.07.0-rc1/targets/ramips/mt7621/
     * If it is not working, with D-Link DIR-860l B1, you have to reset the router and re-load the firmware via emergency upload, like this
       1. Plug the Ethernet cable that connects your computer, that was plugged into one of the LAN ports, 
       1. Setup your PC with static IP - ex: 192.168.0.2 (different from 192.168.0.1), the gateway is 192.168.0.1, netmask 255.255.255.0
@@ -87,7 +132,7 @@ https://openwrt.org/faq/before_installation#error_code18005
       1. It works for sure, it's not like Linksys WRT, that you need an USB-TTL cable…
 
 * RPI-3
-  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/18.06.4/targets/brcm2708/bcm2710/
+  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/19.07.0-rc1/targets/brcm2708/bcm2710/
   * I don't have a RPI-3 in my hand, so I cannot test it, but a dude asked to build this, so he uses it.
 
 -->
@@ -102,17 +147,17 @@ https://openwrt.org/faq/before_installation#error_code18005
 
 What is very useful is (many NodeJs built packages as well as binary builds):
 ```text
-src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/node
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/node
 ```
 
 The rest, you can find on OpenWrt as well, so you do not need it:
 ```text
-src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.4/targets/mvebu/cortexa9/packages
-src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/base
-src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/luci
-src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/packages
-src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/routing
-src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_cortex-a9_vfpv3/telephony
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/19.07.0-rc1/targets/mvebu/cortexa9/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/telephony
 ```
 
 <!--
@@ -120,34 +165,34 @@ src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.4/packages/arm_co
 
 What is very useful is (many NodeJs built packages as well as binary builds):
 ```text
-src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.4/packages/mipsel_24kc/node
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/mipsel_24kc/node
 ```
 
 The rest, you can find on OpenWrt as well, so you do not need it:
 ```text
-src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.4/targets/ramips/mt7621/packages
-src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.4/packages/mipsel_24kc/base
-src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.4/packages/mipsel_24kc/luci
-src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.4/packages/mipsel_24kc/packages
-src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.4/packages/mipsel_24kc/routing
-src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.4/packages/mipsel_24kc/telephony
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/19.07.0-rc1/targets/ramips/mt7621/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/mipsel_24kc/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/mipsel_24kc/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/mipsel_24kc/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/mipsel_24kc/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/mipsel_24kc/telephony
 ```
 
 ### R-PI 3 or compatible arm (aarch64_cortex-a53)
 
 What is very useful is (many NodeJs built packages as well as binary builds):
 ```text
-src/gz openwrt_node http://cdn.corifeus.com/openwrt/18.06.4/packages/aarch64_cortex-a53/node
+src/gz openwrt_node http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/aarch64_cortex-a53/node
 ```
 
 The rest, you can find on OpenWrt as well, so you do not need it:
 ```text
-src/gz openwrt_core http://cdn.corifeus.com/openwrt/18.06.4/targets/brcm2708/bcm2710/packages
-src/gz openwrt_base http://cdn.corifeus.com/openwrt/18.06.4/packages/aarch64_cortex-a53/base
-src/gz openwrt_luci http://cdn.corifeus.com/openwrt/18.06.4/packages/aarch64_cortex-a53/luci
-src/gz openwrt_packages http://cdn.corifeus.com/openwrt/18.06.4/packages/aarch64_cortex-a53/packages
-src/gz openwrt_routing http://cdn.corifeus.com/openwrt/18.06.4/packages/aarch64_cortex-a53/routing
-src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/18.06.4/packages/aarch64_cortex-a53/telephony
+src/gz openwrt_core http://cdn.corifeus.com/openwrt/19.07.0-rc1/targets/brcm2708/bcm2710/packages
+src/gz openwrt_base http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/aarch64_cortex-a53/base
+src/gz openwrt_luci http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/aarch64_cortex-a53/luci
+src/gz openwrt_packages http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/aarch64_cortex-a53/packages
+src/gz openwrt_routing http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/aarch64_cortex-a53/routing
+src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/aarch64_cortex-a53/telephony
 ```
 -->
 
@@ -254,7 +299,7 @@ All the latest stable OpenWrt versions.
 * RAW
   * docker pull patrikx3/openwrt-insomnia:latest
 
-You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/18.06.4, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
+You run them, but these here, the built is in: http://cdn.corifeus.com/openwrt/19.07.0-rc1, all the built packages and firmwares in ```/build/source/bin```, you move to a host, install the firmware and you are done, because in the ```insomnia``` firmwares there is a lot in, but this is the default, so you need to change your own hostname here:
 [http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg](http://192.168.1.1/cgi-bin/luci/admin/system/packages/ipkg) at ```Configuration``` tab. If you do not want to build at all you can choose to your host  
 
 All built packages and firmwares including the ```insomnia``` firmwares are in ```/build/source/bin```. 

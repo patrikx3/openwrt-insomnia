@@ -3,5 +3,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source $DIR/build-lib
 
-docker run -e HOST_HOSTNAME=`hostname` -v $DIR/$BUILD_DIR:/build/host-build -v $DIR/patches:/build/patches -v $DIR/secure:/build/secure -v $DIR/make-scripts:/build/make-scripts -v $DIR/router:/build/router -v $DIR/image-builder-files:/build/image-builder-files -ti patrikx3/openwrt-insomnia bash
+docker run  --ulimit stack=1000000000:1000000000 -e HOST_HOSTNAME=`hostname` -v $DIR/$BUILD_DIR:/build/host-build -v $DIR/patches:/build/patches -v $DIR/secure:/build/secure -v $DIR/make-scripts:/build/make-scripts -v $DIR/router:/build/router -v $DIR/image-builder-files:/build/image-builder-files -ti patrikx3/openwrt-insomnia bash
 

@@ -7,7 +7,7 @@ FROM patrikx3/openwrt-insomnia:base
 MAINTAINER patrikx3/openwrt-insomnia - Patrik Laszlo - alabard@gmail.com
 
 # if you want a branch, the version should be snapshot
-ARG OPENWRT_VERSION_TOTAL=18.06.4
+ARG OPENWRT_VERSION_TOTAL=19.07.0-rc1
 #ARG OPENWRT_BRANCH=openwrt-18.01
 ENV OPENWRT_VERSION_TOTAL=${OPENWRT_VERSION_TOTAL}
 #ENV OPENWRT_BRANCH=${OPENWRT_BRANCH}

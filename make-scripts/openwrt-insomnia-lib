@@ -6,6 +6,9 @@ build_host_path=/build/host-build
 
 default_cdn="${OPENWRT_DEFAULT_CDN}"
 
+ulimit -s 81920
+ulimit -n 81920
+
 #set -e
 # grep -rnw  -e 'downloads.lede-project.org'
 # http://downloads.lede-project.org/18.06.0
@@ -160,7 +163,7 @@ function setup-config-and-build() {
     make download -j$CORES_BUILD V=s
     if [ "$4" = "only" ];
     then
-        make -j$CORES_BUILD #V=s
+        make -j$CORES_BUILD V=s
     else
         IGNORE_ERRORS=1 make clean download world V=s -j$CORES_BUILD
     fi

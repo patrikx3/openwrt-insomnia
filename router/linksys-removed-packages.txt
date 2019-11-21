@@ -1,0 +1,3 @@
+librpc - this is removed
+luci - this is removed
+wpad-mini - this is removed

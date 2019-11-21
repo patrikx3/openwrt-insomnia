@@ -10,7 +10,7 @@ https://openwrt.org/docs/user-guide/wifi_configuration#wps_options
 
 It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work.
 
-There were some changes. So this is how it works with ```18.06.4```.
+There were some changes. So this is how it works with ```19.07.0-rc1```.
 
 Minimal steps needed to get WPS running:
 
@@ -24,7 +24,7 @@ But you can do it with ```LUCI``` as well.
 
 ```bash
 opkg update
-opkg remove wpad-mini
+opkg remove wpad-mini wpad-basic
 # if you remove it, it will not work
 opkg install wpad hostapd-utils
 reboot && exit

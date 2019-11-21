@@ -86,14 +86,11 @@ git clone https://git.patrikx3.com/router-scripts-openwrt.git
 
 cd router-scripts-openwrt
 opkg update
-opkg install node node-npm node-npm-check-updates
+opkg remove wpad-mini wpad-basic
+opkg install node node-npm node-npm-check-updates wpad hostapd-utils
 npm install
 
-# wps.md
-# opkg remove wpad-mini
-# opkg install wpad hostapd-utils
-
-# vpn-client-create.md - only on 3200ACM
+# vpn-client-create.md - only on 3200ACM and WRT32X
 # opkg install ppp-mod-pptp kmod-nf-nathelper-extra luci-proto-ppp xl2tpd ppp-mod-pppol2tp ipsec-tools ip-full
 
 # an error with dnsmasq-dhcp wrt3200acm/wrt32x
@@ -107,6 +104,13 @@ cd /opt/router-scripts-openwrt
 reboot && exit
 
 # have to make sure that ./image-builder-files/etc/sysupgrade.conf includes in /cgi-bin/luci/admin/system/flashops/backupfiles
+```
+
+#### Crypto accelerator
+https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
+
+```bash
+openssl engine -t -c
 ```
 
 [//]: #@corifeus-footer

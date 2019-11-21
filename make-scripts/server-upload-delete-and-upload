@@ -2,4 +2,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
+
+
 $DIR/../secure/server-upload-delete-and-upload
