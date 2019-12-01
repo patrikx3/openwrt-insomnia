@@ -86,6 +86,7 @@ git clone https://git.patrikx3.com/router-scripts-openwrt.git
 
 cd router-scripts-openwrt
 opkg update
+opkg remove python python-base python-codecs python-compiler python-ctypes python-db python-decimal python-distutils python-email python-gdbm python-light python-logging python-multiprocessing python-ncurses python-openssl python-pydoc python-sqlite3 python-unittest python-xml samba36-client samba36-server luci-app-samba
 opkg remove wpad-mini wpad-basic
 opkg install node node-npm node-npm-check-updates wpad hostapd-utils
 npm install

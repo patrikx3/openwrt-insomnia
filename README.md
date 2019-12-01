@@ -14,7 +14,7 @@
 
 # Info
 
-... built all pre-built packages and firmwares, image builder, Linksys WRT1900ACS/WRT3200ACM/WRT32X is built with extra packages in the firmware, but based on the READMEs, you can built a new one easy.  
+The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) and the crypto accelerator. 
 
   
 Also, a docker container with all the firmwares and packages are in `/build/source/bin` @  
@@ -31,25 +31,6 @@ Since OpenWrt 19, the crypto accelerator is enabled by default. This speeds up f
   
 https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
     
-To enable, you have to append to the `/etc/ssl/openssl.cnf`, this text:
-```text
-[default]
-openssl_conf=openssl_def
-
-[openssl_def]
-# this is the main library configuration section
-engines=engine_section
-
-[engine_section]
-# this is the engine configuration section, where the engines are listed
-devcrypto=devcrypto_section
-
-[devcrypto_section]
-# this is the section where the devcrypto engine commands are used
-CIPHERS=ALL
-DIGESTS=NONE
-```  
-
 ### You can verify 
 
 Not enabled:  
@@ -69,27 +50,16 @@ root@hawk:~# openssl engine -t -c
      [ available ]
 ```
 
-## The following CPU-s are usually built
-
-* arm_cortex-a9_vfpv3 (arm a9) - mvebu eg. Linksys WRT
-
-<!--
-* mipsel_24kc (ramips) - mt7621 eg. D-LINK DIR 860L B1                              
-* aarch64_cortex-a53 (arm a53) - per request - R-PI 3
--->
-
-***There are at least about 7000 packages built per target.***
+***There are at least about 7500 packages built for Linksys WRT.***
 
 * Enabled Apache HTTP2
 * Enabled NGINX HTTP2
 * NodeJs latest version and many pre-built packages (including binaries)
 
-I cant's list all of it, there is enough for now. See what is in [create from scratch](docs/create-from-scratch.md).
+See what is in [create from scratch](docs/create-from-scratch.md).
 
 
 <!--
-[Redis stable version is here!](https://cdn.corifeus.com/openwrt/19.07.0-rc1/packages/arm_cortex-a9_vfpv3/redis/)
-
 # NodeJs Homebridge and homekit settings is enabled by default based on
 https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
 -->

@@ -40,15 +40,23 @@ function pre-build() {
 }
 
 function patches-and-feeds() {
-    cp -avr /build/patches/source /build
+    #cp -avr /build/patches/source /build
+
     # if you need to update the feeds, we have to call the ./script feeds
     # make package/kernel/mwlwifi/{clean,compile}
     # it is could that it is only remove on the patches and feeds
     #rm package/kernel/mwlwifi/patches/ -rf
+    feeds
 }
 
 function feeds() {
-    cp -avr /build/patches/source/feeds /build/source
+    #cp -avr /build/patches/source/feeds /build/source
+
+    cp /build/patches/source/feeds/packages/apache/patches/002-test_char_h.patch /build/source/package/feeds/packages/apache/patches/002-test_char_h.patch
+    #cp /build/patches/source/package/kernel/mac80211/Makefile /build/source/package/kernel/mac80211/Makefile
+    #mkdir -p /build/source/package/kernel/mwlwifi/patches
+    #cp /build/patches/source/package/kernel/mwlwifi/patches/001-vendor_command_policy.patch /build/source/package/kernel/mwlwifi/patches/001-vendor_command_policy.patch
+    #cp /build/patches/source/package/kernel/mwlwifi/patches/002.regfree.patch /build/source/package/kernel/mwlwifi/patches/002.regfree.patch
 }
 
 function fix-paths() {
