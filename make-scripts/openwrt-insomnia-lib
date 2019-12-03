@@ -168,12 +168,13 @@ function setup-config-and-build() {
 
 
 
-    make download -j$CORES_BUILD V=s
+    make download -j$CORES_BUILD
     if [ "$4" = "only" ];
     then
-        make -j$CORES_BUILD V=s
+        make -j$CORES_BUILD
     else
-        IGNORE_ERRORS=1 make clean download world V=s -j$CORES_BUILD
+        #IGNORE_ERRORS=1 make clean download world -j$CORES_BUILD
+        IGNORE_ERRORS=1 make
     fi
 
     timeEnd=$(date +%s.%N)
