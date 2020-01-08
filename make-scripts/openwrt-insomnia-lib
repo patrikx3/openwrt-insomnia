@@ -97,15 +97,16 @@ function setup-config-and-build() {
     if [ "$ROUTER_PROFILE" = "rpi-3" ] && [ "$4" = "only" ];
     then
         echo "for r-pi3 enable CONFIG_KERNEL_DEVMEM=y"
-        sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config
+        #sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config
+        grep -qxF 'CONFIG_KERNEL_DEVMEM=y' .config ||  echo "CONFIG_KERNEL_DEVMEM=y"  >> .config
     fi
 
     # disable node unused packages
     cat .config | grep node
 
-    grep -qxF 'CONFIG_DEVEL=y' .config ||  echo "CONFIG_DEVEL=y"  >> .config
+    #grep -qxF 'CONFIG_DEVEL=y' .config ||  echo "CONFIG_DEVEL=y"  >> .config
     grep -qxF 'CONFIG_BUILD_LOG=y' .config ||  echo "CONFIG_BUILD_LOG=y"  >> .config
-    grep -qxF 'CONFIG_CCACHE=y' .config ||  echo "CONFIG_CCACHE=y"  >> .config
+    #grep -qxF 'CONFIG_CCACHE=y' .config ||  echo "CONFIG_CCACHE=y"  >> .config
     cat .config | grep -G 'CONFIG_DEVEL\|CONFIG_BUILD_LOG\|CONFIG_CCACHE'
 
 

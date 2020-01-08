@@ -85,22 +85,11 @@ git config --global http.sslVerify "false"
 git clone https://git.patrikx3.com/router-scripts-openwrt.git 
 
 cd router-scripts-openwrt
-opkg update
-opkg remove python python-base python-codecs python-compiler python-ctypes python-db python-decimal python-distutils python-email python-gdbm python-light python-logging python-multiprocessing python-ncurses python-openssl python-pydoc python-sqlite3 python-unittest python-xml samba36-client samba36-server luci-app-samba
-opkg remove wpad-mini wpad-basic
-opkg install node node-npm node-npm-check-updates wpad hostapd-utils
 npm install
-
-# vpn-client-create.md - only on 3200ACM and WRT32X
-# opkg install ppp-mod-pptp kmod-nf-nathelper-extra luci-proto-ppp xl2tpd ppp-mod-pppol2tp ipsec-tools ip-full
 
 # an error with dnsmasq-dhcp wrt3200acm/wrt32x
 # /etc/dnsmasq.confg => except-interface=eth1.2
 
-# restore config
-reboot && exit
-
-cd /opt/router-scripts-openwrt
 ./init-router
 reboot && exit
 
