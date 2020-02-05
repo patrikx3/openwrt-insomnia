@@ -50,6 +50,22 @@ root@hawk:~# openssl engine -t -c
      [ available ]
 ```
 
+## European version
+
+If you have a 3rd Radio and you have the European version of WRT and have a 3rd radio, to get it to work on DFS/Radar, create this file:
+```text
+/etc/modules.d/mwifiex
+``` 
+
+with this content:
+```text
+mwifiex reg_alpha2=FR
+```
+
+Then, set all radio 1 and 2 to be FR as well and the DTS/Radar perfectly works. 
+
+## Packages
+
 ***There are at least about 7500 packages built for Linksys WRT.***
 
 * Enabled Apache HTTP2
