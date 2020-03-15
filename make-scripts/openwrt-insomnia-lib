@@ -53,6 +53,7 @@ function feeds() {
     #cp -avr /build/patches/source/feeds /build/source
 
     cp /build/patches/source/feeds/packages/apache/patches/002-test_char_h.patch /build/source/package/feeds/packages/apache/patches/002-test_char_h.patch
+    cp /build/patches/source/feeds/packages/libuv/Makefile /build/source/feeds/packages/libs/libuv/Makefile
     #cp /build/patches/source/package/kernel/mac80211/Makefile /build/source/package/kernel/mac80211/Makefile
     #mkdir -p /build/source/package/kernel/mwlwifi/patches
     #cp /build/patches/source/package/kernel/mwlwifi/patches/001-vendor_command_policy.patch /build/source/package/kernel/mwlwifi/patches/001-vendor_command_policy.patch
