@@ -2,7 +2,7 @@ language: node_js
 cache:
     npm: false
 node_js:
-- node
+- lts/*
 services:
 - docker
 before_script:
