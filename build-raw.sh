@@ -8,7 +8,7 @@ mkdir -p $DIR/build-openwrt
 BUILD_DIR_LINK=/media/var/openwrt-build
 BUILD=/build
 export PATH="/build/source:${PATH}"
-export OPENWRT_VERSION_TOTAL=19.07.2
+export OPENWRT_VERSION_TOTAL=19.07.3
 export OPENWRT_VERSION_TOTAL_IMAGEBUILDER=${OPENWRT_VERSION_TOTAL}
 export OPENWRT_DEFAULT_CDN=http://downloads.openwrt.org/releases
 

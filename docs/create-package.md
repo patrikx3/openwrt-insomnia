@@ -58,10 +58,10 @@ make menuconfig
 
 ```bash
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-openwrt:#g' .config
-sed -i.bak 's#http://downloads.openwrt.org/releases/19.07.2#http://cdn.corifeus.com/openwrt/19.07.2#g' .config
-sed -i.bak 's#http://downloads.openwrt.org/releases/19.07.2#http://cdn.corifeus.com/openwrt/19.07.2#g' package/base-files/image-config.in
+sed -i.bak 's#http://downloads.openwrt.org/releases/19.07.3#http://cdn.corifeus.com/openwrt/19.07.3#g' .config
+sed -i.bak 's#http://downloads.openwrt.org/releases/19.07.3#http://cdn.corifeus.com/openwrt/19.07.3#g' package/base-files/image-config.in
 sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-openwrt:/usr/sbin#g' package/base-files/image-config.in
-echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/openwrt/19.07.2\"" >> .config
+echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/openwrt/19.07.3\"" >> .config
 cat package/base-files/image-config.in | grep default
 cat .config | grep CONFIG_VERSION_REPO
 cat .config | grep CONFIG_TARGET_INIT_PATH 
@@ -86,7 +86,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2020.4.135
+[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2020.4.139
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
