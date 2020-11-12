@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v12.19.0",
+        "nodejs": "v14.15.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2020.10.119",
+    "version": "2020.10.121",
     "description": "☕ OpenWrt with latest NodeJs for Linksys WRT",
     "main": "src/index.js",
     "directories": {
@@ -35,13 +35,13 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2020.10.137"
+        "corifeus-builder": "^2020.10.144"
     },
     "engines": {
         "node": ">=12.13.0"
     },
     "homepage": "https://corifeus.com/openwrt-insomnia",
     "dependencies": {
-        "corifeus-utils": "^2020.10.129"
+        "corifeus-utils": "^2020.10.136"
     }
 }
