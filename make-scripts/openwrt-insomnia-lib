@@ -258,7 +258,7 @@ function post-build() {
 }
 
 function generate-firmware-dir() {
-    declare -gx firmware_files_sums="$(find /build/source/bin -name config.seed)"
+    declare -gx firmware_files_sums="$(find /build/source/bin -name config.buildinfo)"
     declare -gx firmware_files_dir="$(dirname $firmware_files_sums)"
     declare -gx firmware_files="$(find $firmware_files_dir -maxdepth 1 -type f)"
 }
