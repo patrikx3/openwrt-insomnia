@@ -20,29 +20,29 @@ else
  build=$1
 fi
 
-pre-build
-patches-and-feeds
-setup-config-and-build linksys-wrt-multiple $tag $build only
+#pre-build
+#patches-and-feeds
+#setup-config-and-build linksys-wrt-multiple $tag $build
 
-if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
-then
-    echo "OK"
-    $DIR/server-upload-delete-and-upload
-fi
+#if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
+#then
+#    echo "OK"
+#    $DIR/server-upload-delete-and-upload
+#fi
 
 image-builder-uncompress $IMAGE_BUILDER_FILE
 echo "Image builder is uncompressed"
 
-setup-image-builder-and-build uncompressed linksys-wrt1900acs $FIRMWARE_NAME $1
-setup-image-builder-and-build uncompressed linksys-wrt3200acm $FIRMWARE_NAME $1
-setup-image-builder-and-build uncompressed linksys-wrt32x $FIRMWARE_NAME $1
+setup-image-builder-and-build uncompressed linksys_wrt1900acs $FIRMWARE_NAME $1
+setup-image-builder-and-build uncompressed linksys_wrt3200acm $FIRMWARE_NAME $1
+setup-image-builder-and-build uncompressed linksys_wrt32x $FIRMWARE_NAME $1
 
 post-build $1 $2
 
-if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
-then
-    echo "OK"
-    $DIR/server-upload-delete-and-upload
-fi
+#if [ "$1" != "nosign" ] && [ "$2" != "nosign" ];
+#then
+#    echo "OK"
+#    $DIR/server-upload-delete-and-upload
+#fi
 
 final "$tag"

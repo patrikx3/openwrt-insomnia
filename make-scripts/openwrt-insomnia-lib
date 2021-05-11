@@ -176,7 +176,11 @@ function setup-config-and-build() {
         make -j$CORES_BUILD
     else
         #IGNORE_ERRORS=1 make clean download world -j$CORES_BUILD
-        IGNORE_ERRORS=1 make
+        # -jX remove option if giving more failed packages
+        # -j4 6 hours
+        # -j3 10? hours - probably better to do quicker as possible, so -j4 or max?
+        # -j$CORES_BUILD (9) 4 hours
+        IGNORE_ERRORS=1 make -j4
     fi
 
     timeEnd=$(date +%s.%N)
@@ -188,8 +192,8 @@ function setup-config-and-build() {
     timeMinute=$(echo "$timeHourCarry/60" | bc)
     timeSecond=$(echo "$timeHourCarry-60*$timeMinute" | bc)
 
-    printf "Total runtime: %d:%02d:%02d:%02.4f\n" $timeDay $timeHour $timeMinute $timeSecond > build-runtime.log
-
+    printf "Total runtime: %d:%02d:%02d:%02.4f\n" $timeDay $timeHour $timeMinute $timeSecond > $DIR/build-runtime.log
+    cat $DIR/build-runtime.log
 #    make V=s -j$CORES
 }
 
@@ -211,6 +215,24 @@ function setup-image-builder-and-build() {
         IMAGE_BUILDER_PATH=$(image-builder-uncompress $IMAGE_BUILDER_FILE)
     fi
     pushd $IMAGE_BUILDER_PATH
+
+    rm repositories.conf
+    #echo "src/gz openwrt_core http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/targets/mvebu/cortexa9/packages" >> repositories.conf
+    #echo "src/gz openwrt_base http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/base" >> repositories.conf
+    #echo "src/gz openwrt_luci http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/luci" >> repositories.conf
+    #echo "src/gz openwrt_node http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/node" >> repositories.conf
+    #echo "src/gz openwrt_packages http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/packages" >> repositories.conf
+    #echo "src/gz openwrt_routing http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/routing" >> repositories.conf
+    #echo "src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/telephony" >> repositories.conf
+
+    echo "src openwrt_core file:///build/source/bin/targets/mvebu/cortexa9/packages" >> repositories.conf
+    echo "src openwrt_base file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/base" >> repositories.conf
+    echo "src openwrt_luci file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/luci" >> repositories.conf
+    echo "src openwrt_node file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/node" >> repositories.conf
+    echo "src openwrt_packages file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/packages" >> repositories.conf
+    echo "src openwrt_routing file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/routing" >> repositories.conf
+    echo "src openwrt_telephony file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/telephony" >> repositories.conf
+
 
     #sed -i.bak 's#src/gz#src#g' repositories.conf
     #sed -i.bak "s#$4#file:///build/source/bin#g" repositories.conf || true
