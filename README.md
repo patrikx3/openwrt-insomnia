@@ -24,8 +24,10 @@ https://hub.docker.com/r/patrikx3/openwrt-insomnia
   
 **For building, for Docker, the host should be Debian, as I had issues with building on Ubuntu host and Docker Debian container.**
   
-   
-   
+
+## UPnP    
+Installed UPnP IGDV1 in the firmware. Since all consoles are working with UPnP (since about v18 it started using IGDV2 which is not working with Windows and consoles).   
+  
 ## Crypto accelerator
 
 Since OpenWrt 19, the crypto accelerator is enabled by default. This speeds up for example OpenVPN a lot.
