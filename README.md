@@ -26,7 +26,7 @@ https://hub.docker.com/r/patrikx3/openwrt-insomnia
   
 
 ## UPnP    
-Installed UPnP IGDV1 in the firmware. Since all consoles are working with UPnP (since about v18 it started using IGDV2 which is not working with Windows and consoles).   
+The default UPnP is using (about since OpenWrt v18) IGDV2 which is not compatible with consoles and Windows, so, installed UPnP IGDV1 in the firmware. So, now, all consoles are working with UPnP. 
   
 ## Crypto accelerator
 
