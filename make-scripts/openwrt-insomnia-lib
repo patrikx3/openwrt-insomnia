@@ -54,6 +54,8 @@ function feeds() {
 
     cp /build/patches/source/feeds/packages/apache/patches/002-test_char_h.patch /build/source/package/feeds/packages/apache/patches/002-test_char_h.patch
     cp /build/patches/miniupnpd/Makefile /build/source/package/feeds/packages/miniupnpd/Makefile
+    #cp /build/patches/source/package/kernel/mwlwifi/Makefile /build/source/package/kernel/mwlwifi/Makefile
+    #rm -rf /build/source/package/kernel/mwlwifi/patches
     #cp /build/patches/source/feeds/packages/libuv/Makefile /build/source/feeds/packages/libs/libuv/Makefile
     #cp /build/patches/source/package/kernel/mac80211/Makefile /build/source/package/kernel/mac80211/Makefile
     #mkdir -p /build/source/package/kernel/mwlwifi/patches

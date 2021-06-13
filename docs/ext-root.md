@@ -34,6 +34,16 @@ opkg install kmod-usb-core kmod-usb-ledtrig-usbport kmod-usb-storage kmod-usb-st
 # in insomnia, it is pre installed
 insmod xhci-mtk
 
+###################
+# v21.02.0-rc2
+# mv /etc/config/system /etc/config/system.old 
+# mv /etc/config/network /etc/config/network.old
+# always regenerate and then fix it
+# renaming those to network.old and system.old before sysupgrade is sufficient
+###################
+mv /etc/config/system /etc/config/system.old 
+mv /etc/config/network /etc/config/network.old
+
 mkfs.ext4 /dev/sda1
 # say yes
 
@@ -118,7 +128,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2021.4.114
+[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2021.4.117
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
