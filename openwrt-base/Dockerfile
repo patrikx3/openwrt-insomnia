@@ -3,7 +3,8 @@
 # docker exec -it <containerIdOrName> bash
 # docker attach <id>
 # docker run -t -i patrikx3/openwrt-base bash
-FROM debian:buster
+# maybe bullseye is not ready!
+FROM debian:bullseye
 MAINTAINER patrikx3/openwrt-insomnia:base - Patrik Laszlo - alabard@gmail.com
 
 ENV DEBIAN_FRONTEND=noninteractive

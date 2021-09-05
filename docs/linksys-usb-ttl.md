@@ -34,7 +34,7 @@ which defaults to
 
 ```bash
 tftp 192.168.1.33
-get openwrt-21.02.0-rc4-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
+get openwrt-21.02.0-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
 ```
 
 # TTL
@@ -52,8 +52,8 @@ setenv ipaddr 192.168.1.1
 setenv netmask 255.255.255.0
 setenv serverip 192.168.1.33
 
-setenv firmwareName openwrt-21.02.0-rc4-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
-setenv firmwareName insomnia-openwrt-21.02.0-rc4-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
+setenv firmwareName openwrt-21.02.0-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
+setenv firmwareName insomnia-openwrt-21.02.0-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
 
 
 run update_both_images
