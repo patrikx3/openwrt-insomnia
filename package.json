@@ -42,6 +42,6 @@
     },
     "homepage": "https://corifeus.com/openwrt-insomnia",
     "dependencies": {
-        "corifeus-utils": "^2021.10.105"
+        "corifeus-utils": "^2021.10.108"
     }
 }
