@@ -191,6 +191,9 @@ https://github.com/patrikx3/openwrt-insomnia/tree/master/image-builder-files/etc
  /etc/opkg/keys
 ```
 
+#### Warning
+If you see something like `untrusted comment: OpenWrt usign key of Patrik Laszlo / patrikx3` as it says, you do not have to be afraid. It means, that the comment itself is not verified. 
+
 ### Option 2
 
 The easiest solution I know is via LUCI :  
