@@ -183,7 +183,15 @@ function setup-config-and-build() {
         # -j4 6 hours
         # -j3 10? hours - probably better to do quicker as possible, so -j4 or max?
         # -j$CORES_BUILD (9) 4 hours
-        IGNORE_ERRORS=1 make -j4
+        if [ "$HOST_HOSTNAME" = "server" ];
+        then
+            IGNORE_ERRORS=1 make -j4
+        elif [ "$HOST_HOSTNAME" = "demona" ];
+        then
+            IGNORE_ERRORS=1 make -j8
+        else
+            IGNORE_ERRORS=1 make -j$CORES_BUILD
+        fi
     fi
 
     timeEnd=$(date +%s.%N)
