@@ -92,17 +92,7 @@ https://cdn.corifeus.com/openwrt/
 
 ## The release
 
-* Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT32X
-  * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs.   
-  * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/21.02.0/targets/mvebu/cortexa9/
-    * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works. 
-    * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
-    * Error code: 18005
-      * When trying to install a firmware image, I get the following error:
-        * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
-      * Solution: Rename the firmware image to something short, like e.g. factory.bin
-        * Based on 
-https://openwrt.org/faq/before_installation#error_code18005
+
 
 <!--
 * D-Link DIR-860l B1 
@@ -264,6 +254,19 @@ Based on the OpenWrt forum discussions, after sysupgrade, the ext-root has to be
 
 It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work. [WPS](docs/wps.md) info.
 
+## Upgrade errors
+
+* Linksys WRT1900ACS / Linksys WRT3200ACM / Linksys WRT32X
+    * For Linksys the firmwares that start with ```insomnia``` worth trying, because you can use latest NodeJs.
+    * https://cdn.corifeus.com/openwrt/ or specific version eg. https://cdn.corifeus.com/openwrt/21.02.0/targets/mvebu/cortexa9/
+        * If you get the error ```The uploaded image file does not contain a supported format. Make sure that you choose the generic image format for your platform.```, you have to do it via SSH with ```sysupgrade -F FIRMWARE```, then it works.
+        * If you have a bricked firmware, you need a USB-TTL. [Linksys USB-TTL](docs/linksys-usb-ttl.md).
+        * Error code: 18005
+            * When trying to install a firmware image, I get the following error:
+                * Error code: 18005, Upgrade unsuccessfully because the version of the upgraded file was incorrect. Please check the file name.
+            * Solution: Rename the firmware image to something short, like e.g. factory.bin
+                * Based on
+                  https://openwrt.org/faq/before_installation#error_code18005
 
 ## Docker
 
@@ -271,7 +274,7 @@ It is only working, if only these are built in the firmware: ```hostapd-common w
 
 **Docker CE**
 
-For your workstation you don't really NodeJs, but my Travis, Scrutinizer and my auto generated web sites are required...   
+For your workstation, you don't really NodeJs, but GitHub actions and auto generated websites are required...   
    
 This is a OpenWrt Docker builder and a living Docker repo as well, ready to build, a lot already built.
 (A big image / full firmware, the most important packages are built. Ready to use.)  
