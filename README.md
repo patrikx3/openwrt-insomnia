@@ -15,14 +15,12 @@
 
 # Info
 
-The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) and the crypto accelerator. 
+The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) UPnP and the crypto accelerator. 
 
   
 Also, a docker container with all the firmwares and packages are in `/build/source/bin` @  
 https://hub.docker.com/r/patrikx3/openwrt-insomnia  
 
-  
-**For building, for Docker, the host should be Debian, as I had issues with building on Ubuntu host and Docker Debian container.**
   
 
 ## UPnP    

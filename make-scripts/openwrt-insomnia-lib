@@ -114,10 +114,10 @@ function setup-config-and-build() {
     cat .config | grep -G 'CONFIG_DEVEL\|CONFIG_BUILD_LOG\|CONFIG_CCACHE'
 
 
-    if [ "$4" != "only" ];
-    then
-        cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
-    fi
+    #if [ "$4" != "only" ];
+    #then
+    #    cp $DIR/.config /build/router/${ROUTER_PROFILE}/source/.config
+    #fi
 
     if [ -z "$3" ] || [ "$3" = "nosign" ] || [ "$3" = "corifeus" ]
     then
@@ -188,7 +188,7 @@ function setup-config-and-build() {
             IGNORE_ERRORS=1 make -j4
         elif [ "$HOST_HOSTNAME" = "demona" ];
         then
-            IGNORE_ERRORS=1 make -j8
+            IGNORE_ERRORS=1 make -j9
         else
             IGNORE_ERRORS=1 make -j$CORES_BUILD
         fi
