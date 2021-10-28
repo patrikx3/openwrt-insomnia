@@ -26,7 +26,10 @@ RUN git checkout tags/v${OPENWRT_VERSION_TOTAL}
 #RUN git checkout master
 
 RUN cp feeds.conf.default feeds.conf
+#RUN echo 'src-git node https://github.com/p3x-robot/openwrt-node-packages.git' >> feeds.conf
 RUN echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git' >> feeds.conf
+#RUN echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-21.02' >> feeds.conf
+
 #RUN echo 'src-git redis https://github.com/patrikx3/openwrt-redis.git' >> feeds.conf
 RUN ./scripts/feeds update -a
 RUN ./scripts/feeds install -a
