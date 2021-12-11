@@ -233,13 +233,13 @@ function setup-image-builder-and-build() {
     #echo "src/gz openwrt_routing http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/routing" >> repositories.conf
     #echo "src/gz openwrt_telephony http://cdn.corifeus.com/openwrt/${OPENWRT_VERSION_TOTAL}/packages/arm_cortex-a9_vfpv3-d16/telephony" >> repositories.conf
 
-    echo "src openwrt_core file:///build/source/bin/targets/mvebu/cortexa9/packages" >> repositories.conf
-    echo "src openwrt_base file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/base" >> repositories.conf
-    echo "src openwrt_luci file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/luci" >> repositories.conf
-    echo "src openwrt_node file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/node" >> repositories.conf
-    echo "src openwrt_packages file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/packages" >> repositories.conf
-    echo "src openwrt_routing file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/routing" >> repositories.conf
-    echo "src openwrt_telephony file:///build/source/bin/packages/arm_cortex-a9_vfpv3-d16/telephony" >> repositories.conf
+    echo "src openwrt_core file:///build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/packages" >> repositories.conf
+    echo "src openwrt_base file:///build/source/bin/packages/${ROUTER_ARCH}/base" >> repositories.conf
+    echo "src openwrt_luci file:///build/source/bin/packages/${ROUTER_ARCH}/luci" >> repositories.conf
+    echo "src openwrt_node file:///build/source/bin/packages/${ROUTER_ARCH}/node" >> repositories.conf
+    echo "src openwrt_packages file:///build/source/bin/packages/${ROUTER_ARCH}/packages" >> repositories.conf
+    echo "src openwrt_routing file:///build/source/bin/packages/${ROUTER_ARCH}/routing" >> repositories.conf
+    echo "src openwrt_telephony file:///build/source/bin/packages/${ROUTER_ARCH}/telephony" >> repositories.conf
 
 
     #sed -i.bak 's#src/gz#src#g' repositories.conf
