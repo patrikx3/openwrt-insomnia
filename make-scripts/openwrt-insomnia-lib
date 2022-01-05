@@ -95,11 +95,20 @@ function setup-config-and-build() {
     #sed -i 's#CONFIG_MARIADB_LITE=y#\# CONFIG_MARIADB_LITE is not set#g' $DIR/.config
     #cat .config | grep mariadb
 
-    if [ "$ROUTER_PROFILE" = "rpi-3" ] && [ "$4" = "only" ];
+#    if [ "$ROUTER_PROFILE" = "rpi-3" ] && [ "$4" = "only" ];
+#    then
+#        echo "for r-pi3 enable CONFIG_KERNEL_DEVMEM=y"
+#        #sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config
+#        grep -qxF 'CONFIG_KERNEL_DEVMEM=y' .config ||  echo "CONFIG_KERNEL_DEVMEM=y"  >> .config
+#    fi
+
+    if [ "$ROUTER_PROFILE" = "rpi-4" ];
     then
-        echo "for r-pi3 enable CONFIG_KERNEL_DEVMEM=y"
-        #sed -i 's#\# CONFIG_KERNEL_DEVMEM is not set#CONFIG_KERNEL_DEVMEM=y#g' $DIR/.config
-        grep -qxF 'CONFIG_KERNEL_DEVMEM=y' .config ||  echo "CONFIG_KERNEL_DEVMEM=y"  >> .config
+        echo "for r-pi4 enable"
+        RPI4KERNAL="/build/source/target/linux/bcm27xx/bcm2711/config-5.4"
+        grep -qxF 'CONFIG_RTC_CLASS=y' $RPI4KERNAL ||  echo "CONFIG_RTC_CLASS=y"  >> $RPI4KERNAL
+        grep -qxF 'CONFIG_RTC_DRV_DS1307=y' $RPI4KERNAL ||  echo "CONFIG_RTC_DRV_DS1307=y"  >> $RPI4KERNAL
+        grep -qxF 'CONFIG_RTC_I2C_AND_SPI=y' $RPI4KERNAL ||  echo "CONFIG_RTC_I2C_AND_SPI=y"  >> $RPI4KERNAL
     fi
 
     # disable node unused packages
