@@ -34,7 +34,7 @@ which defaults to
 
 ```bash
 tftp 192.168.1.33
-get openwrt-21.02.1-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
+get openwrt-21.02.2-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
 ```
 
 # TTL
@@ -52,8 +52,8 @@ setenv ipaddr 192.168.1.1
 setenv netmask 255.255.255.0
 setenv serverip 192.168.1.33
 
-setenv firmwareName openwrt-21.02.1-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
-setenv firmwareName insomnia-openwrt-21.02.1-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
+setenv firmwareName openwrt-21.02.2-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
+setenv firmwareName insomnia-openwrt-21.02.2-mvebu-cortexa9-linksys_wrt1900acs-squashfs-factory.img
 
 
 run update_both_images
@@ -80,7 +80,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2022.4.105
+[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2022.4.107
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

@@ -7,10 +7,10 @@ FROM patrikx3/openwrt-insomnia:base
 MAINTAINER patrikx3/openwrt-insomnia - Patrik Laszlo - alabard@gmail.com
 
 # config download
-# wget https://downloads.openwrt.org/releases/21.02.1/targets/mvebu/cortexa9/config.buildinfo -O .config
+# wget https://downloads.openwrt.org/releases/21.02.2/targets/mvebu/cortexa9/config.buildinfo -O .config
 
 # if you want a branch, the version should be snapshot
-ARG OPENWRT_VERSION_TOTAL=21.02.1
+ARG OPENWRT_VERSION_TOTAL=21.02.2
 #ARG OPENWRT_BRANCH=openwrt-18.01
 ENV OPENWRT_VERSION_TOTAL=${OPENWRT_VERSION_TOTAL}
 #ENV OPENWRT_BRANCH=${OPENWRT_BRANCH}
