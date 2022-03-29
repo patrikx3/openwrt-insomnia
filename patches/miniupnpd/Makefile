@@ -3,7 +3,10 @@
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
-#
+# https://forum.openwrt.org/t/upnp-port-forwarding-not-working-for-windows-10-and-xbox-one/87562/35
+# https://git.openwrt.org/?p=feed/packages.git;a=blob;f=net/miniupnpd/Makefile;hb=refs/heads/openwrt-21.02
+# https://git.openwrt.org/?p=feed/packages.git;a=blob;f=net/miniupnpd/Makefile
+# https://github.com/miniupnp/miniupnp/commit/2f2685af97c28ee3559af8d0a0cdf5d8b215a68f
 
 include $(TOPDIR)/rules.mk
 
