@@ -1,1 +1,1 @@
-https://downloads.openwrt.org/releases/21.02.2/targets/bcm27xx/bcm2711/openwrt-21.02.2-bcm27xx-bcm2711.manifest
+https://downloads.openwrt.org/releases/21.02.3		/targets/bcm27xx/bcm2711/openwrt-21.02.3		-bcm27xx-bcm2711.manifest

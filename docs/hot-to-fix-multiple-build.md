@@ -15,12 +15,12 @@ make package/install V=s
 # Need to update and these:
 
 ## D-LINK 860L B1
-https://downloads.openwrt.org/releases/21.02.2/targets/ramips/mt7621/config.seed (is existing in 21.02.2)
+https://downloads.openwrt.org/releases/21.02.3		/targets/ramips/mt7621/config.seed (is existing in 21.02.3		)
 
 ```text
 CONFIG_VERSION_CODE="insomnia"
 CONFIG_KERNEL_MIPS_FPU_EMULATOR=y
-CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.2"
+CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.3		"
 CONFIG_BUILD_LOG=y
 ```
 
@@ -31,10 +31,10 @@ es hasznald ezt:
 ```
 
 ## R-PI3
-https://downloads.openwrt.org/releases/21.02.2/targets/brcm2708/bcm2710/config.seed
+https://downloads.openwrt.org/releases/21.02.3		/targets/brcm2708/bcm2710/config.seed
 
 ```text
-CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.2"
+CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.3		"
 CONFIG_VERSION_CODE="insomnia"
 CONFIG_KERNEL_DEVMEM=y
 CONFIG_PACKAGE_avahi-dbus-daemon=y
@@ -68,7 +68,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2022.4.109
+[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2022.4.116
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
