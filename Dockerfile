@@ -4,13 +4,15 @@
 # docker attach <id>
 # docker run -t -i patrikx3/openwrt-insomnia bash
 FROM patrikx3/openwrt-insomnia:base
-MAINTAINER patrikx3/openwrt-insomnia - Patrik Laszlo - alabard@gmail.com
+LABEL docker="patrikx3/openwrt-insomnia"
+LABEL author="Patrik Laszlo"
+LABEL "e-mail"="Patrik Laszlo"
 
 # config download
-# wget https://downloads.openwrt.org/releases/21.02.3		/targets/mvebu/cortexa9/config.buildinfo -O .config
+# wget https://downloads.openwrt.org/releases/21.02.5/targets/mvebu/cortexa9/config.buildinfo -O .config
 
 # if you want a branch, the version should be snapshot
-ARG OPENWRT_VERSION_TOTAL=21.02.3		
+ARG OPENWRT_VERSION_TOTAL=22.03.5		
 #ARG OPENWRT_BRANCH=openwrt-18.01
 ENV OPENWRT_VERSION_TOTAL=${OPENWRT_VERSION_TOTAL}
 #ENV OPENWRT_BRANCH=${OPENWRT_BRANCH}

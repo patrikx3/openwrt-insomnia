@@ -15,12 +15,12 @@ make package/install V=s
 # Need to update and these:
 
 ## D-LINK 860L B1
-https://downloads.openwrt.org/releases/21.02.3		/targets/ramips/mt7621/config.seed (is existing in 21.02.3		)
+https://downloads.openwrt.org/releases/21.02.5/targets/ramips/mt7621/config.seed (is existing in 21.02.5		)
 
 ```text
 CONFIG_VERSION_CODE="insomnia"
 CONFIG_KERNEL_MIPS_FPU_EMULATOR=y
-CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.3		"
+CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.5"
 CONFIG_BUILD_LOG=y
 ```
 
@@ -31,10 +31,10 @@ es hasznald ezt:
 ```
 
 ## R-PI3
-https://downloads.openwrt.org/releases/21.02.3		/targets/brcm2708/bcm2710/config.seed
+https://downloads.openwrt.org/releases/21.02.5/targets/brcm2708/bcm2710/config.seed
 
 ```text
-CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.3		"
+CONFIG_VERSION_REPO="http://cdn.corifeus.com/openwrt/21.02.5"
 CONFIG_VERSION_CODE="insomnia"
 CONFIG_KERNEL_DEVMEM=y
 CONFIG_PACKAGE_avahi-dbus-daemon=y

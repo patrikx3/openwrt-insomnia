@@ -58,10 +58,10 @@ make menuconfig
 
 ```bash
 sed -i.bak 's#CONFIG_TARGET_INIT_PATH="#CONFIG_TARGET_INIT_PATH="/opt/router-scripts-openwrt:#g' .config
-sed -i.bak 's#http://downloads.openwrt.org/releases/21.02.3		#http://cdn.corifeus.com/openwrt/21.02.3		#g' .config
-sed -i.bak 's#http://downloads.openwrt.org/releases/21.02.3		#http://cdn.corifeus.com/openwrt/21.02.3		#g' package/base-files/image-config.in
+sed -i.bak 's#http://downloads.openwrt.org/releases/21.02.5	#http://cdn.corifeus.com/openwrt/21.02.5		#g' .config
+sed -i.bak 's#http://downloads.openwrt.org/releases/21.02.5	#http://cdn.corifeus.com/openwrt/21.02.5		#g' package/base-files/image-config.in
 sed -i.bak 's#default "/usr/sbin#default "/opt/router-scripts-openwrt:/usr/sbin#g' package/base-files/image-config.in
-echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/openwrt/21.02.3		\"" >> .config
+echo "CONFIG_VERSION_REPO=\"http://cdn.corifeus.com/openwrt/21.02.5\"" >> .config
 cat package/base-files/image-config.in | grep default
 cat .config | grep CONFIG_VERSION_REPO
 cat .config | grep CONFIG_TARGET_INIT_PATH 

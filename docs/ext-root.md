@@ -37,7 +37,7 @@ opkg install kmod-usb-core kmod-usb-ledtrig-usbport kmod-usb-storage kmod-usb-st
 insmod xhci-mtk
 
 ###################
-# v21.02.3		
+# v21.02.5		
 # mv /etc/config/system /etc/config/system.old 
 # mv /etc/config/network /etc/config/network.old
 # always regenerate and then fix it
@@ -97,7 +97,7 @@ git config --global http.sslVerify "false"
 git clone https://git.patrikx3.com/router-scripts-openwrt.git 
 
 cd router-scripts-openwrt
-npm install
+npm install --force
 
 # an error with dnsmasq-dhcp wrt3200acm/wrt32x
 # /etc/dnsmasq.confg => except-interface=eth1.2

@@ -5,7 +5,9 @@
 # docker run -t -i patrikx3/openwrt-base bash
 # maybe bullseye is not ready!
 FROM debian:bullseye
-MAINTAINER patrikx3/openwrt-insomnia:base - Patrik Laszlo - alabard@gmail.com
+LABEL docker="patrikx3/openwrt-insomnia:base"
+LABEL author="Patrik Laszlo"
+LABEL "e-mail"="Patrik Laszlo"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV FORCE_UNSAFE_CONFIGURE=1
