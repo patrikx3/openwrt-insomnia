@@ -15,7 +15,7 @@
 
 # Info
   
-`openwrt.org` says since version `22.03.3` is not buildable, but in `master` is buildable, so at some time it will get a new version.  
+For Linksys WRT, `openwrt.org` says, since version `22.03.3`, is not buildable, but in the `master` branch is buildable, so, at some time it will get a working firmware.  
 https://openwrt.org/releases/22.03/notes-22.03.3#broken_mv88e6176_switch
    
 ---
