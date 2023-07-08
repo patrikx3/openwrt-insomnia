@@ -8,8 +8,6 @@
 
 https://openwrt.org/docs/user-guide/wifi_configuration#wps_options
 
-It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work.
-
 There were some changes. So this is how it works with ```23.05.0-rc2```.
 
 Minimal steps needed to get WPS running:
@@ -39,18 +37,19 @@ opkg install wpad-mbedtls hostapd-utils
 
 reboot && exit
 
-# wait about 2 minutes
+# v23
 hostapd_cli -i wlan1 wps_pbc
-# or
+# or v23
 hostapd_cli wps_pbc
-# or
+# or v23
 hostapd_cli -i phy1-ap0 wps_pbc
 
 
+# v22 or
 hostapd_cli -i wlan1 wps_pin any $PIN
-# or
+# v23 or
 hostapd_cli wps_pin any $PIN
-#or
+# v23 or
 hostapd_cli -i phy1-ap0 wps_pin any $PIN
 
 # /var/run/hostapd-phy1.conf???
