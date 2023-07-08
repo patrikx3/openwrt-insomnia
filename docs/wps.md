@@ -42,7 +42,7 @@ reboot && exit
 # wait about 2 minutes
 hostapd_cli -i wlan1 wps_pbc
 
-hostapd_cli wps_pin any $PIN
+hostapd_cli -i wlan1 wps_pin any $PIN
 ```
 
 # Debug (not needed)
