@@ -194,7 +194,7 @@ function setup-config-and-build() {
             IGNORE_ERRORS=1 make -j4
         elif [ "$HOST_HOSTNAME" = "demona" ];
         then
-            IGNORE_ERRORS=1 make -j8
+            IGNORE_ERRORS=1 make -j16
         else
             IGNORE_ERRORS=1 make -j$CORES_BUILD
         fi
