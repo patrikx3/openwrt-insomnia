@@ -71,7 +71,7 @@ Then, set all radio 1 and 2 to be FR as well and the DTS/Radar perfectly works.
 
 ## Packages
 
-***There are at least about 9000 packages built for Linksys WRT.***
+**There are over 9000 packages built for Linksys WRT.**
 
 <!--
 * Enabled Apache HTTP2
