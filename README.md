@@ -20,16 +20,11 @@ https://cdn.corifeus.com/openwrt
  
 ---
   
-The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) UPnP and the crypto accelerator. 
+The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) the crypto accelerator. 
 
   
 Also, a docker container with all the firmwares and packages are in `/build/source/bin` @  
 https://hub.docker.com/r/patrikx3/openwrt-insomnia  
-
-  
-
-## UPnP    
-The default UPnP is using (about since OpenWrt v18) IGDV2 which is not compatible with consoles and Windows, so, installed UPnP IGDV1 in the firmware. So, now, all consoles are working with UPnP. 
   
 ## Crypto accelerator
 
