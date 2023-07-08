@@ -9,10 +9,10 @@ LABEL author="Patrik Laszlo"
 LABEL "e-mail"="Patrik Laszlo"
 
 # config download
-# wget https://downloads.openwrt.org/releases/21.02.5/targets/mvebu/cortexa9/config.buildinfo -O .config
+# wget https://downloads.openwrt.org/releases/23.05.0-rc2/targets/mvebu/cortexa9/config.buildinfo -O .config
 
 # if you want a branch, the version should be snapshot
-ARG OPENWRT_VERSION_TOTAL=22.03.5		
+ARG OPENWRT_VERSION_TOTAL=23.05.0-rc2		
 #ARG OPENWRT_BRANCH=openwrt-18.01
 ENV OPENWRT_VERSION_TOTAL=${OPENWRT_VERSION_TOTAL}
 #ENV OPENWRT_BRANCH=${OPENWRT_BRANCH}

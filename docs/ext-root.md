@@ -37,7 +37,7 @@ opkg install kmod-usb-core kmod-usb-ledtrig-usbport kmod-usb-storage kmod-usb-st
 insmod xhci-mtk
 
 ###################
-# v21.02.5		
+# v23.05.0-rc2		
 # mv /etc/config/system /etc/config/system.old 
 # mv /etc/config/network /etc/config/network.old
 # always regenerate and then fix it
