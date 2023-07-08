@@ -253,7 +253,7 @@ Based on the OpenWrt forum discussions, after sysupgrade, the ext-root has to be
 
 ## Wifi and WPS Issue
 
-It is only working, if only these are built in the firmware: ```hostapd-common wpad-mini```, nothing other like that. If not, it will not work. [WPS](docs/wps.md) info.
+[WPS](docs/wps.md) info.
 
 ## Upgrade errors
 
