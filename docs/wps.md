@@ -8,6 +8,8 @@
 
 https://openwrt.org/docs/user-guide/wifi_configuration#wps_options
 
+https://forum.openwrt.org/t/how-to-use-wps-on-linksys-wrt/165148
+
 There were some changes. So this is how it works with ```23.05.0-rc2```.
 
 Minimal steps needed to get WPS running:
