@@ -17,7 +17,11 @@
   
 To see the firmwares, see:  
 https://cdn.corifeus.com/openwrt
- 
+
+---
+  
+Nota bene: https://openwrt.org/releases/23.05/notes-23.05.0-rc2#switch_from_wolfssl_to_mbedtls_as_default
+  
 ---
   
 The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) and the crypto accelerator. 
