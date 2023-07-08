@@ -56,7 +56,7 @@ root@hawk:~# openssl engine -t -c
 ```
 
 ## UPnP
-I could only install it with `opkg install miniupnpd-nftables luci-app-upnp`.`
+I could only install it with `opkg install miniupnpd-nftables luci-app-upnp`.
 
 For `/etc/config/upnpd`, we better to enable and setup these options:
 
