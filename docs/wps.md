@@ -47,6 +47,8 @@ hostapd_cli wps_pbc
 hostapd_cli -i wlan1 wps_pin any $PIN
 # or
 hostapd_cli wps_pin any $PIN
+
+# /var/run/hostapd-phy1.conf???
 ```
 
 # Debug (not needed)
