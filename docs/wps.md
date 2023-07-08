@@ -27,13 +27,13 @@ opkg update
 
 # if you remove it, it will not work
 # v22
-#opkg remove wpad-basic-wolfssl
+opkg remove wpad-basic-wolfssl
 # v23
 opkg remove wpad-basic-mbedtls
 
 # it will start working after re-install
 # v22
-#opkg install wpad-wolfssl hostapd-utils
+opkg install wpad-wolfssl hostapd-utils
 # v23
 opkg install wpad-mbedtls hostapd-utils
 
