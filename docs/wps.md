@@ -43,10 +43,15 @@ reboot && exit
 hostapd_cli -i wlan1 wps_pbc
 # or
 hostapd_cli wps_pbc
+# or
+hostapd_cli -i phy1-ap0 wps_pbc
+
 
 hostapd_cli -i wlan1 wps_pin any $PIN
 # or
 hostapd_cli wps_pin any $PIN
+#or
+hostapd_cli -i phy1-ap0 wps_pin any $PIN
 
 # /var/run/hostapd-phy1.conf???
 ```
