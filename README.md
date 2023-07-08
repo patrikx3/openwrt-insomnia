@@ -55,6 +55,15 @@ root@hawk:~# openssl engine -t -c
      [ available ]
 ```
 
+## Upnp
+For `/etc/config/upnpd`, we better to enable and setup these options:
+```txt
+config upnpd 'config'
+	option enabled '1'
+	option external_iface 'wan'
+	option internal_iface 'lan'
+```
+
 ## European version
 
 If you have a 3rd Radio and you have the European version of WRT and have a 3rd radio, to get it to work on DFS/Radar, create this file:
