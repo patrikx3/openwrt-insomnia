@@ -39,7 +39,7 @@ opkg install wpad-mbedtls hostapd-utils
 
 reboot && exit
 
-# v23
+# v22
 hostapd_cli -i wlan1 wps_pbc
 # or v23
 hostapd_cli wps_pbc
