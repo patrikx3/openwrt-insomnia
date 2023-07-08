@@ -2,7 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-source $DIR/openwrt-insomnia-lib
+copy-scripts.sh
 
 ROUTER_PROFILE="rpi-4"
 ROUTER_TARGET="bcm27xx"
@@ -11,6 +11,8 @@ ROUTER_ARCH="aarch64_cortex-a72"
 FIRMWARE_NAME="insomnia"
 IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/openwrt-imagebuilder-${OPENWRT_VERSION_TOTAL_IMAGEBUILDER}-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
 #IMAGE_BUILDER_FILE="/build/source/bin/targets/${ROUTER_TARGET}/${ROUTER_SUB_TARGET}/openwrt-imagebuilder-${ROUTER_TARGET}-${ROUTER_SUB_TARGET}.Linux-x86_64.tar.xz"
+
+source $DIR/openwrt-insomnia-lib
 
 tag="rpi-4"
 

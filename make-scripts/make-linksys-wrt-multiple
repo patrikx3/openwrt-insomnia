@@ -2,6 +2,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
+copy-scripts.sh
+
 ROUTER_TARGET="mvebu"
 ROUTER_SUB_TARGET="cortexa9"
 ROUTER_ARCH="arm_cortex-a9_vfpv3-d16"

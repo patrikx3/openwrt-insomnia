@@ -24,9 +24,19 @@ But you can do it with ```LUCI``` as well.
 
 ```bash
 opkg update
-opkg remove wpad-mini wpad-basic
+
 # if you remove it, it will not work
-opkg install wpad hostapd-utils
+# v22
+#opkg remove wpad-basic-wolfssl
+# v23
+opkg remove wpad-basic-mbedtls
+
+# it will start working after remove
+# v22
+#opkg install wpad-wolfssl hostapd-utils
+# v23
+opkg install wpad-mbedtls hostapd-utils
+
 reboot && exit
 
 # wait about 2 minutes
