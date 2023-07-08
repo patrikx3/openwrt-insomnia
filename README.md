@@ -15,10 +15,9 @@
 
 # Info
   
-For Linksys WRT, `openwrt.org` says, since version `22.03.3`, is not buildable, but in the `master` branch is buildable, so, at some time it will get a working firmware. Besides, the `RC`  is building, but I do not suggest to use the RC versions. Better, to wait the full stable.  
-  
-https://openwrt.org/releases/22.03/notes-22.03.3#broken_mv88e6176_switch
-   
+To see the firmwares, see:  
+https://cdn.corifeus.com/openwrt
+ 
 ---
   
 The main reason is to be able to use the latest NodeJs for Linksys WRT (the default NodeJs is old) UPnP and the crypto accelerator. 
