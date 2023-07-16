@@ -4,7 +4,7 @@
 # docker attach <id>
 # docker run -t -i patrikx3/openwrt-base bash
 # maybe bullseye is not ready!
-FROM debian:bullseye
+FROM debian:testing
 LABEL docker="patrikx3/openwrt-insomnia:base"
 LABEL author="Patrik Laszlo"
 LABEL "e-mail"="Patrik Laszlo"
@@ -30,8 +30,8 @@ RUN apt-get -y update
 # jeff added to the build bots => pwgen locales ccache
 
 # based on => https://openwrt.org/docs/guide-developer/build-system/install-buildsystem
-
-RUN apt -y install libatomic-ops-dev python3 g++ make python3-pip gcc-multilib g++-multilib asciidoc bash bc time bcc bin86 binutils build-essential bzip2 cmake curl default-jdk fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc mercurial nano ncdu patch perl-modules python python-dev python2.7-dev quilt rsync ruby sdcc sharutils software-properties-common sshpass subversion sudo unzip util-linux wget xsltproc xz-utils zlib1g-dev g++-multilib swig python3 python3-dev python3-distutils python3-setuptools help2man libelf-dev ecj java-wrappers nasm bzr libpcap-dev pwgen locales ccache java-propose-classpath libncursesw5-dev
+# missing: b43-fwcutter
+RUN apt -y install  openjdk-17-jdk-headless python3-dev libthread-queue-any-perl libncurses-dev libatomic-ops-dev python3 g++ make python3-pip gcc-multilib g++-multilib asciidoc bash bc time bcc bin86 binutils build-essential bzip2 cmake curl default-jdk fastjar file flex gawk gcc genisoimage gettext git git-core intltool jikespg libboost-dev libgtk2.0-dev libncurses5-dev libssl-dev libusb-dev libxml-parser-perl make mc mercurial nano ncdu patch perl-modules quilt rsync ruby sdcc sharutils software-properties-common sshpass subversion sudo unzip util-linux wget xsltproc xz-utils zlib1g-dev g++-multilib swig python3 python3-dev python3-distutils python3-setuptools help2man libelf-dev ecj java-wrappers nasm bzr libpcap-dev pwgen locales ccache java-propose-classpath libncursesw5-dev
 #before it was needed nethack*, still?
 # nethack
 
