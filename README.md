@@ -20,7 +20,7 @@ https://cdn.corifeus.com/openwrt
 
 ---
   
-Nota bene: https://openwrt.org/releases/23.05/notes-23.05.0-rc2#switch_from_wolfssl_to_mbedtls_as_default
+Nota bene: [switch_from_wolfssl_to_mbedtls_as_default](https://openwrt.org/releases/23.05/notes-23.05.0-rc2#switch_from_wolfssl_to_mbedtls_as_default)
   
 ---
   
