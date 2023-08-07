@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-$DIR/build-openwrt/final-commit-and-push >> $DIR/build-openwrt/final-commit-and-push.log 2>> $DIR/build-openwrt/final-commit-and-push.error.log &

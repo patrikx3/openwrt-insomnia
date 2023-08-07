@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-source $DIR/build-lib
-
-# https://unix.stackexchange.com/questions/128559/solving-mv-argument-list-too-long
-
-docker run --storage-opt size=200G --ulimit stack=-1:-1 --ulimit core=-1:-1 -e HOST_HOSTNAME=`hostname` -v $DIR/$BUILD_DIR:/build/host-build -v $DIR/patches:/build/patches -v $DIR/secure:/build/secure -v $DIR/make-scripts:/build/make-scripts -v $DIR/router:/build/router -v $DIR/image-builder-files:/build/image-builder-files -ti patrikx3/openwrt-insomnia bash
