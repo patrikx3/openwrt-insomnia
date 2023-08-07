@@ -30,3 +30,4 @@ jobs:
             - run: npm i -g grunt-cli
             - run: npm install
             - run: grunt
+            - run: ./init-firmware.sh
