@@ -63,7 +63,7 @@ mkdir -p /media/storage
 /sbin/block detect > /etc/config/fstab; sed -i s/option$'\t'enabled$'\t'\'0\'/option$'\t'enabled$'\t'\'1\'/ /etc/config/fstab; sed -i s#/mnt/sda1#/overlay# /etc/config/fstab; cat /etc/config/fstab;
 
 # set /dev/sda3 -> /media/storage
-nano /etc/config/fstab
+# nano /etc/config/fstab
 
 # built the overlay into the drive
 mount /dev/sda1 /mnt ; tar -C /overlay -cvf - . | tar -C /mnt -xf - ; umount /mnt
@@ -97,7 +97,7 @@ git config --global http.sslVerify "false"
 git clone https://git.patrikx3.com/router-scripts-openwrt.git 
 
 cd router-scripts-openwrt
-npm install --force
+npm install --force --verbose
 
 # an error with dnsmasq-dhcp wrt3200acm/wrt32x
 # /etc/dnsmasq.confg => except-interface=eth1.2
@@ -130,7 +130,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2023.10.117
+[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2023.10.119
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

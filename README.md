@@ -32,30 +32,6 @@ The main reason is to be able to use the latest NodeJs for Linksys WRT (the defa
 
   
   
-## Crypto accelerator
-
-Since OpenWrt 19, the crypto accelerator is enabled by default. (kmod-cryptodev libopenssl-devcrypto)
-  
-https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
-    
-### You can verify 
-
-Not enabled:  
-```text
-root@hawk:~# openssl engine -t -c
-(dynamic) Dynamic engine loading support
-     [ unavailable ]
-```
-
-Enabled:  
-```text
-root@hawk:~# openssl engine -t -c
-(dynamic) Dynamic engine loading support
-     [ unavailable ]
-(devcrypto) /dev/crypto engine
- [DES-CBC, DES-EDE3-CBC, AES-128-CBC, AES-192-CBC, AES-256-CBC, AES-128-ECB, AES-192-ECB, AES-256-ECB]
-     [ available ]
-```
 
 ## UPnP
 I could only install it with `opkg install miniupnpd-nftables luci-app-upnp`.
@@ -95,12 +71,15 @@ https://github.com/nxhack/openwrt-node-packages#note-about-avahi-and-homebridge
 -->
 
 
-# Linksys WRT Radar Detection
-Tested on WRT1900ACSv2 and WRT3200ACM, works.  
-[README](docs/linksys-wrt-radar-detection.md)
-
 # Ext-Root
 [README](docs/ext-root.md)
+
+# Wireguard
+[README](docs/wireguard.md)
+
+
+# WPS
+[README](docs/wps.md)
 
 ## How I built these Dockers via these links
 [README](docs/links-i-used.md)
@@ -114,16 +93,15 @@ Tested on WRT1900ACSv2 and WRT3200ACM, works.
 # Create from scratch
 [README](docs/create-from-scratch.md)
 
+# Linksys WRT Radar Detection
+Tested on WRT1900ACSv2 and WRT3200ACM, works.  
+[README](docs/linksys-wrt-radar-detection.md)
 
 # Copy configs
 [README](docs/copy-test-configs.md)
 
-
 # Firmware sizes
 [README](docs/firmware-sizes.md)
-
-# WPS
-[README](docs/wps.md)
 
 # Packages and patches
 
@@ -158,7 +136,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2023.10.117
+[**P3X-OPENWRT-INSOMNIA**](https://corifeus.com/openwrt-insomnia) Build v2023.10.119
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

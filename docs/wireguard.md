@@ -4,13 +4,9 @@
 
                         
 [//]: #@corifeus-header:end
-```bash
-cp -avr /build/router/dir-860l-b1/source/. /build/source
-cp -avr /build/router/linksys-wrt1900acs/source/. /build/source
-cp -avr /build/router/linksys-wrt3200acm/source/. /build/source
-cp -avr /build/router/rpi-3/source/. /build/source
-```
+# Wireguard
 
+I had to change from default MTU to 1280 in the peer/client.
 [//]: #@corifeus-footer
 
 ---

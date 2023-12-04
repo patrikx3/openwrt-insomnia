@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION="23.05.0-rc2"
+VERSION="23.05.2"
 rm -rf build-openwrt/
 mkdir build-openwrt
 pushd build-openwrt
