@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "openwrt",
         "cdn": true,
-        "nodejs": "v20.5.1",
+        "nodejs": "v20.11.0",
         "icon": "fas fa-coffee",
         "code": "Insomnia",
         "opencollective": false,
         "reponame": "openwrt-insomnia",
         "build": true
     },
-    "version": "2023.10.121",
+    "version": "2024.4.102",
     "description": "☕ OpenWrt Insomnia for Linksys WRT",
     "main": "src/index.js",
     "directories": {
@@ -35,7 +35,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2023.10.142"
+        "corifeus-builder": "^2024.4.103"
     },
     "engines": {
         "node": ">=12.13.0"
