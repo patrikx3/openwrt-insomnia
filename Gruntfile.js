@@ -4,8 +4,7 @@ module.exports = (grunt) => {
     const loader = new builder.loader(grunt);
     loader.js({
         replacer: {
-            type: 'openwrt',
-            npmio: false,
+            type: 'openwrt',          
         },
     });
 
